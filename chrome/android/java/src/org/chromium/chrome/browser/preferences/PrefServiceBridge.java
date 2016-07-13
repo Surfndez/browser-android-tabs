@@ -516,7 +516,21 @@ public class PrefServiceBridge {
     }
 
     /**
-     * @return Whether Safe Browsing is managed
+     * @param whether Tracking Protection should be enabled.
+     */
+    public void setTrackingProtectionEnabled(boolean enabled) {
+        PrefServiceBridgeJni.get().setTrackingProtectionEnabled(enabled);
+    }
+
+    /**
+     * @param whether AdBlock should be enabled.
+     */
+    public void setAdBlockEnabled(boolean enabled) {
+        PrefServiceBridgeJni.get().setAdBlockEnabled(enabled);
+    }
+
+    /**
+     * @return whether Safe Browsing is managed
      */
     public boolean isSafeBrowsingManaged() {
         return PrefServiceBridgeJni.get().getSafeBrowsingManaged(PrefServiceBridge.this);
@@ -1273,5 +1287,7 @@ public class PrefServiceBridge {
         boolean getExplicitLanguageAskPromptShown(PrefServiceBridge caller);
         void setExplicitLanguageAskPromptShown(PrefServiceBridge caller, boolean shown);
         void setForceWebContentsDarkModeEnabled(PrefServiceBridge caller, boolean enabled);
+        void setTrackingProtectionEnabled(boolean enabled);
+        void setAdBlockEnabled(boolean enabled);
     }
 }
