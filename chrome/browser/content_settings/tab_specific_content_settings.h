@@ -288,6 +288,7 @@ class TabSpecificContentSettings
   void OnContentBlocked(ContentSettingsType type);
   void OnContentBlockedWithDetail(ContentSettingsType type,
                                   const base::string16& details);
+  void OnContentDeniedScript(const std::string& original_url);
   void OnContentAllowed(ContentSettingsType type);
 
   // These methods are invoked on the UI thread forwarded from the
