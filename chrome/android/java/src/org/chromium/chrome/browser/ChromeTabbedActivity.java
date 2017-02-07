@@ -1842,7 +1842,7 @@ public class ChromeTabbedActivity extends ChromeActivity implements ScreenshotMo
         });
     }
 
-    private void setBraveShieldsColor(String url) {
+    protected void setBraveShieldsColor(String url) {
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
             if (app.getShieldsConfig().isTopShieldsEnabled(url)) {
