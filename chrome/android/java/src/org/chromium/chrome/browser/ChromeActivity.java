@@ -688,7 +688,6 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
      * {@link Toolbar}. Extending classes can override this call to avoid creating the toolbar.
      */
     protected void initializeToolbar() {
-<<<<<<< HEAD
         try (TraceEvent te = TraceEvent.scoped("ChromeActivity.initializeToolbar")) {
             final View controlContainer = findViewById(R.id.control_container);
             assert controlContainer != null;
@@ -1603,6 +1602,12 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         if (mDirectActionInitializer != null) {
             registerDirectActions();
         }
+
+        // Starting Brave Sync
+        /*ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        if (null != app) {
+            app.mBraveSyncWorker = new BraveSyncWorker(this);
+        }*/
     }
 
     /**
