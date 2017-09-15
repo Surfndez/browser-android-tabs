@@ -122,6 +122,7 @@ public class SiteSettingsPreferences
             websitePrefs.add(Type.SENSORS);
             websitePrefs.add(Type.SOUND);
             websitePrefs.add(Type.USB);
+            websitePrefs.add(Type.DESKTOP_VIEW_SETTINGS);
         }
 
         // Initialize the summary and icon for all preferences that have an
@@ -167,6 +168,8 @@ public class SiteSettingsPreferences
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
+            } else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
+                p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
             } else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
             }

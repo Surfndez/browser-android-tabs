@@ -367,6 +367,22 @@ public class PrefServiceBridge {
     }
 
     /**
+     * @return true if Desktop View is enabled.
+     * The default is false.
+     */
+    public boolean desktopViewEnabled() {
+        return PrefServiceBridgeJni.get().getDesktopViewEnabled();
+    }
+
+    /**
+     * @return Whether Desktop View is managed by policy.
+     */
+    public boolean desktopViewManaged() {
+        return isContentSettingManaged(ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW);
+    }
+
+
+    /**
      * @return true if background sync is managed by policy.
      */
     public boolean isBackgroundSyncManaged() {
@@ -393,6 +409,13 @@ public class PrefServiceBridge {
      */
     public void setEulaAccepted() {
         PrefServiceBridgeJni.get().setEulaAccepted(PrefServiceBridge.this);
+    }
+
+    /**
+     * Enable or disable Desktop View .
+     */
+    public void setDesktopViewEnabled(boolean enabled) {
+        PrefServiceBridgeJni.get().setDesktopViewEnabled(enabled);
     }
 
     /**
@@ -1338,5 +1361,7 @@ public class PrefServiceBridge {
         boolean getTrackingProtectionEnabled();
         boolean getAdBlockEnabled();
         boolean getAdBlockRegionalEnabled();
+        boolean getDesktopViewEnabled();
+        void setDesktopViewEnabled(boolean enabled);
     }
 }
