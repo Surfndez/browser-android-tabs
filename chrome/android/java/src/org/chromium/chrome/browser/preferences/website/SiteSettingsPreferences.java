@@ -35,6 +35,7 @@ public class SiteSettingsPreferences
     // are defined in the SiteSettingsCategory, additional keys
     // are listed here.
     static final String MEDIA_KEY = "media";
+    //static final String DESKTOP_VIEW_SETTINGS_KEY = "desktop_view";
 
     // Whether this class is handling showing the Media sub-menu (and not the main menu).
     boolean mMediaSubMenu;
@@ -76,6 +77,7 @@ public class SiteSettingsPreferences
                 getPreferenceScreen().removePreference(findPreference(i));
             }
             getPreferenceScreen().removePreference(findPreference(MEDIA_KEY));
+            //getPreferenceScreen().removePreference(findPreference(DESKTOP_VIEW_SETTINGS_KEY));
         } else {
             // These will be tucked under the Media subkey, so don't show them on the main menu.
             getPreferenceScreen().removePreference(findPreference(Type.AUTOPLAY));
@@ -168,9 +170,9 @@ public class SiteSettingsPreferences
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
-            } else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
+            }/* else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
-            } else {
+            }*/ else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
             }
 
