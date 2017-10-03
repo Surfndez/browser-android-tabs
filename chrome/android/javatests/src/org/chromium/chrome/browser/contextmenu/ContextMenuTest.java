@@ -397,7 +397,7 @@ public class ContextMenuTest implements CustomMainActivityStart {
 
     @Test
     @SmallTest
-    @Feature({"Browser", "ContextMenu"})
+    @Feature({"Browser", "ContextMenu", "ApplyLater"})
     @RetryOnFailure
     public void testContextMenuRetrievesLinkOptions() throws TimeoutException {
         Tab tab = mDownloadTestRule.getActivity().getActivityTab();
