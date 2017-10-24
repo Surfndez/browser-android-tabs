@@ -205,6 +205,17 @@ public class PrefServiceBridge {
         return list;
     }
 
+    /**
+     * Returns all the currently saved exceptions for a given content settings type,
+     * from incognito profile.
+     * @param contentSettingsType The type to fetch exceptions for.
+     */
+    public List<ContentSettingException> getContentSettingsExceptionsIncognito(int contentSettingsType) {
+        List<ContentSettingException> list = new ArrayList<ContentSettingException>();
+        PrefServiceBridgeJni.get().getContentSettingsExceptionsIncognito(contentSettingsType, list);
+        return list;
+    }
+
     @CalledByNative
     private static void addContentSettingExceptionToList(ArrayList<ContentSettingException> list,
             int contentSettingsType, String pattern, int contentSetting, String source) {
@@ -1363,5 +1374,9 @@ public class PrefServiceBridge {
         boolean getAdBlockRegionalEnabled();
         boolean getDesktopViewEnabled();
         void setDesktopViewEnabled(boolean enabled);
+        void getContentSettingsExceptionsIncognito(
+            int contentSettingsType, List<ContentSettingException> list);
+        void setContentSettingForPatternIncognito(
+                int contentSettingType, String pattern, int setting);
     }
 }
