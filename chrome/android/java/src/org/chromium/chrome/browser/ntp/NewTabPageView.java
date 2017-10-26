@@ -197,7 +197,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         initializeLayoutChangeListener();
         mNewTabPageLayout.setSearchProviderInfo(searchProviderHasLogo, searchProviderIsGoogle);
 
-        mRecyclerView.init(mUiConfig, closeContextMenuCallback);
+        //mRecyclerView.init(mUiConfig, closeContextMenuCallback);
 
         // Set up snippets
         NewTabPageAdapter newTabPageAdapter = new NewTabPageAdapter(

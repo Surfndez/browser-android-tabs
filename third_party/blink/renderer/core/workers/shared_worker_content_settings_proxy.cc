@@ -50,4 +50,8 @@ SharedWorkerContentSettingsProxy::GetService() {
   return *content_settings_instance_host;
 }
 
+bool SharedWorkerContentSettingsProxy::AllowFingerprinting() {
+    return true;
+};
+
 }  // namespace blink
