@@ -248,6 +248,13 @@ public class Preferences extends ChromeBaseAppCompatActivity
         }
 
         if (item.getItemId() == android.R.id.home) {
+            Log.i(TAG, "SAM: android.R.id.home clicked");
+            if (getFragmentForTest() instanceof BraveSyncScreensPreference) {
+                BraveSyncScreensPreference pref = (BraveSyncScreensPreference) getFragmentForTest();
+                if (pref.onBackPressed()) {
+                    return true;
+                }
+            }
             finish();
             return true;
         } else if (item.getItemId() == R.id.menu_id_general_help) {
