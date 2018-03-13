@@ -261,7 +261,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
      *                        has focus.
      */
     public void setFakeboxDelegate(FakeboxDelegate fakeboxDelegate) {
-        mRecyclerView.setFakeboxDelegate(fakeboxDelegate);
+        //mRecyclerView.setFakeboxDelegate(fakeboxDelegate);
     }
 
     private void initializeLayoutChangeListener() {
