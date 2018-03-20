@@ -232,6 +232,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             mContext = context;
         }
 
+        @Override
         protected Long doInBackground(Void... params) {
             if (null == mContext) {
                 return null;
