@@ -288,6 +288,13 @@ public class FeatureUtilities {
         return Build.VERSION.SDK_INT > Build.VERSION_CODES.M;
     }
 
+    /**
+     * Whether or not use custom tabs
+     */
+    public static boolean useCustomTabs() {
+        return ChromePreferenceManager.getInstance().useCustomTabs();
+    }
+
     private static void cacheServiceManagerForDownloadResumption() {
         cacheFlag(SERVICE_MANAGER_FOR_DOWNLOAD_RESUMPTION_KEY,
                 ChromeFeatureList.SERVICE_MANAGER_FOR_DOWNLOAD);
