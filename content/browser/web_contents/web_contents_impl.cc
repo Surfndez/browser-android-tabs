@@ -37,6 +37,9 @@
 #include "base/time/time.h"
 #include "base/trace_event/trace_event.h"
 #include "build/build_config.h"
+#include "chrome/browser/net/blockers/shields_config.h"
+#include "chrome/browser/profiles/profile.h"
+#include "chrome/browser/browser_process.h"
 #include "components/download/public/common/download_stats.h"
 #include "components/rappor/public/rappor_utils.h"
 #include "components/url_formatter/url_formatter.h"
@@ -125,6 +128,7 @@
 #include "content/public/browser/web_contents_binding_set.h"
 #include "content/public/browser/web_contents_delegate.h"
 #include "content/public/browser/web_ui_controller.h"
+#include "content/public/browser/web_contents_ledger_observer.h"
 #include "content/public/common/bindings_policy.h"
 #include "content/public/common/child_process_host.h"
 #include "content/public/common/content_client.h"
@@ -1725,6 +1729,14 @@ base::TimeTicks WebContentsImpl::GetLastActiveTime() {
   return last_active_time_;
 }
 
+base::TimeTicks WebContentsImpl::GetLastHiddenTime() const {
+  return last_hidden_time_;
+}
+
+void WebContentsImpl::SetLastActiveTime(base::TimeTicks last_active_time) {
+  last_active_time_ = last_active_time;
+}
+
 void WebContentsImpl::WasShown() {
   controller_.SetActive(true);
 
@@ -1783,8 +1795,10 @@ void WebContentsImpl::WasHidden() {
 
   // Inform the renderer that the page was hidden if there are no entities
   // capturing screenshots or video (e.g. mirroring).
-  if (!IsBeingCaptured())
+  if (!IsBeingCaptured()) {
     SendPageMessage(new PageMsg_WasHidden(MSG_ROUTING_NONE));
+  }
+  last_hidden_time_ = base::TimeTicks::Now();
 
   SetVisibility(Visibility::HIDDEN);
 }
