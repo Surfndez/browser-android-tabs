@@ -47,7 +47,8 @@ public class MainPreferences extends PreferenceFragmentCompat
     public static final String PREF_ACCOUNT_SECTION = "account_section";
     //public static final String PREF_SIGN_IN = "sign_in";
     public static final String PREF_SYNC_AND_SERVICES = "sync_and_services";
-    public static final String PREF_SEARCH_ENGINE = "search_engine";
+    public static final String PREF_STANDARD_SEARCH_ENGINE = "standard_search_engine";
+    public static final String PREF_PRIVATE_SEARCH_ENGINE = "private_search_engine";
     public static final String PREF_SAVED_PASSWORDS = "saved_passwords";
     public static final String PREF_HOMEPAGE = "homepage";
     public static final String PREF_UI_THEME = "ui_theme";
@@ -132,8 +133,8 @@ public class MainPreferences extends PreferenceFragmentCompat
         mSignInPreference.setOnStateChangedCallback(this::onSignInPreferenceStateChanged);
 
         updatePasswordsPreference();
-
-        setManagedPreferenceDelegateForPreference(PREF_SEARCH_ENGINE);
+        setManagedPreferenceDelegateForPreference(PREF_STANDARD_SEARCH_ENGINE);
+        setManagedPreferenceDelegateForPreference(PREF_PRIVATE_SEARCH_ENGINE);
         //setManagedPreferenceDelegateForPreference(PREF_DATA_REDUCTION);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -201,10 +202,11 @@ public class MainPreferences extends PreferenceFragmentCompat
             addPreferenceIfAbsent(PREF_SIGN_IN);
         } else {
             removePreferenceIfPresent(PREF_SIGN_IN);
-        }*/
+        }
 
-        updateSyncAndServicesPreference();
-        updateSearchEnginePreference();
+        updateSyncAndServicesPreference();*/
+        updateSearchEnginePreference(PREF_STANDARD_SEARCH_ENGINE);
+        updateSearchEnginePreference(PREF_PRIVATE_SEARCH_ENGINE);
 
         Preference homepagePref = addPreferenceIfAbsent(PREF_HOMEPAGE);
         setOnOffSummary(homepagePref, HomepageManager.getInstance().getPrefHomepageEnabled());
@@ -237,27 +239,23 @@ public class MainPreferences extends PreferenceFragmentCompat
         if (preference != null) getPreferenceScreen().removePreference(preference);
     }
 
-    private void updateSyncAndServicesPreference() {
-        ChromeBasePreference syncAndServices =
-                (ChromeBasePreference) findPreference(PREF_SYNC_AND_SERVICES);
-        syncAndServices.setIcon(SyncPreferenceUtils.getSyncStatusIcon(getActivity()));
-        syncAndServices.setSummary(SyncPreferenceUtils.getSyncStatusSummary(getActivity()));
-    }
+    // private void updateSyncAndServicesPreference() {
+    //     ChromeBasePreference syncAndServices =
+    //             (ChromeBasePreference) findPreference(PREF_SYNC_AND_SERVICES);
+    //     syncAndServices.setIcon(SyncPreferenceUtils.getSyncStatusIcon(getActivity()));
+    //     syncAndServices.setSummary(SyncPreferenceUtils.getSyncStatusSummary(getActivity()));
+    // }
 
-    private void updateSearchEnginePreference() {
+    private void updateSearchEnginePreference(String prefSearchName) {
         if (!TemplateUrlServiceFactory.get().isLoaded()) {
             ChromeBasePreference searchEnginePref =
-                    (ChromeBasePreference) findPreference(PREF_SEARCH_ENGINE);
+                    (ChromeBasePreference) findPreference(prefSearchName);
             searchEnginePref.setEnabled(false);
             return;
         }
 
-        String defaultSearchEngineName = null;
-        TemplateUrl dseTemplateUrl =
-                TemplateUrlServiceFactory.get().getDefaultSearchEngineTemplateUrl();
-        if (dseTemplateUrl != null) defaultSearchEngineName = dseTemplateUrl.getShortName();
-
-        Preference searchEnginePreference = findPreference(PREF_SEARCH_ENGINE);
+        String defaultSearchEngineName = TemplateUrlServiceFactory.get().getDefaultSearchEngineName(prefSearchName.equals(PREF_PRIVATE_SEARCH_ENGINE));
+        Preference searchEnginePreference = findPreference(prefSearchName);
         searchEnginePreference.setEnabled(true);
         searchEnginePreference.setSummary(defaultSearchEngineName);
     }
@@ -301,7 +299,8 @@ public class MainPreferences extends PreferenceFragmentCompat
     @Override
     public void onTemplateUrlServiceLoaded() {
         TemplateUrlServiceFactory.get().unregisterLoadListener(this);
-        updateSearchEnginePreference();
+        updateSearchEnginePreference(PREF_STANDARD_SEARCH_ENGINE);
+        updateSearchEnginePreference(PREF_PRIVATE_SEARCH_ENGINE);
     }
 
     @Override
