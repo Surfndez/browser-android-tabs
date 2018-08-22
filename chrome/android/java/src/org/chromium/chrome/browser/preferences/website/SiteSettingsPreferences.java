@@ -84,9 +84,9 @@ public class SiteSettingsPreferences
             getPreferenceScreen().removePreference(findPreference(Type.PLAY_YT_VIDEO_IN_BROWSER));
             // TODO(csharrison): Remove this condition once the experimental UI lands. It is not
             // great to dynamically remove the preference in this way.
-            if (!SiteSettingsCategory.adsCategoryEnabled()) {
-                getPreferenceScreen().removePreference(findPreference(Type.ADS));
-            }
+            // if (!SiteSettingsCategory.adsCategoryEnabled()) {
+            //     getPreferenceScreen().removePreference(findPreference(Type.ADS));
+            // }
             CommandLine commandLine = CommandLine.getInstance();
             if (!commandLine.hasSwitch(ContentSwitches.ENABLE_EXPERIMENTAL_WEB_PLATFORM_FEATURES)) {
                 getPreferenceScreen().removePreference(findPreference(Type.BLUETOOTH_SCANNING));
@@ -105,9 +105,9 @@ public class SiteSettingsPreferences
             websitePrefs.add(Type.PLAY_VIDEO_IN_BACKGROUND);
             websitePrefs.add(Type.PLAY_YT_VIDEO_IN_BROWSER);
         } else {
-            if (SiteSettingsCategory.adsCategoryEnabled()) {
+            /*if (SiteSettingsCategory.adsCategoryEnabled()) {
                 websitePrefs.add(Type.ADS);
-            }
+            }*/
             websitePrefs.add(Type.AUTOMATIC_DOWNLOADS);
             //websitePrefs.add(Type.BACKGROUND_SYNC);
             CommandLine commandLine = CommandLine.getInstance();
@@ -164,8 +164,8 @@ public class SiteSettingsPreferences
                 p.setSummary(ContentSettingsResources.getGeolocationAllowedSummary());
             } else if (Type.CLIPBOARD == prefCategory && !checked) {
                 p.setSummary(ContentSettingsResources.getClipboardBlockedListSummary());
-            } else if (Type.ADS == prefCategory && !checked) {
-                p.setSummary(ContentSettingsResources.getAdsBlockedListSummary());
+            //} else if (Type.ADS == prefCategory && !checked) {
+            //    p.setSummary(ContentSettingsResources.getAdsBlockedListSummary());
             } else if (Type.SOUND == prefCategory && !checked) {
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
