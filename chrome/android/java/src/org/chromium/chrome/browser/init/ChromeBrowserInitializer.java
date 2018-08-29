@@ -592,7 +592,7 @@ public class ChromeBrowserInitializer {
         ModuleUtil.recordStartupTime();
 
         InitAdBlock();
-        UpdateStats();
+        //UpdateStats();
         CheckInstallationSource();
         SwitchSearchSuggestEnabled();
     }
