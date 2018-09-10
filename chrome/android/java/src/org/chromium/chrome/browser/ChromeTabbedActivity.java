@@ -630,7 +630,7 @@ public class ChromeTabbedActivity extends ChromeActivity implements ScreenshotMo
 
             mTabModelObserver = new TabModelSelectorTabModelObserver(mTabModelSelectorImpl) {
                 @Override
-                public void didSelectTab(Tab tab, TabSelectionType type, int lastId) {
+                public void didSelectTab(Tab tab, @TabSelectionType int type, int lastId) {
                     try {
                         URL url = new URL(tab.getUrl());
 
