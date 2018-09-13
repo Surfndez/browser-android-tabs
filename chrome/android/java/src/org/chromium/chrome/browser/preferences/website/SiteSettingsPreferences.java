@@ -72,7 +72,8 @@ public class SiteSettingsPreferences
             // The Media sub-menu only contains Protected Content and Autoplay, so remove all other
             // menus.
             for (@Type int i = 0; i < Type.NUM_ENTRIES; i++) {
-                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA) continue;
+                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA || 
+                    i == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND || i == SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER) continue;
                 getPreferenceScreen().removePreference(findPreference(i));
             }
             getPreferenceScreen().removePreference(findPreference(MEDIA_KEY));

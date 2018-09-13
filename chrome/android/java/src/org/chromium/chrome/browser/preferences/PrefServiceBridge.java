@@ -892,6 +892,15 @@ public class PrefServiceBridge {
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_SOUND:
                 PrefServiceBridgeJni.get().setSoundEnabled(PrefServiceBridge.this, allow);
                 break;
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
+                nativeSetDesktopViewEnabled(allow);
+                break;
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
+                nativeSetPlayVideoInBackgroundEnabled(allow);
+                break;
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
+                nativeSetPlayYTVideoInBrowserEnabled(allow);
+                break;
             default:
                 assert false;
         }
@@ -930,6 +939,12 @@ public class PrefServiceBridge {
                 return PrefServiceBridgeJni.get().getSensorsEnabled(PrefServiceBridge.this);
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_SOUND:
                 return PrefServiceBridgeJni.get().getSoundEnabled(PrefServiceBridge.this);
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
+                return PrefServiceBridgeJni.get().getDesktopViewEnabled();
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
+                return PrefServiceBridgeJni.get().getPlayVideoInBackgroundEnabled();
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
+                return PrefServiceBridgeJni.get().getPlayYTVideoInBrowserEnabled();
             default:
                 assert false;
                 return false;
