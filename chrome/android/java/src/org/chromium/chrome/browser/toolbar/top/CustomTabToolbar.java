@@ -877,5 +877,11 @@ public class CustomTabToolbar extends ToolbarLayout implements View.OnLongClickL
         public LocationBarVoiceRecognitionHandler getLocationBarVoiceRecognitionHandler() {
             return null;
         }
+
+        @Override
+        public  void onRewardsPanelDismiss() {}
+
+        @Override
+        public  void dismissRewardsPanel() {}
     }
 }
