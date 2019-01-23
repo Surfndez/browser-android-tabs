@@ -44,8 +44,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import android.widget.ImageButton;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 
 import org.chromium.base.Log;
 import org.chromium.base.ActivityState;
