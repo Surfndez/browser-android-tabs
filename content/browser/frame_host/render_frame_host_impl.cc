@@ -1004,7 +1004,7 @@ RenderFrameHostImpl::RenderFrameHostImpl(
 
 #if defined(OS_ANDROID)
   if (NeedPlayVideoInBackground()) {
-    AllowInjectingJavaScriptForAndroidWebView();
+    AllowInjectingJavaScript();
   }
 #endif
 }
