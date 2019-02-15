@@ -43,7 +43,7 @@ public class BrowsingModeBottomToolbarCoordinator {
     private final HomeButton mHomeButton;
 
     /** The share button that lives in the bottom toolbar. */
-    private final ShareButton mShareButton;
+    //private final ShareButton mShareButton;
 
     /** The search accelerator that lives in the bottom toolbar. */
     private final SearchAccelerator mSearchAccelerator;
@@ -98,18 +98,18 @@ public class BrowsingModeBottomToolbarCoordinator {
         mHomeButton.setActivityTabProvider(mTabProvider);
         setupIPH(FeatureConstants.CHROME_DUET_HOME_BUTTON_FEATURE, mHomeButton, homeButtonListener);
 
-        mShareButton = mToolbarRoot.findViewById(R.id.share_button);
-        mShareButtonListenerSupplierCallback = shareButtonListener -> {
-            mShareButton.setOnClickListener(shareButtonListener);
-        };
-        mShareButtonListenerSupplier = shareButtonListenerSupplier;
-        mShareButtonListenerSupplier.addObserver(mShareButtonListenerSupplierCallback);
-        mShareButton.setActivityTabProvider(mTabProvider);
+        // mShareButton = mToolbarRoot.findViewById(R.id.share_button);
+        // mShareButtonListenerSupplierCallback = shareButtonListener -> {
+        //     mShareButton.setOnClickListener(shareButtonListener);
+        // };
+        // mShareButtonListenerSupplier = shareButtonListenerSupplier;
+        // mShareButtonListenerSupplier.addObserver(mShareButtonListenerSupplierCallback);
+        // mShareButton.setActivityTabProvider(mTabProvider);
 
-        mSearchAccelerator = mToolbarRoot.findViewById(R.id.search_accelerator);
-        mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
-        setupIPH(FeatureConstants.CHROME_DUET_SEARCH_FEATURE, mSearchAccelerator,
-                searchAcceleratorListener);
+        // mSearchAccelerator = mToolbarRoot.findViewById(R.id.search_accelerator);
+        // mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
+        // setupIPH(FeatureConstants.CHROME_DUET_SEARCH_FEATURE, mSearchAccelerator,
+        //         searchAcceleratorListener);
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(mToolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
@@ -284,8 +284,8 @@ public class BrowsingModeBottomToolbarCoordinator {
         mShareButtonListenerSupplier.removeObserver(mShareButtonListenerSupplierCallback);
         mMediator.destroy();
         mHomeButton.destroy();
-        mShareButton.destroy();
-        mSearchAccelerator.destroy();
+        //mShareButton.destroy();
+        //mSearchAccelerator.destroy();
         mTabSwitcherButtonCoordinator.destroy();
         mMenuButton.destroy();
     }
