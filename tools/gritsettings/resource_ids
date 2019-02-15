@@ -456,7 +456,7 @@
   },
   "ui/webui/resources/webui_resources.grd": {
     "includes": [27880],
-    "structures": [28080],
+    "structures": [28880],
   },
   "weblayer/weblayer_resources.grd": {
     "includes": [28700],
