@@ -40,6 +40,7 @@ import org.chromium.base.SysUtils;
 import org.chromium.base.metrics.RecordUserAction;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeFeatureList;
+import org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificationService;
 import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper;
 import org.chromium.chrome.browser.ui.widget.highlight.ViewHighlighter;
 import org.chromium.ui.widget.Toast;
@@ -237,9 +238,13 @@ class AppMenu implements OnItemClickListener, OnKeyListener {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         for (int i = 0; i < numItems; ++i) {
             MenuItem item = mMenu.getItem(i);
-            if (!ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
-                item.getItemId() == R.id.brave_rewards_id) {
+            if (item.getItemId() == R.id.brave_rewards_id &&
+                !ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)) {
                 continue;
+            }
+            if (item.getItemId() == R.id.brave_set_default_browser &&
+                BraveSetDefaultBrowserNotificationService.isBraveSetAsDefaultBrowser(context)) {
+                item.setEnabled(false);
             }
             if (item.isVisible()) {
                 menuItems.add(item);
