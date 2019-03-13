@@ -24,10 +24,10 @@ import org.chromium.chrome.browser.toolbar.BookmarksButton;
 import org.chromium.chrome.browser.toolbar.HomeButton;
 import org.chromium.chrome.browser.toolbar.IncognitoStateProvider;
 import org.chromium.chrome.browser.toolbar.MenuButton;
-import org.chromium.chrome.browser.toolbar.NewTabButton;
 import org.chromium.chrome.browser.toolbar.TabCountProvider;
 import org.chromium.chrome.browser.toolbar.TabSwitcherButtonCoordinator;
 import org.chromium.chrome.browser.toolbar.TabSwitcherButtonView;
+import org.chromium.chrome.browser.toolbar.bottom.SearchAccelerator;
 import org.chromium.components.feature_engagement.Tracker;
 import org.chromium.ui.modelutil.PropertyModelChangeProcessor;
 
@@ -100,6 +100,8 @@ public class BrowsingModeBottomToolbarCoordinator {
             }
         });
 
+        mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
+        mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(toolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
@@ -161,10 +163,6 @@ public class BrowsingModeBottomToolbarCoordinator {
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
         mMenuButton.setThemeColorProvider(themeColorProvider);
 
-        mNewTabButton = mToolbarRoot.findViewById(R.id.new_tab_button);
-        mNewTabButton.setThemeColorProvider(themeColorProvider);
-        mNewTabButton.setOnClickListener(newTabClickListener);
-
         mBookmarksButton.setThemeColorProvider(themeColorProvider);
     }
 
@@ -203,10 +201,9 @@ public class BrowsingModeBottomToolbarCoordinator {
         mMediator.destroy();
         mHomeButton.destroy();
         //mShareButton.destroy();
-        //mSearchAccelerator.destroy();
+        mSearchAccelerator.destroy();
         mTabSwitcherButtonCoordinator.destroy();
         mMenuButton.destroy();
-        mNewTabButton.destroy();
         mBookmarksButton.destroy();
     }
 }
