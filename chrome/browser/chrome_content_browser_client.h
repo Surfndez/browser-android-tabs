@@ -87,7 +87,7 @@ class ChromeHidDelegate;
 class ChromeSerialDelegate;
 
 // Returns the user agent of Chrome.
-std::string GetUserAgent();
+std::string GetUserAgent(const std::string& host);
 
 blink::UserAgentMetadata GetUserAgentMetadata();
 
@@ -580,7 +580,7 @@ class ChromeContentBrowserClient : public content::ContentBrowserClient {
                                    blink::mojom::WebFeature feature) override;
 
   std::string GetProduct() override;
-  std::string GetUserAgent() override;
+  std::string GetUserAgent(const std::string& host) override;
   blink::UserAgentMetadata GetUserAgentMetadata() override;
 
   base::Optional<gfx::ImageSkia> GetProductLogo() override;
