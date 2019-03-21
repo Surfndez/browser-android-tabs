@@ -1008,6 +1008,7 @@ public class ToolbarManager implements ScrimObserver, ToolbarTabController, UrlF
                     mActivity.getCompositorViewHolder().getLayoutManager(),
                     wrapBottomToolbarClickListenerForIPH(tabSwitcherClickHandler),
                     wrapBottomToolbarClickListenerForIPH(newTabClickHandler),
+                    wrapBottomToolbarClickListenerForIPH(bookmarkClickHandler),
                     closeTabsClickListener, mAppMenuButtonHelper, mOverviewModeBehavior,
                     mActivity.getWindowAndroid(), mTabCountProvider, mIncognitoStateProvider,
                     mActivity.findViewById(R.id.control_container));
@@ -1811,6 +1812,9 @@ public class ToolbarManager implements ScrimObserver, ToolbarTabController, UrlF
         boolean editingAllowed = currentTab == null || mBookmarkBridge == null
                 || mBookmarkBridge.isEditBookmarksEnabled();
         mToolbar.updateBookmarkButton(isBookmarked, editingAllowed);
+        if (mBottomToolbarCoordinator != null) {
+            mBottomToolbarCoordinator.updateBookmarkButton(isBookmarked, editingAllowed);
+        }
     }
 
     private void updateReloadState(boolean tabCrashed) {
