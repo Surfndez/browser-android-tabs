@@ -44,6 +44,7 @@ import org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificat
 import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper;
 import org.chromium.chrome.browser.ui.widget.highlight.ViewHighlighter;
 import org.chromium.ui.widget.Toast;
+import org.chromium.ui.base.DeviceFormFactor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -245,6 +246,17 @@ class AppMenu implements OnItemClickListener, OnKeyListener {
             if (item.getItemId() == R.id.brave_set_default_browser &&
                 BraveSetDefaultBrowserNotificationService.isBraveSetAsDefaultBrowser(context)) {
                 item.setEnabled(false);
+            }
+            if (item.getItemId() == R.id.bottom_toolbar_enable_disable) {
+                boolean isTablet = DeviceFormFactor.isNonMultiDisplayContextOnTablet(context);
+                if (isTablet) {
+                    // We don't have bottom toolbar on tablets
+                    continue;
+                }
+                item.setTitle(context.getResources().getString(
+                    ChromePreferenceManager.getInstance().isBottomToolbarEnabled() ?
+                        R.string.bottom_toolbar_disable :
+                        R.string.bottom_toolbar_enable));
             }
             if (item.isVisible()) {
                 menuItems.add(item);
