@@ -4,12 +4,18 @@
 
 package org.chromium.chrome.browser.preferences;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 
 import androidx.annotation.Nullable;
+import android.graphics.Point;
+import android.view.Display;
 
+import org.chromium.base.Log;
+import org.chromium.base.ApplicationStatus;
 import org.chromium.base.ContextUtils;
 import org.chromium.base.StrictModeContext;
+import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.crash.MinidumpUploadService.ProcessType;
 
 import java.util.Collections;
@@ -303,6 +309,9 @@ public class ChromePreferenceManager {
      */
     public static final String OFFLINE_INDICATOR_V2_ENABLED_KEY = "offline_indicator_v2_enabled";
 
+    private static final int SMALL_SCREEN_WIDTH = 360;
+    private static final int SMALL_SCREEN_HEIGHT = 640;
+
     private static class LazyHolder {
         static final ChromePreferenceManager INSTANCE = new ChromePreferenceManager();
     }
@@ -546,9 +555,31 @@ public class ChromePreferenceManager {
             return mSharedPreferences.getBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, true);
         } else {
             writeBoolean(BRAVE_BOTTOM_TOOLBAR_SET_KEY, true);
-            writeBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, true);
-            return true;
+            boolean enable = true;
+            if (isSmallScreen()) {
+                enable = false;
+            }
+            writeBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, enable);
+
+            return enable;
         }
+    }
+
+    private boolean isSmallScreen() {
+        Activity currentActivity = null;
+        for (Activity ref : ApplicationStatus.getRunningActivities()) {
+            if (!(ref instanceof ChromeActivity)) continue;
+
+            currentActivity = ref;
+            break;
+        }
+        Display screensize = currentActivity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        screensize.getSize(size);
+        int width = size.x;
+        int height = size.y;
+
+        return (width <= SMALL_SCREEN_WIDTH) && (height <= SMALL_SCREEN_HEIGHT);
     }
 
     /** Get whether or not use custom tabs.
