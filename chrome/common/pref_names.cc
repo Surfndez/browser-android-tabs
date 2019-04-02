@@ -2847,4 +2847,6 @@ const char kCorsLegacyModeEnabled[] = "cors.legacy_mode.enabled";
 const char kExternalProtocolDialogShowAlwaysOpenCheckbox[] =
     "external_protocol_dialog.show_always_open_checkbox";
 
+// Boolean that is true when SafetyNet check is failed.
+const char kSafetynetCheckFailed[] = "safetynetcheck.failed";
 }  // namespace prefs

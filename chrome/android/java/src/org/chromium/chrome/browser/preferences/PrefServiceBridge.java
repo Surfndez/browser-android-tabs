@@ -893,13 +893,13 @@ public class PrefServiceBridge {
                 PrefServiceBridgeJni.get().setSoundEnabled(PrefServiceBridge.this, allow);
                 break;
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
-                nativeSetDesktopViewEnabled(allow);
+                PrefServiceBridgeJni.get().setDesktopViewEnabled(allow);
                 break;
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
-                nativeSetPlayVideoInBackgroundEnabled(allow);
+                PrefServiceBridgeJni.get().setPlayVideoInBackgroundEnabled(allow);
                 break;
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
-                nativeSetPlayYTVideoInBrowserEnabled(allow);
+                PrefServiceBridgeJni.get().setPlayYTVideoInBrowserEnabled(allow);
                 break;
             default:
                 assert false;
@@ -1278,6 +1278,17 @@ public class PrefServiceBridge {
                 PrefServiceBridge.this, enabled);
     }
 
+    /**
+     * @param whether SafetyNet check failed.
+     */
+    public void setSafetynetCheckFailed(boolean value) {
+        PrefServiceBridgeJni.get().setSafetynetCheckFailed(value);
+    }
+
+    public boolean isSafetynetCheckFailed() {
+        return PrefServiceBridgeJni.get().getSafetynetCheckFailed();
+    }
+
     @VisibleForTesting
     public static void setInstanceForTesting(@Nullable PrefServiceBridge instanceForTesting) {
         sInstance = instanceForTesting;
@@ -1440,5 +1451,7 @@ public class PrefServiceBridge {
         void setPlayVideoInBackgroundEnabled(boolean enabled);
         boolean getPlayYTVideoInBrowserEnabled();
         void setPlayYTVideoInBrowserEnabled(boolean enabled);
+        void setSafetynetCheckFailed(boolean value);
+        boolean getSafetynetCheckFailed();
     }
 }
