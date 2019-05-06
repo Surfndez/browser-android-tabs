@@ -81,8 +81,6 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
     /** The activity tab provider that used for making the IPH. */
     private final ActivityTabProvider mTabProvider;
 
-    private final ScrollingBottomViewResourceFrameLayout mToolbarRoot;
-
     final Context context = ContextUtils.getApplicationContext();
 
     /**
@@ -225,9 +223,11 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
             mHomeButton.setOverviewModeBehavior(overviewModeBehavior);
         }
 
-        mBookmarksButton.setThemeColorProvider(themeColorProvider);
-        mBookmarksButton.setOnClickListener(bookmarkClickListener);
-        mBookmarksButton.setOnLongClickListener(this);
+        if (mBookmarksButton != null) {
+            mBookmarksButton.setThemeColorProvider(themeColorProvider);
+            mBookmarksButton.setOnClickListener(bookmarkClickListener);
+            mBookmarksButton.setOnLongClickListener(this);
+        }
     }
 
     @Override
