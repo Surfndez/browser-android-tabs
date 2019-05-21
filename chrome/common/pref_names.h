@@ -1014,6 +1014,7 @@ extern const char kCorsLegacyModeEnabled[];
 extern const char kExternalProtocolDialogShowAlwaysOpenCheckbox[];
 
 extern const char kSafetynetCheckFailed[];
+extern const char kUseRewardsStagingServer[];
 }  // namespace prefs
 
 #endif  // CHROME_COMMON_PREF_NAMES_H_

@@ -1294,6 +1294,17 @@ public class PrefServiceBridge {
         sInstance = instanceForTesting;
     }
 
+    /**
+     * @param whether should use staging server for Rewards.
+     */
+    public void setUseRewardsStagingServer(boolean value) {
+        PrefServiceBridgeJni.get().setUseRewardsStagingServer(value);
+    }
+
+    public boolean useRewardsStagingServer() {
+        return PrefServiceBridgeJni.get().getUseRewardsStagingServer();
+    }
+
     @NativeMethods
     public interface Natives {
         boolean isContentSettingEnabled(PrefServiceBridge caller, int contentSettingType);
@@ -1453,5 +1464,7 @@ public class PrefServiceBridge {
         void setPlayYTVideoInBrowserEnabled(boolean enabled);
         void setSafetynetCheckFailed(boolean value);
         boolean getSafetynetCheckFailed();
+        void setUseRewardsStagingServer(boolean value);
+        boolean getUseRewardsStagingServer();
     }
 }
