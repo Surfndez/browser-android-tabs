@@ -540,7 +540,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
 
         // Comment sync temporary
-        /*ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        /*ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         if (null != app) {
             app.mBraveSyncWorker = new BraveSyncWorker(this);
         }*/
@@ -756,7 +756,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     }
 
     public void setBraveShieldsColor(boolean incognitoTab, String url) {
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         if (null != app) {
             if (app.getShieldsConfig().isTopShieldsEnabled(incognitoTab, url)) {
                 // Set Brave Shields button in color if we have a valid URL
@@ -1638,7 +1638,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             registerDirectActions();
         }
 
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         if (null != app) {
             if (this instanceof ChromeTabbedActivity) {
                 if (app.mBraveSyncWorker == null) {
@@ -1904,7 +1904,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                     OfflinePageUtils.saveBookmarkOffline(newBookmarkId, tabToBookmark);
                 }
                 BookmarkModel newBookmarkModel = new BookmarkModel();
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                 if (null != app && null != app.mBraveSyncWorker && null != newBookmarkId && null != newBookmarkModel) {
                     app.mBraveSyncWorker.CreateUpdateBookmark(bCreateBookmark, newBookmarkModel.getBookmarkById(newBookmarkId));
                     newBookmarkModel.destroy();
