@@ -52,7 +52,7 @@ public class ContextUtils {
 
     public static Context getBaseApplicationContext() {
         if (sApplicationContext instanceof ContextWrapper) {
-            return ((ContextWrapper)sApplicationContext).getBaseContext();
+            return ((ContextWrapper)sApplicationContext).getBaseContext().getApplicationContext();
         } else {
             return getApplicationContext();
         }
