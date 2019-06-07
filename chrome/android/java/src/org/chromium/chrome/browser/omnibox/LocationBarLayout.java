@@ -1097,7 +1097,7 @@ public class LocationBarLayout extends FrameLayout
 
         mStatusViewCoordinator.setUseDarkColors(useDarkColors);
         mStatusViewCoordinator.setIncognitoBadgeVisibility(
-                mToolbarDataProvider.isIncognito() && !mIsTablet);
+                /*mToolbarDataProvider.isIncognito() && !mIsTablet*/false);
         mAutocompleteCoordinator.updateVisualsForState(
                 useDarkColors, mToolbarDataProvider.isIncognito());
     }
