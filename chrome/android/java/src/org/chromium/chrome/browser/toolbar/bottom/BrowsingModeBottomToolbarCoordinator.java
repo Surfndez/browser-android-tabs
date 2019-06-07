@@ -82,7 +82,7 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         mMediator = new BrowsingModeBottomToolbarMediator(model);
 
         mHomeButton = toolbarRoot.findViewById(R.id.home_button);
-        mHomeButton.setWrapperView(toolbarRoot.findViewById(R.id.home_button_wrapper));
+        //mHomeButton.setWrapperView(toolbarRoot.findViewById(R.id.home_button_wrapper));
         mHomeButton.setOnClickListener(homeButtonListener);
         mHomeButton.setOnLongClickListener(this);
         mHomeButton.setActivityTabProvider(tabProvider);
@@ -92,16 +92,14 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         //mShareButton.setOnClickListener(shareButtonListener);
         //mShareButton.setActivityTabProvider(tabProvider);
 
-        //mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
+        mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
         //mSearchAccelerator.setWrapperView(
         //        toolbarRoot.findViewById(R.id.search_accelerator_wrapper));
-        //mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
-
-        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
-
-        mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
         mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
         mSearchAccelerator.setOnLongClickListener(this);
+
+        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
+        //mBookmarksButton.setWrapperView(toolbarRoot.findViewById(R.id.bookmark_button_wrapper));
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(toolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
@@ -115,7 +113,7 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
                 (view) -> tabSwitcherLongClickListener.onLongClick(tabSwitcherButtonView));
         }
         mMenuButton = toolbarRoot.findViewById(R.id.menu_button_wrapper);
-        mMenuButton.setWrapperView(toolbarRoot.findViewById(R.id.labeled_menu_button_wrapper));
+        //mMenuButton.setWrapperView(toolbarRoot.findViewById(R.id.labeled_menu_button_wrapper));
 
         tabProvider.addObserverAndTrigger(new HintlessActivityTabObserver() {
             @Override
