@@ -118,16 +118,12 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         // mShareButtonListenerSupplier.addObserver(mShareButtonListenerSupplierCallback);
         // mShareButton.setActivityTabProvider(mTabProvider);
 
-        // mSearchAccelerator = mToolbarRoot.findViewById(R.id.search_accelerator);
-        // mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
-        // setupIPH(FeatureConstants.CHROME_DUET_SEARCH_FEATURE, mSearchAccelerator,
-        //         searchAcceleratorListener);
+        mSearchAccelerator = mToolbarRoot.findViewById(R.id.search_accelerator);
+        mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
+        setupIPH(FeatureConstants.CHROME_DUET_SEARCH_FEATURE, mSearchAccelerator,
+                 searchAcceleratorListener);
 
         mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
-
-        mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
-        mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
-        mSearchAccelerator.setOnLongClickListener(this);
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(mToolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
