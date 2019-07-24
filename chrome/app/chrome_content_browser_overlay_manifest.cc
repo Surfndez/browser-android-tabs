@@ -208,7 +208,6 @@ const service_manager::Manifest& GetChromeContentBrowserOverlayManifest() {
                 web_ui_test::mojom::TestRunner>())
         .PackageService(image_annotation::GetManifest())
         .PackageService(prefs::GetManifest())
-        .PackageService(bat_ledger::GetManifest())
 #if defined(OS_CHROMEOS)
         .PackageService(chromeos::multidevice_setup::GetManifest())
 #endif  // defined(OS_CHROMEOS)
