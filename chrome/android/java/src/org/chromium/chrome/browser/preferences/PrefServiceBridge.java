@@ -615,17 +615,6 @@ public class PrefServiceBridge {
     }
 
     /**
-     * @param whether Tracking Protection should be enabled.
-     */
-    public void setTrackingProtectionEnabled(boolean enabled) {
-        PrefServiceBridgeJni.get().setTrackingProtectionEnabled(enabled);
-    }
-
-    public boolean isTrackingProtectionEnabled() {
-        return PrefServiceBridgeJni.get().getTrackingProtectionEnabled();
-    }
-
-    /**
      * @param whether AdBlock should be enabled.
      */
     public void setAdBlockEnabled(boolean enabled) {
@@ -1442,14 +1431,12 @@ public class PrefServiceBridge {
         boolean getExplicitLanguageAskPromptShown(PrefServiceBridge caller);
         void setExplicitLanguageAskPromptShown(PrefServiceBridge caller, boolean shown);
         void setForceWebContentsDarkModeEnabled(PrefServiceBridge caller, boolean enabled);
-        void setTrackingProtectionEnabled(boolean enabled);
         void setAdBlockEnabled(boolean enabled);
         void setHTTPSEEnabled(boolean enabled);
         void setFingerprintingProtectionEnabled(boolean enabled);
         void setAdBlockRegionalEnabled(boolean enabled);
         boolean getFingerprintingProtectionEnabled();
         boolean getHTTPSEEnabled();
-        boolean getTrackingProtectionEnabled();
         boolean getAdBlockEnabled();
         boolean getAdBlockRegionalEnabled();
         boolean getDesktopViewEnabled();
