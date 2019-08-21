@@ -100,6 +100,7 @@ import org.chromium.chrome.browser.util.ViewUtils;
 import org.chromium.components.feature_engagement.EventConstants;
 import org.chromium.ui.base.LocalizationUtils;
 import org.chromium.ui.interpolators.BakedBezierInterpolator;
+import org.chromium.chrome.browser.onboarding.OnboardingPrefManager;
 import org.chromium.base.Log;
 
 import java.lang.annotation.Retention;
@@ -2188,7 +2189,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         }
 
         updateNotificationBadgeForNewInstall(rewardsEnabled);
-        mayShowBraveAdsOobeDialog();
+        if (!PackageUtils.isFirstInstall(getContext()) && !OnboardingPrefManager.getInstance().isAdsAvailable()) {
+            mayShowBraveAdsOobeDialog();
+        }
     }
 
     private void updateNotificationBadgeForNewInstall(boolean rewardsEnabled) {
