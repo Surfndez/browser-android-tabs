@@ -21,6 +21,7 @@ import org.chromium.chrome.browser.toolbar.TabCountProvider;
 import org.chromium.chrome.browser.ui.appmenu.AppMenuButtonHelper;
 import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.ui.modelutil.PropertyModelChangeProcessor;
+import org.chromium.chrome.browser.util.TabUtil;
 
 /**
  * The coordinator for the tab switcher mode bottom toolbar. This class handles all interactions
@@ -107,14 +108,11 @@ public class TabSwitcherBottomToolbarCoordinator implements View.OnLongClickList
 
     @Override
     public boolean onLongClick(View v) {
-        String description = "";
-        Resources resources = context.getResources();
-
         if (v == mNewTabButtonWrapper) {
-            description = resources.getString(R.string.accessibility_new_tab_page);
+            TabUtil.showTabPopupMenu(context, v);
         }
 
-        return AccessibilityUtil.showAccessibilityToast(context, v, description);
+        return true;
     }
 
     /**
