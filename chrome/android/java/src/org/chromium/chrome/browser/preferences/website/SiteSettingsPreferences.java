@@ -10,6 +10,7 @@ import android.support.v7.preference.PreferenceFragmentCompat;
 
 import org.chromium.base.CommandLine;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.preferences.BravePreferenceFragment;
 import org.chromium.chrome.browser.preferences.LocationSettings;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.PreferenceUtils;
@@ -30,7 +31,7 @@ import java.util.List;
  * Media to its own dedicated PreferenceFragment rather than sharing this one.
  */
 public class SiteSettingsPreferences
-        extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener {
+        extends BravePreferenceFragment implements Preference.OnPreferenceClickListener {
     // The keys for each category shown on the Site Settings page
     // are defined in the SiteSettingsCategory, additional keys
     // are listed here.

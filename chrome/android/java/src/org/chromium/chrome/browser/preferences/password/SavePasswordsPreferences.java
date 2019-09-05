@@ -30,6 +30,7 @@ import org.chromium.chrome.browser.help.HelpAndFeedback;
 import org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference;
 import org.chromium.chrome.browser.preferences.ChromeBasePreference;
 import org.chromium.chrome.browser.preferences.ChromeSwitchPreference;
+import org.chromium.chrome.browser.preferences.BravePreferenceFragment;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.PreferencesLauncher;
 import org.chromium.chrome.browser.preferences.SearchUtils;
@@ -44,7 +45,7 @@ import java.util.Locale;
  * saving, to view saved passwords (just the username and URL), and to delete saved passwords.
  */
 public class SavePasswordsPreferences
-        extends PreferenceFragmentCompat implements PasswordManagerHandler.PasswordListObserver,
+        extends BravePreferenceFragment implements PasswordManagerHandler.PasswordListObserver,
                                                     Preference.OnPreferenceClickListener {
     // Keys for name/password dictionaries.
     public static final String PASSWORD_LIST_URL = "url";
