@@ -14,6 +14,7 @@ import android.text.TextUtils;
 
 import org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference;
 import org.chromium.chrome.browser.tracing.TracingController;
+import org.chromium.chrome.browser.preferences.BravePreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,7 +27,7 @@ import java.util.Set;
  * passed to the fragment via an extra (EXTRA_CATEGORY_TYPE).
  */
 public class TracingCategoriesPreferences
-        extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
+        extends BravePreferenceFragment implements Preference.OnPreferenceChangeListener {
     public static final String EXTRA_CATEGORY_TYPE = "type";
 
     // Non-translated strings:

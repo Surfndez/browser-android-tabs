@@ -12,9 +12,10 @@ import android.support.v7.preference.PreferenceScreen;
 import org.chromium.base.ContextUtils;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.preferences.ChromeSwitchPreference;
+import org.chromium.chrome.browser.preferences.BravePreferenceFragment;
 
 /** The "Autofill Assistant" preferences screen in Settings. */
-public class AutofillAssistantPreferences extends PreferenceFragmentCompat {
+public class AutofillAssistantPreferences extends BravePreferenceFragment {
     /** Autofill Assistant switch preference key name. */
     public static final String PREF_AUTOFILL_ASSISTANT_SWITCH = "autofill_assistant_switch";
 

@@ -11,11 +11,12 @@ import org.chromium.chrome.R;
 import org.chromium.chrome.browser.preferences.ChromeSwitchPreference;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.PreferenceUtils;
+import org.chromium.chrome.browser.preferences.BravePreferenceFragment;
 
 /**
  * Fragment to manage 'Do Not Track' preference and to explain to the user what it does.
  */
-public class DoNotTrackPreference extends PreferenceFragmentCompat {
+public class DoNotTrackPreference extends BravePreferenceFragment {
     private static final String PREF_DO_NOT_TRACK_SWITCH = "do_not_track_switch";
 
     @Override
