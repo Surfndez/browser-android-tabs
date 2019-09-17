@@ -243,6 +243,7 @@ jumbo_component("network_service") {
     "//third_party/webrtc_overrides",
     "//third_party/webrtc_overrides:init_webrtc",
     "//url",
+    "//skia",
   ]
 
   public_deps = [
