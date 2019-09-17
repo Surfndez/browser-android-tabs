@@ -17,6 +17,8 @@ import org.chromium.base.VisibleForTesting;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.night_mode.NightModeMetrics;
+import org.chromium.chrome.browser.night_mode.NightModeUtils;
+import org.chromium.chrome.browser.util.FeatureUtilities;
 import org.chromium.chrome.browser.preferences.themes.ThemePreferences.ThemeSetting;
 import org.chromium.chrome.browser.ui.widget.RadioButtonWithDescription;
 
@@ -80,6 +82,10 @@ public class RadioButtonGroupThemePreference
                 ThemeSetting.LIGHT, (RadioButtonWithDescription) holder.findViewById(R.id.light));
         mButtons.set(
                 ThemeSetting.DARK, (RadioButtonWithDescription) holder.findViewById(R.id.dark));
+
+        if (!NightModeUtils.isNightModeSupported() || !FeatureUtilities.isNightModeAvailable()) {
+            mButtons.get(0).setVisibility(View.GONE);
+        }
 
         for (int i = 0; i < ThemeSetting.NUM_ENTRIES; i++) {
             mButtons.get(i).setRadioButtonGroup(mButtons);

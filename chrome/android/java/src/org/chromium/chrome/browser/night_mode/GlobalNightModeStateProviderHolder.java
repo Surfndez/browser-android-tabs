@@ -57,18 +57,17 @@ public class GlobalNightModeStateProviderHolder {
      *         attached to, because the night mode state can be overridden at the activity level.
      */
     public static NightModeStateProvider getInstance() {
-        if (sInstance == null) {
-            if (CommandLine.getInstance().hasSwitch(ChromeSwitches.FORCE_ENABLE_NIGHT_MODE)
-                    || !NightModeUtils.isNightModeSupported()
-                    || !FeatureUtilities.isNightModeAvailable()) {
-                sInstance = new DummyNightModeStateProvider();
-            } else {
+        // if (sInstance == null) {
+        //     if (CommandLine.getInstance().hasSwitch(ChromeSwitches.FORCE_ENABLE_NIGHT_MODE)
+        //             || !NightModeUtils.isNightModeSupported()
+        //             || !FeatureUtilities.isNightModeAvailable()) {
+        //         sInstance = new DummyNightModeStateProvider();
+        //     } else {
                 sInstance = new GlobalNightModeStateController(SystemNightModeMonitor.getInstance(),
                         PowerSavingModeMonitor.getInstance(),
                         ChromePreferenceManager.getInstance());
-            }
-        }
-        return sInstance;
+        // }
+        // return sInstance;
     }
 
     @VisibleForTesting

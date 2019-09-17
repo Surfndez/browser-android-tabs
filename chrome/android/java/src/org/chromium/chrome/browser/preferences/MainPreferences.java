@@ -257,11 +257,11 @@ public class MainPreferences extends PreferenceFragmentCompat
         Preference closingTabsPref = addPreferenceIfAbsent(PREF_CLOSING_TABS);
         setOnOffSummary(closingTabsPref, ClosingTabsManager.isClosingAllTabsClosesBraveEnabled());
 
-        if (NightModeUtils.isNightModeSupported() && FeatureUtilities.isNightModeAvailable()) {
-            addPreferenceIfAbsent(PREF_UI_THEME);
-        } else {
-            removePreferenceIfPresent(PREF_UI_THEME);
-        }
+        // if (NightModeUtils.isNightModeSupported() && FeatureUtilities.isNightModeAvailable()) {
+        //     addPreferenceIfAbsent(PREF_UI_THEME);
+        // } else {
+        //     removePreferenceIfPresent(PREF_UI_THEME);
+        // }
 
         if (DeveloperPreferences.shouldShowDeveloperPreferences()) {
             addPreferenceIfAbsent(PREF_DEVELOPER);
