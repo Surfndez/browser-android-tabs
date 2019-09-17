@@ -416,6 +416,8 @@ class AppMenu implements OnItemClickListener, OnKeyListener {
             description = resources.getString(R.string.menu_bookmark);
         } else if (itemId == R.id.offline_page_id) {
             description = resources.getString(R.string.menu_download);
+        } else if (itemId == R.id.share_page_id) {
+            description = resources.getString(R.string.menu_share_page);
         } else if (itemId == R.id.info_menu_id) {
             description = resources.getString(R.string.menu_page_info);
         } else if (itemId == R.id.reload_menu_id) {
