@@ -87,4 +87,6 @@ const char kBlockedURL[] = "about:blank#blocked";
 const char kChromeUIResourcesURL[] = "chrome://resources/";
 const char kChromeUIShorthangURL[] = "chrome://shorthang/";
 
+const char kBraveUIScheme[] = "brave";
+
 }  // namespace content
