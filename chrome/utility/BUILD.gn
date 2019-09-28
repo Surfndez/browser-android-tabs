@@ -29,7 +29,7 @@ static_library("utility") {
   public_deps = []
   deps = [
     "//base",
-    "//brave/components/services/bat_ledger:lib",
+    "//brave/utility",
     "//chrome:resources",
     "//chrome:strings",
     "//chrome/common",
