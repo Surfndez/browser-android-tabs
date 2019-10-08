@@ -221,6 +221,10 @@ public class AppMenuPropertiesDelegateImpl implements AppMenuPropertiesDelegate 
             MenuItem allBookmarksMenuItem = menu.findItem(R.id.all_bookmarks_menu_id);
             allBookmarksMenuItem.setTitle(mContext.getString(R.string.menu_bookmarks));
 
+            // Don't allow either "chrome://" pages or interstitial pages to be shared or phone devices.
+            menu.findItem(R.id.share_row_menu_id)
+                    .setVisible(!isChromeScheme && !currentTab.isShowingInterstitialPage() && mIsTablet);
+
             // Disable find in page on the native NTP.
             menu.findItem(R.id.find_in_page_id)
                     .setVisible(!currentTab.isNativePage() && currentTab.getWebContents() != null);
