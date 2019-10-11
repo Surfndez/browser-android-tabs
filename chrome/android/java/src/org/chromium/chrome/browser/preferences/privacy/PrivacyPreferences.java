@@ -30,7 +30,7 @@ import org.chromium.chrome.browser.profiles.Profile;
 import org.chromium.chrome.browser.usage_stats.UsageStatsConsentDialog;
 import org.chromium.ui.text.NoUnderlineClickableSpan;
 import org.chromium.ui.text.SpanApplier;
-import org.chromium.chrome.browser.preferences.ChromeSwitchPreferenceCompat;
+import org.chromium.chrome.browser.preferences.ChromeSwitchPreference;
 
 /**
  * Fragment to keep track of the all the privacy related preferences.
@@ -50,7 +50,7 @@ public class PrivacyPreferences
     private static final String PREF_SEARCH_SUGGESTIONS = "search_suggestions";
 
     private ManagedPreferenceDelegate mManagedPreferenceDelegate;
-    private ChromeSwitchPreferenceCompat mSearchSuggestions;
+    private ChromeSwitchPreference mSearchSuggestions;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -87,32 +87,32 @@ public class PrivacyPreferences
         fingerprintingProtectionPref.setOnPreferenceChangeListener(this);
         fingerprintingProtectionPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
-        ChromeBaseCheckBoxPreferenceCompat httpsePref =
-                (ChromeBaseCheckBoxPreferenceCompat) findPreference(PREF_HTTPSE);
+        ChromeBaseCheckBoxPreference httpsePref =
+                (ChromeBaseCheckBoxPreference) findPreference(PREF_HTTPSE);
         httpsePref.setOnPreferenceChangeListener(this);
         httpsePref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
-        ChromeBaseCheckBoxPreferenceCompat adBlockPref =
-                (ChromeBaseCheckBoxPreferenceCompat) findPreference(PREF_AD_BLOCK);
+        ChromeBaseCheckBoxPreference adBlockPref =
+                (ChromeBaseCheckBoxPreference) findPreference(PREF_AD_BLOCK);
         adBlockPref.setOnPreferenceChangeListener(this);
         adBlockPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
-        ChromeBaseCheckBoxPreferenceCompat adBlockRegionalPref =
-                (ChromeBaseCheckBoxPreferenceCompat) findPreference(PREF_AD_BLOCK_REGIONAL);
+        ChromeBaseCheckBoxPreference adBlockRegionalPref =
+                (ChromeBaseCheckBoxPreference) findPreference(PREF_AD_BLOCK_REGIONAL);
         adBlockRegionalPref.setOnPreferenceChangeListener(this);
         adBlockRegionalPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
-        /*ChromeBaseCheckBoxPreferenceCompat sendMetricsPref =
-                (ChromeBaseCheckBoxPreferenceCompat) findPreference(PREF_SEND_METRICS);
+        /*ChromeBaseCheckBoxPreference sendMetricsPref =
+                (ChromeBaseCheckBoxPreference) findPreference(PREF_SEND_METRICS);
         sendMetricsPref.setOnPreferenceChangeListener(this);
         sendMetricsPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);*/
 
-        ChromeBaseCheckBoxPreferenceCompat closeTabsOnExitPref =
-                (ChromeBaseCheckBoxPreferenceCompat) findPreference(PREF_CLOSE_TABS_ON_EXIT);
+        ChromeBaseCheckBoxPreference closeTabsOnExitPref =
+                (ChromeBaseCheckBoxPreference) findPreference(PREF_CLOSE_TABS_ON_EXIT);
         closeTabsOnExitPref.setOnPreferenceChangeListener(this);
         closeTabsOnExitPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
-        mSearchSuggestions = (ChromeSwitchPreferenceCompat) findPreference(PREF_SEARCH_SUGGESTIONS);
+        mSearchSuggestions = (ChromeSwitchPreference) findPreference(PREF_SEARCH_SUGGESTIONS);
         mSearchSuggestions.setOnPreferenceChangeListener(this);
         mSearchSuggestions.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
