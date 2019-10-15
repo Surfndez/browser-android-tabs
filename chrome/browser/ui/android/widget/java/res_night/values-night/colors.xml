@@ -4,6 +4,6 @@
      found in the LICENSE file. -->
 
 <resources>
-    <color name="light_active_color">@color/modern_blue_300</color>
+    <color name="light_active_color">@color/brave_theme_color</color>
 </resources>
 
