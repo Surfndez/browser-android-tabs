@@ -15,7 +15,6 @@
 #include "base/memory/ref_counted.h"
 #include "base/threading/sequenced_task_runner_handle.h"
 #include "base/time/time.h"
-#include "brave/components/brave_ads/browser/buildflags/buildflags.h"
 #include "chrome/common/buildflags.h"
 #include "chrome/utility/services.h"
 #include "components/safe_browsing/buildflags.h"
@@ -41,12 +40,47 @@
 #include "chrome/utility/printing_handler.h"
 #endif
 
+#include "brave/components/brave_ads/browser/buildflags/buildflags.h"
+#include "brave/components/brave_rewards/browser/buildflags/buildflags.h"
+
 #if BUILDFLAG(BRAVE_ADS_ENABLED)
 #include "brave/components/services/bat_ads/bat_ads_app.h"
+#include "brave/components/services/bat_ads/public/interfaces/bat_ads.mojom.h"
 #endif
 
+#if BUILDFLAG(BRAVE_REWARDS_ENABLED)
 #include "brave/components/services/bat_ledger/bat_ledger_app.h"
 #include "brave/components/services/bat_ledger/public/interfaces/bat_ledger.mojom.h"
+#endif
+
+namespace {
+
+#if BUILDFLAG(BRAVE_ADS_ENABLED) || BUILDFLAG(BRAVE_REWARDS_ENABLED)
+void RunServiceAsyncThenTerminateProcess(
+    std::unique_ptr<service_manager::Service> service) {
+  service_manager::Service::RunAsyncUntilTermination(
+      std::move(service),
+      base::BindOnce([] { content::UtilityThread::Get()->ReleaseProcess(); }));
+}
+#endif
+
+#if BUILDFLAG(BRAVE_ADS_ENABLED)
+std::unique_ptr<service_manager::Service> CreateBatAdsService(
+    service_manager::mojom::ServiceRequest request) {
+  return std::make_unique<bat_ads::BatAdsApp>(
+      std::move(request));
+}
+#endif
+
+#if BUILDFLAG(BRAVE_REWARDS_ENABLED)
+std::unique_ptr<service_manager::Service> CreateBatLedgerService(
+    service_manager::mojom::ServiceRequest request) {
+  return std::make_unique<bat_ledger::BatLedgerApp>(
+      std::move(request));
+}
+#endif
+
+}  // namespace
 
 namespace {
 
@@ -129,4 +163,26 @@ mojo::ServiceFactory* ChromeContentUtilityClient::GetIOThreadServiceFactory() {
 void ChromeContentUtilityClient::SetNetworkBinderCreationCallback(
     const NetworkBinderCreationCallback& callback) {
   g_network_binder_creation_callback.Get() = callback;
+}
+
+bool ChromeContentUtilityClient::HandleServiceRequest(
+    const std::string& service_name,
+    service_manager::mojom::ServiceRequest request) {
+#if BUILDFLAG(BRAVE_ADS_ENABLED)
+  if (service_name == bat_ads::mojom::kServiceName) {
+    RunServiceAsyncThenTerminateProcess(
+        CreateBatAdsService(std::move(request)));
+    return true;
+  }
+#endif
+
+#if BUILDFLAG(BRAVE_REWARDS_ENABLED)
+  if (service_name == bat_ledger::mojom::kServiceName) {
+    RunServiceAsyncThenTerminateProcess(
+        CreateBatLedgerService(std::move(request)));
+    return true;
+  }
+#endif
+
+  return false;
 }
