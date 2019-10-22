@@ -124,6 +124,7 @@ public class SiteSettingsPreferences
             websitePrefs.add(Type.MICROPHONE);
             websitePrefs.add(Type.NOTIFICATIONS);
             websitePrefs.add(Type.POPUPS);
+            websitePrefs.add(Type.DESKTOP_VIEW);
             websitePrefs.add(Type.SENSORS);
             websitePrefs.add(Type.SOUND);
             websitePrefs.add(Type.USB);
