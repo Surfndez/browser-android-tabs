@@ -42,7 +42,6 @@ public class DeveloperPreferences extends BravePreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String s) {
-        BraveRewardsNativeWorker.getInstance().GetAddresses();
         getActivity().setTitle(MSG_DEVELOPER_OPTIONS_TITLE);
         PreferenceUtils.addPreferencesFromResource(this, R.xml.developer_preferences);
 
