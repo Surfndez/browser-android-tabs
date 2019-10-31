@@ -4139,7 +4139,9 @@ The site does NOT gain access to the camera. The camera images are only visible 
               'Installing Extra ICU for Chrome…').">
         Extra ICU
       </message>
-
+      <message name="IDS_BRAVE_LICENSE_TEXT" desc="Title for the Brave License">
+        Brave License
+      </message>
     </messages>
   </release>
 </grit>

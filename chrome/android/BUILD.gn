@@ -1417,6 +1417,7 @@ if (current_toolchain == default_toolchain) {
         "//brave-crypto/browser/crypto.js",
         "//net/data/ssl/certificates/urp_staging.crt",
         "//net/data/ssl/certificates/urp.crt",
+        "//BRAVE_LICENSE.html",
       ]
       foreach(_locale, locales - android_chrome_omitted_locales) {
         renaming_sources +=
