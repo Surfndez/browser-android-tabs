@@ -1377,4 +1377,35 @@ HTTPS</translation>
 <translation id="2453860139492968684">إنهاء</translation>
 <translation id="7127980134843952133">سجل التنزيلات </translation>
 <translation id="327726072512457161">الخروج من الإعدادات</translation>
+<translation id="351823742912624358">تم حجب الإعلانات &amp; وبرامج التتبع</translation>
+<translation id="676626188808136495">حجب الإعلانات &amp; وبرامج التتبع</translation>
+<translation id="6975719536773320922">تم حجب 
+الإعلانات &amp; وبرامج التتبع</translation>
+<translation id="8158940752709423201">الإعلانات &amp; وبرامج التتبع</translation>
+<translation id="8565174155241544325">يمكنك الآن ربح %1$ss مقابل
+مشاهدة الإعلانات التي تحترم الخصوصية.</translation>
+<translation id="7924320838799747606">رصيدك</translation>
+<translation id="6160106411363856968">نقاط BAP</translation>
+<translation id="1081826981536899387">نقاط عملة BAT الرمزية</translation>
+<translation id="7837083325641186736"><ph name="VALUE" /></translation>
+<translation id="3826081199286264109">دولار أمريكي</translation>
+<translation id="1910721550319506122">مرحباً!</translation>
+<translation id="3101693828171454453">لا توجد عملة (عملات) <ph name="TOKEN" /></translation>
+<translation id="9212459913845238740">منح النقاط المطالب بها</translation>
+<translation id="3523149753820792761">لقد ساهمت بـ <ph name="BAT_VALUE" /> <ph name="BAT_TEXT" />.</translation>
+<translation id="5497435273900537730">تتوفر منحة مجانية بمقدار <ph name="TOKEN" />.</translation>
+<translation id="2132683977638223450">منح النقاط المجانية</translation>
+<translation id="4376933248999950592">لقد حددت <ph name="BAT_VALUE" />  <ph name="BAT_TEXT" />للمُنشئين الذين لم يشتركوا
+بعد لتلقي المساهمات. سوف يستمر متصفحك في محاولة المساهمة
+حتى تتم عملية التحقق، أو حتى مرور 90 يوماً.</translation>
+<translation id="4522570452068850558">التفاصيل</translation>
+<translation id="4702084935512138078">برامج التتتبع &amp; والإعلانات التي تخترق الخصوصية، حتى تتمكن من التصفح دون تتبعك عبر الويب.</translation>
+<translation id="8537217141725709400">اربح <ph name="TOKEN" />s</translation>
+<translation id="7396091471805549630">بتشغيل نظام Rewards، فإنك توافق على</translation>
+<translation id="597993392929850353">ترخيص Brave </translation>
+<translation id="1486343603936278248">عملة رمزية</translation>
+<translation id="8713995420537272453">نقطة</translation>
+<translation id="6678056861663824314">1 <ph name="TIP" /></translation>
+<translation id="4065726515175370979">5 <ph name="TIP" /></translation>
+<translation id="8171148564903208264">10 <ph name="TIP" /></translation>
 </translationbundle>

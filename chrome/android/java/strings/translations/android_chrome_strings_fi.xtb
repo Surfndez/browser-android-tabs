@@ -1374,4 +1374,33 @@ rakastamillesi sisällöntuottajille.</translation>
 <translation id="2453860139492968684">Viimeistele</translation>
 <translation id="7127980134843952133">Lataushistoria</translation>
 <translation id="327726072512457161">Asetuksista poistuminen</translation>
+<translation id="351823742912624358">Mainokset ja seurantaohjelmat estetty</translation>
+<translation id="676626188808136495">Estä mainokset ja seuranta</translation>
+<translation id="6975719536773320922">Mainokset ja seurantaohjelmat
+estetty</translation>
+<translation id="8158940752709423201">Mainokset ja seurantaohjelmat</translation>
+<translation id="8565174155241544325">Voit nyt ansaita %1$s
+katsomalla yksityisyyttä kunnioittavia mainoksia.</translation>
+<translation id="7924320838799747606">Oma saldosi</translation>
+<translation id="6160106411363856968">BAP</translation>
+<translation id="1081826981536899387">BAT-pisteet</translation>
+<translation id="7837083325641186736"><ph name="VALUE" /></translation>
+<translation id="3826081199286264109">USD</translation>
+<translation id="1910721550319506122">Tervetuloa!</translation>
+<translation id="3101693828171454453">ei tarpeeksi <ph name="TOKEN" /></translation>
+<translation id="9212459913845238740">Pisteapurahaa lunastettu</translation>
+<translation id="3523149753820792761">Olet antanut <ph name="BAT_VALUE" /> <ph name="BAT_TEXT" /> kannatusmaksuna.</translation>
+<translation id="5497435273900537730">Ilmainen <ph name="TOKEN" /> apuraha on saatavilla.</translation>
+<translation id="2132683977638223450">Ilmainen pisteapuraha</translation>
+<translation id="4376933248999950592">Olet osoittanut <ph name="BAT_VALUE" />  <ph name="BAT_TEXT" /> tekijöille, jotka eivät ole vielä rekisteröityneet kannatusmaksujen vastaanottajiksi. Selaimesi jatkaa kannatusmaksuyritysten tekemistä siihen asti, että tekijät ovat vahvistaneet tai että on kulunut 90 vuorokautta.</translation>
+<translation id="4522570452068850558">Tarkat tiedot</translation>
+<translation id="4702084935512138078">yksityisyyttä kunnioittavia mainoksia ja seurantaohjelmia, jotta voit jatkaa selaamista ilman, että sinua seurataan verkossa.</translation>
+<translation id="8537217141725709400">Ansaitse <ph name="TOKEN" />a</translation>
+<translation id="7396091471805549630">Ottamalla palkinnot käyttöön hyväksyt</translation>
+<translation id="597993392929850353">Brave-lisenssi</translation>
+<translation id="1486343603936278248">poletti</translation>
+<translation id="8713995420537272453">piste</translation>
+<translation id="6678056861663824314">1 <ph name="TIP" /></translation>
+<translation id="4065726515175370979">5 <ph name="TIP" /></translation>
+<translation id="8171148564903208264">10 <ph name="TIP" /></translation>
 </translationbundle>
