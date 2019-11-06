@@ -407,15 +407,15 @@ public class LocationBarModel implements ToolbarDataProvider, ToolbarCommonPrope
                                 && (!SearchEngineLogoUtils.shouldShowSearchEngineLogo(isIncognito())
                                         || getNewTabPageForCurrentTab() != null)
                         ? 0
-                        : R.drawable.omnibox_info;
+                        : R.drawable.omnibox_info_red;
             case ConnectionSecurityLevel.WARNING:
-                return R.drawable.omnibox_info;
+                return R.drawable.omnibox_info_red;
             case ConnectionSecurityLevel.DANGEROUS:
-                return R.drawable.omnibox_https_invalid;
+                return R.drawable.omnibox_https_invalid_red;
             case ConnectionSecurityLevel.SECURE_WITH_POLICY_INSTALLED_CERT:
             case ConnectionSecurityLevel.SECURE:
             case ConnectionSecurityLevel.EV_SECURE:
-                return R.drawable.omnibox_https_valid;
+                return R.drawable.omnibox_https_valid_new;
             default:
                 assert false;
         }
