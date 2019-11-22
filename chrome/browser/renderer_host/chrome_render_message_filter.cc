@@ -127,7 +127,7 @@ ChromeRenderMessageFilter::ChromeRenderMessageFilter(int render_process_id,
     ChromeRenderMessageFilter::enable_fingerprinting_protection_ = new BooleanPrefMember();
     ChromeRenderMessageFilter::enable_fingerprinting_protection_->Init(prefs::kFingerprintingProtectionEnabled,  profile->GetPrefs());
     ChromeRenderMessageFilter::enable_fingerprinting_protection_->MoveToSequence(
-      base::CreateSingleThreadTaskRunnerWithTraits({BrowserThread::IO}));
+      base::CreateSingleThreadTaskRunner({BrowserThread::IO}));
   }
   auto* loading_predictor =
       predictors::LoadingPredictorFactory::GetForProfile(profile);

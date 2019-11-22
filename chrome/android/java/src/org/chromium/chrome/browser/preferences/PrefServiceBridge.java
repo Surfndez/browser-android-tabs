@@ -212,7 +212,7 @@ public class PrefServiceBridge {
      */
     public List<ContentSettingException> getContentSettingsExceptionsIncognito(int contentSettingsType) {
         List<ContentSettingException> list = new ArrayList<ContentSettingException>();
-        PrefServiceBridgeJni.get().getContentSettingsExceptionsIncognito(contentSettingsType, list);
+        PrefServiceBridgeJni.get().getContentSettingsExceptionsIncognito(PrefServiceBridge.this, contentSettingsType, list);
         return list;
     }
 
@@ -382,7 +382,7 @@ public class PrefServiceBridge {
      * The default is false.
      */
     public boolean desktopViewEnabled() {
-        return PrefServiceBridgeJni.get().getDesktopViewEnabled();
+        return PrefServiceBridgeJni.get().getDesktopViewEnabled(PrefServiceBridge.this);
     }
 
     /**
@@ -397,7 +397,7 @@ public class PrefServiceBridge {
      * The default is false.
      */
     public boolean playVideoInBackgroundEnabled() {
-        return PrefServiceBridgeJni.getPlayVideoInBackgroundEnabled();
+        return PrefServiceBridgeJni.get().getPlayVideoInBackgroundEnabled(PrefServiceBridge.this);
     }
 
     /**
@@ -412,7 +412,7 @@ public class PrefServiceBridge {
      * The default is true.
      */
     public boolean playYTVideoInBrowserEnabled() {
-        return PrefServiceBridgeJni.getPlayYTVideoInBrowserEnabled();
+        return PrefServiceBridgeJni.get().getPlayYTVideoInBrowserEnabled(PrefServiceBridge.this);
     }
 
     /**
@@ -455,21 +455,21 @@ public class PrefServiceBridge {
      * Enable or disable Desktop View .
      */
     public void setDesktopViewEnabled(boolean enabled) {
-        PrefServiceBridgeJni.get().setDesktopViewEnabled(enabled);
+        PrefServiceBridgeJni.get().setDesktopViewEnabled(PrefServiceBridge.this, enabled);
     }
 
     /**
      * Enable or disable 'Play video in background' option
      */
     public void setPlayVideoInBackgroundEnabled(boolean enabled) {
-        PrefServiceBridgeJni.setPlayVideoInBackgroundEnabled(enabled);
+        PrefServiceBridgeJni.get().setPlayVideoInBackgroundEnabled(PrefServiceBridge.this, enabled);
     }
 
     /**
      * Enable or disable 'Play YouTube video in browser' option
      */
     public void setPlayYTVideoInBrowserEnabled(boolean enabled) {
-        PrefServiceBridgeJni.setPlayYTVideoInBrowserEnabled(enabled);
+        PrefServiceBridgeJni.get().setPlayYTVideoInBrowserEnabled(PrefServiceBridge.this, enabled);
     }
 
     /**
@@ -596,44 +596,44 @@ public class PrefServiceBridge {
      * @param whether HTTPSE should be enabled.
      */
     public void setHTTPSEEnabled(boolean enabled) {
-        PrefServiceBridgeJni.get().setHTTPSEEnabled(enabled);
+        PrefServiceBridgeJni.get().setHTTPSEEnabled(PrefServiceBridge.this, enabled);
     }
 
     public boolean isHTTPSEEnabled() {
-        return PrefServiceBridgeJni.get().getHTTPSEEnabled();
+        return PrefServiceBridgeJni.get().getHTTPSEEnabled(PrefServiceBridge.this);
     }
 
     /**
      * @param whether Fingerprinting Protection should be enabled.
      */
     public void setFingerprintingProtectionEnabled(boolean enabled) {
-        PrefServiceBridgeJni.get().setFingerprintingProtectionEnabled(enabled);
+        PrefServiceBridgeJni.get().setFingerprintingProtectionEnabled(PrefServiceBridge.this, enabled);
     }
 
     public boolean isFingerprintingProtectionEnabled() {
-        return PrefServiceBridgeJni.get().getFingerprintingProtectionEnabled();
+        return PrefServiceBridgeJni.get().getFingerprintingProtectionEnabled(PrefServiceBridge.this);
     }
 
     /**
      * @param whether AdBlock should be enabled.
      */
     public void setAdBlockEnabled(boolean enabled) {
-        PrefServiceBridgeJni.get().setAdBlockEnabled(enabled);
+        PrefServiceBridgeJni.get().setAdBlockEnabled(PrefServiceBridge.this, enabled);
     }
 
     public boolean isAdBlockEnabled() {
-        return PrefServiceBridgeJni.get().getAdBlockEnabled();
+        return PrefServiceBridgeJni.get().getAdBlockEnabled(PrefServiceBridge.this);
     }
 
     /**
      * @param whether AdBlock should be enabled.
      */
     public void setAdBlockRegionalEnabled(boolean enabled) {
-        PrefServiceBridgeJni.get().setAdBlockRegionalEnabled(enabled);
+        PrefServiceBridgeJni.get().setAdBlockRegionalEnabled(PrefServiceBridge.this, enabled);
     }
 
     public boolean isAdBlockRegionalEnabled() {
-        return PrefServiceBridgeJni.get().getAdBlockRegionalEnabled();
+        return PrefServiceBridgeJni.get().getAdBlockRegionalEnabled(PrefServiceBridge.this);
     }
 
     /**
@@ -882,13 +882,13 @@ public class PrefServiceBridge {
                 PrefServiceBridgeJni.get().setSoundEnabled(PrefServiceBridge.this, allow);
                 break;
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
-                PrefServiceBridgeJni.get().setDesktopViewEnabled(allow);
+                PrefServiceBridgeJni.get().setDesktopViewEnabled(PrefServiceBridge.this, allow);
                 break;
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
-                PrefServiceBridgeJni.get().setPlayVideoInBackgroundEnabled(allow);
+                PrefServiceBridgeJni.get().setPlayVideoInBackgroundEnabled(PrefServiceBridge.this, allow);
                 break;
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
-                PrefServiceBridgeJni.get().setPlayYTVideoInBrowserEnabled(allow);
+                PrefServiceBridgeJni.get().setPlayYTVideoInBrowserEnabled(PrefServiceBridge.this, allow);
                 break;
             default:
                 assert false;
@@ -929,11 +929,11 @@ public class PrefServiceBridge {
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_SOUND:
                 return PrefServiceBridgeJni.get().getSoundEnabled(PrefServiceBridge.this);
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
-                return PrefServiceBridgeJni.get().getDesktopViewEnabled();
+                return PrefServiceBridgeJni.get().getDesktopViewEnabled(PrefServiceBridge.this);
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
-                return PrefServiceBridgeJni.get().getPlayVideoInBackgroundEnabled();
+                return PrefServiceBridgeJni.get().getPlayVideoInBackgroundEnabled(PrefServiceBridge.this);
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
-                return PrefServiceBridgeJni.get().getPlayYTVideoInBrowserEnabled();
+                return PrefServiceBridgeJni.get().getPlayYTVideoInBrowserEnabled(PrefServiceBridge.this);
             default:
                 assert false;
                 return false;
@@ -1271,11 +1271,11 @@ public class PrefServiceBridge {
      * @param whether SafetyNet check failed.
      */
     public void setSafetynetCheckFailed(boolean value) {
-        PrefServiceBridgeJni.get().setSafetynetCheckFailed(value);
+        PrefServiceBridgeJni.get().setSafetynetCheckFailed(PrefServiceBridge.this, value);
     }
 
     public boolean isSafetynetCheckFailed() {
-        return PrefServiceBridgeJni.get().getSafetynetCheckFailed();
+        return PrefServiceBridgeJni.get().getSafetynetCheckFailed(PrefServiceBridge.this);
     }
 
     @VisibleForTesting
@@ -1287,11 +1287,19 @@ public class PrefServiceBridge {
      * @param whether should use staging server for Rewards.
      */
     public void setUseRewardsStagingServer(boolean value) {
-        PrefServiceBridgeJni.get().setUseRewardsStagingServer(value);
+        PrefServiceBridgeJni.get().setUseRewardsStagingServer(PrefServiceBridge.this, value);
     }
 
     public boolean useRewardsStagingServer() {
-        return PrefServiceBridgeJni.get().getUseRewardsStagingServer();
+        return PrefServiceBridgeJni.get().getUseRewardsStagingServer(PrefServiceBridge.this);
+    }
+
+    public void setContentSettingForPattern(int contentSettingType, String pattern, int setting) {
+        PrefServiceBridgeJni.get().setContentSettingForPattern(PrefServiceBridge.this, contentSettingType, pattern, setting);
+    }
+
+    public void setContentSettingForPatternIncognito(int contentSettingType, String pattern, int setting) {
+        PrefServiceBridgeJni.get().setContentSettingForPatternIncognito(PrefServiceBridge.this, contentSettingType, pattern, setting);
     }
 
     @NativeMethods
@@ -1431,27 +1439,27 @@ public class PrefServiceBridge {
         boolean getExplicitLanguageAskPromptShown(PrefServiceBridge caller);
         void setExplicitLanguageAskPromptShown(PrefServiceBridge caller, boolean shown);
         void setForceWebContentsDarkModeEnabled(PrefServiceBridge caller, boolean enabled);
-        void setAdBlockEnabled(boolean enabled);
-        void setHTTPSEEnabled(boolean enabled);
-        void setFingerprintingProtectionEnabled(boolean enabled);
-        void setAdBlockRegionalEnabled(boolean enabled);
-        boolean getFingerprintingProtectionEnabled();
-        boolean getHTTPSEEnabled();
-        boolean getAdBlockEnabled();
-        boolean getAdBlockRegionalEnabled();
-        boolean getDesktopViewEnabled();
-        void setDesktopViewEnabled(boolean enabled);
-        void getContentSettingsExceptionsIncognito(
+        void setAdBlockEnabled(PrefServiceBridge caller, boolean enabled);
+        void setHTTPSEEnabled(PrefServiceBridge caller, boolean enabled);
+        void setFingerprintingProtectionEnabled(PrefServiceBridge caller, boolean enabled);
+        void setAdBlockRegionalEnabled(PrefServiceBridge caller, boolean enabled);
+        boolean getFingerprintingProtectionEnabled(PrefServiceBridge caller);
+        boolean getHTTPSEEnabled(PrefServiceBridge caller);
+        boolean getAdBlockEnabled(PrefServiceBridge caller);
+        boolean getAdBlockRegionalEnabled(PrefServiceBridge caller);
+        boolean getDesktopViewEnabled(PrefServiceBridge caller);
+        void setDesktopViewEnabled(PrefServiceBridge caller, boolean enabled);
+        void getContentSettingsExceptionsIncognito(PrefServiceBridge caller,
             int contentSettingsType, List<ContentSettingException> list);
-        void setContentSettingForPatternIncognito(
+        void setContentSettingForPatternIncognito(PrefServiceBridge caller,
                 int contentSettingType, String pattern, int setting);
-        boolean getPlayVideoInBackgroundEnabled();
-        void setPlayVideoInBackgroundEnabled(boolean enabled);
-        boolean getPlayYTVideoInBrowserEnabled();
-        void setPlayYTVideoInBrowserEnabled(boolean enabled);
-        void setSafetynetCheckFailed(boolean value);
-        boolean getSafetynetCheckFailed();
-        void setUseRewardsStagingServer(boolean value);
-        boolean getUseRewardsStagingServer();
+        boolean getPlayVideoInBackgroundEnabled(PrefServiceBridge caller);
+        void setPlayVideoInBackgroundEnabled(PrefServiceBridge caller, boolean enabled);
+        boolean getPlayYTVideoInBrowserEnabled(PrefServiceBridge caller);
+        void setPlayYTVideoInBrowserEnabled(PrefServiceBridge caller, boolean enabled);
+        void setSafetynetCheckFailed(PrefServiceBridge caller, boolean value);
+        boolean getSafetynetCheckFailed(PrefServiceBridge caller);
+        void setUseRewardsStagingServer(PrefServiceBridge caller, boolean value);
+        boolean getUseRewardsStagingServer(PrefServiceBridge caller);
     }
 }
