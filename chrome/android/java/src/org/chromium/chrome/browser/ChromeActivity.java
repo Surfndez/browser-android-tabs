@@ -78,6 +78,7 @@ import org.chromium.chrome.browser.bookmarks.BookmarkBridge;
 import org.chromium.chrome.browser.appmenu.BraveShieldsMenuHandler;
 import org.chromium.chrome.browser.bookmarks.BookmarkModel;
 import org.chromium.chrome.browser.bookmarks.BookmarkUtils;
+import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.compositor.CompositorViewHolder;
 import org.chromium.chrome.browser.compositor.bottombar.OverlayPanelManager;
 import org.chromium.chrome.browser.compositor.bottombar.ephemeraltab.EphemeralTabCoordinator;
@@ -375,6 +376,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     // TODO(972867): Pull MenuOrKeyboardActionController out of ChromeActivity.
     private List<MenuOrKeyboardActionController.MenuOrKeyboardActionHandler> mMenuActionHandlers =
             new ArrayList<>();
+
+    private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
 
     @Override
     protected ActivityWindowAndroid createWindowAndroid() {
@@ -1566,7 +1569,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             }
             ClosingTabsManager.getInstance().setClosingTabsOption();
         }
-        
+
         mNativeInitialized = true;
         OfflineContentAggregatorNotificationBridgeUiFactory.instance();
         maybeRemoveWindowBackground();
@@ -1632,6 +1635,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         if(onboardingActivity == null){
             OnboardingPrefManager.getInstance().showOnboarding(this, false);
         }
+
+        mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
     }
 
     /**
@@ -2908,6 +2913,12 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 Log.e(TAG, "GooglePlayServicesNotAvailableException: " + e);
                 assert(false);
             }
+        }
+    }
+
+    protected void onNotifyFrontTabUrlChanged(Tab tab, String url) {
+        if (mBraveRewardsNativeWorker != null && !tab.isIncognito() ) {
+            mBraveRewardsNativeWorker.OnNotifyFrontTabUrlChanged(tab.getId(), url);
         }
     }
 }
