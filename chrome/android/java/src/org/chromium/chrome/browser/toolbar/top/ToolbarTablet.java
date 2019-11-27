@@ -75,7 +75,7 @@ import java.util.Collection;
 @SuppressLint("Instantiatable")
 public class ToolbarTablet extends ToolbarLayout
         implements OnClickListener, View.OnLongClickListener, TabCountObserver,
-        BraveRewardsObserver {
+        BraveRewardsObserver,  BraveRewardsNativeWorker.PublisherObserver  {
     // The number of toolbar buttons that can be hidden at small widths (reload, back, forward).
     public static final int HIDEABLE_BUTTON_COUNT = 3;
 
@@ -120,6 +120,12 @@ public class ToolbarTablet extends ToolbarLayout
     private FrameLayout mShieldsLayout;
     private boolean mShieldsLayoutIsColorBackground;
     private FrameLayout mRewardsLayout;
+
+    private boolean isPublisherVerified;
+    private boolean isNotificationPosted;
+    private boolean isInitialNotificationPosted; //initial red circle notification
+    private boolean areRewardsEnabled;
+
 
     /**
      * Constructs a ToolbarTablet object.
@@ -199,7 +205,10 @@ public class ToolbarTablet extends ToolbarLayout
     void destroy() {
         super.destroy();
         if (mHomeButton != null) mHomeButton.destroy();
-        if (mBraveRewardsNativeWorker != null) mBraveRewardsNativeWorker.RemoveObserver(this);
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.RemoveObserver(this);
+            mBraveRewardsNativeWorker.RemovePublisherObserver(this);
+        }
     }
 
     /**
@@ -340,6 +349,7 @@ public class ToolbarTablet extends ToolbarLayout
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         if (mBraveRewardsNativeWorker != null) {
             mBraveRewardsNativeWorker.AddObserver(this);
+            mBraveRewardsNativeWorker.AddPublisherObserver(this);
             mBraveRewardsNativeWorker.GetAllNotifications();
         }
     }
@@ -411,7 +421,8 @@ public class ToolbarTablet extends ToolbarLayout
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, true);
                     editor.apply();
-                    mBraveRewardsNotificationsCount.setVisibility(View.GONE);
+                    mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+                    isInitialNotificationPosted = false;
                 }
             }
         }
@@ -552,6 +563,7 @@ public class ToolbarTablet extends ToolbarLayout
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
             sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON, true);
+            areRewardsEnabled = true;
             if (sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
                 sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, false);
                 sharedPreferencesEditor.apply();
@@ -603,9 +615,13 @@ public class ToolbarTablet extends ToolbarLayout
                 }
                 mBraveRewardsNotificationsCount.setText(value);
                 mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
+                isNotificationPosted = true;
             } else {
                 mBraveRewardsNotificationsCount.setText("");
-                mBraveRewardsNotificationsCount.setVisibility(View.GONE);
+                mBraveRewardsNotificationsCount.setBackgroundResource(0);
+                mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+                isNotificationPosted = false;
+                UpdateVerifiedPublisherMark();
             }
         }
 
@@ -619,10 +635,13 @@ public class ToolbarTablet extends ToolbarLayout
         SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
         boolean shownBefore = sharedPref.getBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, false);
         boolean shouldShow = !shownBefore && !rewardsEnabled;
+        isInitialNotificationPosted = shouldShow; //initial notification
 
         if (!shouldShow) return;
 
         mBraveRewardsNotificationsCount.setText("");
+        mBraveRewardsNotificationsCount.setBackground(
+                getResources().getDrawable(R.drawable.brave_rewards_circle));
         mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
     }
 
@@ -640,7 +659,9 @@ public class ToolbarTablet extends ToolbarLayout
     public void OnGetPendingContributionsTotal(double amount) {}
 
     @Override
-    public void OnGetRewardsMainEnabled(boolean enabled) {}
+    public void OnGetRewardsMainEnabled(boolean enabled) {
+        areRewardsEnabled = enabled;
+    }
 
     @Override
     public void OnGetAutoContributeProps() {}
@@ -672,6 +693,8 @@ public class ToolbarTablet extends ToolbarLayout
             }
         }
         if (needRelaunch) RestartWorker.AskForRelaunch(getContext());
+        areRewardsEnabled = enabled;
+        UpdateVerifiedPublisherMark();
     }
 
     /**
@@ -1019,5 +1042,38 @@ public class ToolbarTablet extends ToolbarLayout
     private boolean isAccessibilityTabSwitcherPreferenceEnabled() {
         return ChromePreferenceManager.getInstance().readBoolean(
                 ChromePreferenceManager.ACCESSIBILITY_TAB_SWITCHER, true);
+    }
+
+    /**
+        BraveRewardsNativeWorker.PublisherObserver:
+        update a 'verified publisher' checkmark on url bar BAT icon only if
+        no notifications are posted
+    */
+    @Override
+    public void onfronTabPublisherChanged(boolean verified) {
+        isPublisherVerified = verified;
+        UpdateVerifiedPublisherMark();
+    }
+
+
+    private void UpdateVerifiedPublisherMark() {
+        if (isInitialNotificationPosted) {
+            return;
+        }
+        else if (!areRewardsEnabled ){
+            mBraveRewardsNotificationsCount.setBackgroundResource(0);
+            mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+        }
+        else if (!isNotificationPosted) {
+            if (isPublisherVerified) {
+                mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
+                mBraveRewardsNotificationsCount.setBackground(
+                        getResources().getDrawable(R.drawable.bat_verified));
+            }
+            else {
+                mBraveRewardsNotificationsCount.setBackgroundResource(0);
+                mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 }

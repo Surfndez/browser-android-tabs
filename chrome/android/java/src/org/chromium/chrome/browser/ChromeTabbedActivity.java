@@ -658,6 +658,10 @@ public class ChromeTabbedActivity extends ChromeActivity implements ScreenshotMo
             mTabModelObserver = new TabModelSelectorTabModelObserver(mTabModelSelectorImpl) {
                 @Override
                 public void didSelectTab(Tab tab, @TabSelectionType int type, int lastId) {
+                    if (getActivityTab().equals(tab)) {
+                        onNotifyFrontTabUrlChanged(tab, tab.getUrl());
+                    }
+
                     try {
                         URL url = new URL(tab.getUrl());
 
@@ -1855,6 +1859,10 @@ public class ChromeTabbedActivity extends ChromeActivity implements ScreenshotMo
 
             @Override
             public void onDidFinishNavigation(Tab tab, NavigationHandle navigation) {
+                if (getActivityTab().equals(tab)) {
+                    onNotifyFrontTabUrlChanged(tab, tab.getUrl());
+                }
+
                 if (navigation.hasCommitted() && navigation.isInMainFrame()) {
                     DataReductionPromoInfoBar.maybeLaunchPromoInfoBar(ChromeTabbedActivity.this,
                             tab.getWebContents(), navigation.getUrl(), tab.isShowingErrorPage(),
