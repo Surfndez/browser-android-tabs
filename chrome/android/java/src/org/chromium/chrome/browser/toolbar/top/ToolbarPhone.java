@@ -116,7 +116,8 @@ import org.chromium.ui.widget.Toast;
 public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, OnClickListener,
                                                            View.OnLongClickListener,
                                                            NewTabPage.OnSearchBoxScrollListener,
-                                                           TabCountObserver, BraveRewardsObserver {
+                                                           TabCountObserver, BraveRewardsObserver,
+                                                           BraveRewardsNativeWorker.PublisherObserver {
     /** The amount of time transitioning from one theme color to another should take in ms. */
     public static final long THEME_COLOR_TRANSITION_DURATION = 250;
 
@@ -332,6 +333,11 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     private FrameLayout mShieldsLayout;
     private FrameLayout mRewardsLayout;
 
+    private boolean isPublisherVerified;
+    private boolean isNotificationPosted;
+    private boolean isInitialNotificationPosted; //initial red circle notification
+    private boolean areRewardsEnabled;
+
     // The following are some properties used during animation.  We use explicit property classes
     // to avoid the cost of reflection for each animation setup.
 
@@ -426,7 +432,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         super.destroy();
         if (mHomeButton != null) mHomeButton.destroy();
         cancelAnimations();
-        if (mBraveRewardsNativeWorker != null) mBraveRewardsNativeWorker.RemoveObserver(this);
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.RemoveObserver(this);
+            mBraveRewardsNativeWorker.RemovePublisherObserver(this);
+        }
     }
 
     /**
@@ -571,6 +580,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         if (mBraveRewardsNativeWorker != null) {
             mBraveRewardsNativeWorker.AddObserver(this);
+            mBraveRewardsNativeWorker.AddPublisherObserver(this);
             mBraveRewardsNativeWorker.GetAllNotifications();
         }
     }
@@ -627,7 +637,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, true);
                     editor.apply();
-                    mBraveRewardsNotificationsCount.setVisibility(View.GONE);
+                    mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+                    isInitialNotificationPosted = false;
                 }
             }
         }
@@ -2134,6 +2145,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
             // Set preferences that Brave Rewards was turned On and that Brave Rewards icon is not hidden
             sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON, true);
+            areRewardsEnabled = true;
             if (sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
                 sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, false);
                 sharedPreferencesEditor.apply();
@@ -2185,9 +2197,13 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 }
                 mBraveRewardsNotificationsCount.setText(value);
                 mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
+                isNotificationPosted = true;
             } else {
                 mBraveRewardsNotificationsCount.setText("");
-                mBraveRewardsNotificationsCount.setVisibility(View.GONE);
+                mBraveRewardsNotificationsCount.setBackgroundResource(0);
+                mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+                isNotificationPosted = false;
+                UpdateVerifiedPublisherMark();
             }
         }
 
@@ -2201,10 +2217,13 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
         boolean shownBefore = sharedPref.getBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, false);
         boolean shouldShow = !shownBefore && !rewardsEnabled;
+        isInitialNotificationPosted = shouldShow; //initial notification
 
         if (!shouldShow) return;
 
         mBraveRewardsNotificationsCount.setText("");
+        mBraveRewardsNotificationsCount.setBackground(
+                getResources().getDrawable(R.drawable.brave_rewards_circle));
         mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
     }
 
@@ -2222,7 +2241,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnGetPendingContributionsTotal(double amount) {}
 
     @Override
-    public void OnGetRewardsMainEnabled(boolean enabled) {}
+    public void OnGetRewardsMainEnabled(boolean enabled) {
+        areRewardsEnabled = enabled;
+    }
 
     @Override
     public void OnGetAutoContributeProps() {}
@@ -2254,6 +2275,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             }
         }
         if (needRelaunch) RestartWorker.AskForRelaunch(getContext());
+        areRewardsEnabled = enabled;
+        UpdateVerifiedPublisherMark();
     }
 
     @Override
@@ -3175,6 +3198,39 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
         if (mExperimentalButtonAnimator != null && mExperimentalButtonAnimator.isRunning()) {
             mExperimentalButtonAnimator.cancel();
+        }
+    }
+
+    /**
+        BraveRewardsNativeWorker.PublisherObserver:
+        update a 'verified publisher' checkmark on url bar BAT icon only if
+        no notifications are posted
+    */
+    @Override
+    public void onfronTabPublisherChanged(boolean verified) {
+        isPublisherVerified = verified;
+        UpdateVerifiedPublisherMark();
+    }
+
+
+    private void UpdateVerifiedPublisherMark() {
+        if (isInitialNotificationPosted) {
+            return;
+        }
+        else if (!areRewardsEnabled ){
+            mBraveRewardsNotificationsCount.setBackgroundResource(0);
+            mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+        }
+        else if (!isNotificationPosted) {
+            if (isPublisherVerified) {
+                mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
+                mBraveRewardsNotificationsCount.setBackground(
+                        getResources().getDrawable(R.drawable.bat_verified));
+            }
+            else {
+                mBraveRewardsNotificationsCount.setBackgroundResource(0);
+                mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
+            }
         }
     }
 }
