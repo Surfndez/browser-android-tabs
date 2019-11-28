@@ -183,7 +183,7 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequest(
     loader->SetAllowReportingRawHeaders(network_service->HasRawHeadersAccess(
         loader->GetProcessId(), *effective_url));
   }
-  return OnBeforeURLRequestInternal(request, std::move(callback), new_url);
+  return OnBeforeURLRequestInternal(request, new_url);
 }
 
 int NetworkServiceNetworkDelegate::OnBeforeStartTransaction(
@@ -472,7 +472,6 @@ void NetworkServiceNetworkDelegate::ForwardProxyErrors(int net_error) {
 
 int NetworkServiceNetworkDelegate::OnBeforeURLRequestInternal(
     net::URLRequest* request,
-    net::CompletionOnceCallback callback,
     GURL* new_url) {
   int rv = net::OK;
   // TODO(samartnik): we probably need better place for handling this
@@ -491,20 +490,15 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequestInternal(
     if (ctx->url_loader && tab_prop.is_valid) {
       rv = OnBeforeURLRequest_PreBlockersWork(
           request,
-          std::move(callback),
           new_url,
           ctx);
     }
-  }
-  if (!callback.is_null()) {
-    std::move(callback).Run(rv);
   }
   return rv;
 }
 
 int NetworkServiceNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
     net::URLRequest* request,
-    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   ctx->firstparty_host = "";
@@ -560,13 +554,12 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
   ctx->trackersBlocked = 0;
   ctx->httpsUpgrades = 0;
 
-  int rv = OnBeforeURLRequest_AdBlockPreFileWork(request, std::move(callback), new_url, ctx);
+  int rv = OnBeforeURLRequest_AdBlockPreFileWork(request, new_url, ctx);
   return rv;
 }
 
 int NetworkServiceNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
     net::URLRequest* request,
-    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
 	if (!ctx->block
@@ -584,7 +577,7 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
     }
   }
 
-  int rv = OnBeforeURLRequest_AdBlockPostFileWork(request, std::move(callback), new_url, ctx);
+  int rv = OnBeforeURLRequest_AdBlockPostFileWork(request, new_url, ctx);
   return rv;
 }
 
@@ -600,7 +593,6 @@ void NetworkServiceNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork(std::shar
 
 int NetworkServiceNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
   net::URLRequest* request,
-  net::CompletionOnceCallback callback,
   GURL* new_url,
   std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   if (ctx->needPerformAdBlock) {
@@ -620,13 +612,12 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
     *new_url = GURL(TRANSPARENT1PXGIF);
   }
 
-   int rv = OnBeforeURLRequest_HttpsePreFileWork(request, std::move(callback), new_url, ctx);
+   int rv = OnBeforeURLRequest_HttpsePreFileWork(request, new_url, ctx);
    return rv;
 }
 
 int NetworkServiceNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
     net::URLRequest* request,
-    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   ctx->needPerformHTTPSE = false;
@@ -647,7 +638,7 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
     }
   }
 
-  int rv = OnBeforeURLRequest_HttpsePostFileWork(request, std::move(callback), new_url, ctx);
+  int rv = OnBeforeURLRequest_HttpsePostFileWork(request, new_url, ctx);
   return rv;
 }
 
@@ -658,7 +649,7 @@ void NetworkServiceNetworkDelegate::OnBeforeURLRequest_HttpseFileWork(net::URLRe
   ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy, ctx->request_identifier);
 }
 
-int NetworkServiceNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest* request,net::CompletionOnceCallback callback,GURL* new_url,
+int NetworkServiceNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest* request, GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   if (!ctx->newURL.empty() &&
     ctx->needPerformHTTPSE &&
@@ -669,13 +660,12 @@ int NetworkServiceNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::UR
     }
   }
 
-  int rv = OnBeforeURLRequest_PostBlockers(request, std::move(callback), new_url, ctx);
+  int rv = OnBeforeURLRequest_PostBlockers(request, new_url, ctx);
   return rv;
 }
 
 int NetworkServiceNetworkDelegate::OnBeforeURLRequest_PostBlockers(
     net::URLRequest* request,
-    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   net::blockers::ShieldsConfig* shieldsConfig =
