@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.View.OnAttachStateChangeListener;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
+import android.content.SharedPreferences;
+import java.util.Calendar;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
@@ -73,6 +75,11 @@ import org.chromium.content_public.browser.WebContentsAccessibility;
 import org.chromium.content_public.common.ResourceRequestBody;
 import org.chromium.ui.base.PageTransition;
 import org.chromium.ui.base.WindowAndroid;
+import org.chromium.chrome.browser.preferences.BackgroundImagesPreferences;
+import org.chromium.chrome.browser.ntp.sponsored.BackgroundImage;
+import org.chromium.chrome.browser.ntp.sponsored.SponsoredImage;
+import org.chromium.chrome.browser.ntp.sponsored.SponsoredImageUtil;
+import org.chromium.chrome.browser.util.LocaleUtil;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -265,6 +272,8 @@ public class Tab {
 
     private final UserDataHost mUserDataHost = new UserDataHost();
 
+    private BackgroundImage backgroundImage;
+
     /**
      * @return {@link UserDataHost} that manages {@link UserData} objects attached to
      *         this Tab instance.
@@ -332,6 +341,8 @@ public class Tab {
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
+
+        backgroundImage = getBackgroundImage();
     }
 
     /**
@@ -1938,6 +1949,48 @@ public class Tab {
             getWebContents().getNavigationController().setUseDesktopUserAgent(
                     useDesktop, reloadOnChange);
         }
+    }
+
+    public BackgroundImage getTabBackgroundImage() {
+        return backgroundImage;
+    }
+
+    private BackgroundImage getBackgroundImage() {
+        BackgroundImage backgroundImage;
+        SharedPreferences mSharedPreferences = ContextUtils.getAppSharedPreferences();
+
+        if (mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) == 2
+            && SponsoredImageUtil.imageIndex == 2) {
+            SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage(); 
+            long currentTime = Calendar.getInstance().getTimeInMillis();
+            if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
+                && LocaleUtil.isSponsoredRegions()
+                && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
+                // sponsoredImageClick();
+                SponsoredImageUtil.imageIndex = SponsoredImageUtil.imageIndex + 3;
+                return sponsoredImage;
+            }
+        }
+
+        if (SponsoredImageUtil.imageIndex % 4 == 0 && SponsoredImageUtil.imageIndex != 1) {
+            SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage(); 
+            long currentTime = Calendar.getInstance().getTimeInMillis();
+            if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
+                && LocaleUtil.isSponsoredRegions()
+                && mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) != 1
+                && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
+                // sponsoredImageClick();
+                backgroundImage = sponsoredImage;
+            } else {
+                backgroundImage = SponsoredImageUtil.getBackgroundImage();
+            }
+        } else {
+            backgroundImage = SponsoredImageUtil.getBackgroundImage();
+        }
+
+        SponsoredImageUtil.imageIndex++;
+
+        return backgroundImage;
     }
 
     @NativeMethods
