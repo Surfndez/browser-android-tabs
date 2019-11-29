@@ -33,6 +33,8 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 
 import org.chromium.base.TraceEvent;
 import org.chromium.base.VisibleForTesting;
@@ -491,6 +493,9 @@ public class NewTabPageView extends HistoryNavigationLayout {
     }
 
     private void showBackgroundImage() {
+
+        TextView creditText = (TextView)mNewTabPageLayout.findViewById(R.id.credit_text);
+
         if(mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)) {
             ViewTreeObserver observer = mNewTabPageLayout.getViewTreeObserver();
             observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -538,8 +543,16 @@ public class NewTabPageView extends HistoryNavigationLayout {
 
                     mNewTabPageLayout.setBackground(imageDrawable);
 
-                    if (backgroundImage instanceof SponsoredImage ) {
-                        mNewTabPageLayout.setOnClickListener(new View.OnClickListener() {
+                    if (backgroundImage.getImageCredit() != null && !(backgroundImage instanceof SponsoredImage)) {
+
+                        String imageCreditStr = String.format(mNewTabPageLayout.getResources().getString(R.string.photo_by, backgroundImage.getImageCredit().getName()));
+
+                        SpannableStringBuilder spannableString = new SpannableStringBuilder(imageCreditStr);
+                        spannableString.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), ((imageCreditStr.length()-1) - (backgroundImage.getImageCredit().getName().length()-1)), imageCreditStr.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                        creditText.setText(spannableString);
+                        creditText.setVisibility(View.VISIBLE);
+                        creditText.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 for (Activity ref : ApplicationStatus.getRunningActivities()) {
@@ -551,11 +564,15 @@ public class NewTabPageView extends HistoryNavigationLayout {
                                 }
                             }
                         });
+                    } else {
+                        creditText.setVisibility(View.GONE);
                     }
 
                     mNewTabPageLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
             });
+        } else {
+            creditText.setVisibility(View.GONE);
         }
     }
 
