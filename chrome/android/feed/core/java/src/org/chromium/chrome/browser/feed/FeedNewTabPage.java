@@ -70,7 +70,7 @@ public class FeedNewTabPage
                 ? activity.getOverviewModeBehavior()
                 : null;
 
-        mNewTabPageLayout.initialize(mNewTabPageManager, activity, overviewModeBehavior,
+        mNewTabPageLayout.initialize(mNewTabPageManager, mTab, activity, overviewModeBehavior,
                 mTileGroupDelegate, mSearchProviderHasLogo,
                 TemplateUrlServiceFactory.get().isDefaultSearchEngineGoogle(),
                 mCoordinator.getScrollDelegate(), mContextMenuManager, mCoordinator.getUiConfig());

@@ -184,7 +184,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
                 ? tab.getActivity().getOverviewModeBehavior()
                 : null;
 
-        mNewTabPageLayout.initialize(manager, tab.getActivity(), overviewModeBehavior,
+        mNewTabPageLayout.initialize(manager, tab, tab.getActivity(), overviewModeBehavior,
                 tileGroupDelegate, searchProviderHasLogo, searchProviderIsGoogle, mRecyclerView,
                 mContextMenuManager, mUiConfig);
 
@@ -236,10 +236,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         mBraveStatsView = (ViewGroup)mNewTabPageLayout.findViewById(R.id.brave_stats);
 
         backgroundImage = mTab.getTabBackgroundImage();
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M || (Build.VERSION.SDK_INT < Build.VERSION_CODES.M && SponsoredImageUtil.imageIndex <= 16) ) {
-            showBackgroundImage();
-        }
+        showBackgroundImage();
 
         initializeLayoutChangeListener();
         mNewTabPageLayout.setSearchProviderInfo(searchProviderHasLogo, searchProviderIsGoogle);
@@ -343,7 +340,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         TextView estTimeSavedTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_time);
 
         if(mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true) 
-            && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M || (Build.VERSION.SDK_INT < Build.VERSION_CODES.M && SponsoredImageUtil.imageIndex <= 16))) {
+            && (Build.VERSION.SDK_INT > Build.VERSION_CODES.M || (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && mTab.getIndex() <= 16))) {
             adsBlockedTextView.setTextColor(mNewTabPageLayout.getResources().getColor(android.R.color.white));
             httpsUpgradesTextView.setTextColor(mNewTabPageLayout.getResources().getColor(android.R.color.white));
             estTimeSavedTextView.setTextColor(mNewTabPageLayout.getResources().getColor(android.R.color.white));            
@@ -496,7 +493,8 @@ public class NewTabPageView extends HistoryNavigationLayout {
 
         TextView creditText = (TextView)mNewTabPageLayout.findViewById(R.id.credit_text);
 
-        if(mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)) {
+        if(mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)
+            && Build.VERSION.SDK_INT > Build.VERSION_CODES.M || (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && mTab.getIndex() <= 16)) {
             ViewTreeObserver observer = mNewTabPageLayout.getViewTreeObserver();
             observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
