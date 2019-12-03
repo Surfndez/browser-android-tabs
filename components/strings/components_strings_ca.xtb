@@ -6,10 +6,10 @@
 <translation id="1015730422737071372">Proporcioneu més informació</translation>
 <translation id="1021110881106174305">Targetes acceptades</translation>
 <translation id="1032854598605920125">Gira en sentit horari</translation>
-<translation id="1035334672863811645">Inicia la sessió a Chrome</translation>
+<translation id="1035334672863811645">Inicia la sessió a Brave</translation>
 <translation id="1036348656032585052">Desactiva</translation>
 <translation id="1038842779957582377">nom desconegut</translation>
-<translation id="1039626062703039346">Chrome et pot ajudar a protegir el Compte de Google i a canviar la contrasenya. S'informarà a Google sobre aquest lloc web.</translation>
+<translation id="1039626062703039346">Brave et pot ajudar a protegir el Compte de Google i a canviar la contrasenya. S'informarà a Google sobre aquest lloc web.</translation>
 <translation id="1050038467049342496">Tanca altres aplicacions</translation>
 <translation id="1055184225775184556">&amp;Desfés l'addició</translation>
 <translation id="1056898198331236512">Advertiment</translation>
@@ -23,9 +23,9 @@
 <translation id="1088860948719068836">Afegeix el titular de la targeta</translation>
 <translation id="1089439967362294234">Canvia la contrasenya</translation>
 <translation id="1096545575934602868">Aquest camp no pot tenir més de <ph name="MAX_ITEMS_LIMIT" /> entrades. Es descartaran totes les entrades restants.</translation>
-<translation id="109743633954054152">Gestiona les contrasenyes a la configuració de Chrome</translation>
+<translation id="109743633954054152">Gestiona les contrasenyes a la configuració de Brave</translation>
 <translation id="1103523840287552314">Tradueix sempre el text en <ph name="LANGUAGE" /></translation>
-<translation id="1107591249535594099">Si s'activa aquesta casella, Chrome emmagatzema una còpia d'aquesta targeta al dispositiu per agilitzar l'emplenament de formularis.</translation>
+<translation id="1107591249535594099">Si s'activa aquesta casella, Brave emmagatzema una còpia d'aquesta targeta al dispositiu per agilitzar l'emplenament de formularis.</translation>
 <translation id="1110994991967754504">Selecciona un permís per a <ph name="PERMISSION_NAME" /></translation>
 <translation id="1113869188872983271">&amp;Desfés el canvi d'ordre</translation>
 <translation id="1125573121925420732">És probable que rebis advertiments mentre s'actualitza la seguretat als llocs web, però això millorarà aviat.</translation>
@@ -70,7 +70,7 @@
 <translation id="1264126396475825575">S'ha capturat un informe d'error (<ph name="CRASH_TIME" />) (encara no s'ha penjat ni ignorat)</translation>
 <translation id="1270502636509132238">Mètode de recollida</translation>
 <translation id="1285320974508926690">No tradueixis mai aquest lloc</translation>
-<translation id="1292701964462482250">"L'ordinador conté programari que impedeix que Chrome es connecti de manera segura al web" (només en ordinadors Windows)</translation>
+<translation id="1292701964462482250">"L'ordinador conté programari que impedeix que Brave es connecti de manera segura al web" (només en ordinadors Windows)</translation>
 <translation id="1294154142200295408">Variacions de la línia d'ordres</translation>
 <translation id="129553762522093515">Tancades recentment</translation>
 <translation id="1298536327547837046">Escaneig per detectar programari maliciós</translation>
@@ -115,7 +115,6 @@
 <translation id="1463543813647160932">5 x 7</translation>
 <translation id="1472675084647422956">Mostra'n més</translation>
 <translation id="147358896496811705">2A0</translation>
-<translation id="1476595624592550506">Canvia la contrasenya</translation>
 <translation id="1484290072879560759">Tria l'adreça d'enviament</translation>
 <translation id="1492194039220927094">Tramesa automàtica de les polítiques:</translation>
 <translation id="1501859676467574491">Mostra les targetes del Compte de Google</translation>
@@ -158,10 +157,10 @@
 <translation id="1645368109819982629">Protocol no admès</translation>
 <translation id="1656489000284462475">Recollida</translation>
 <translation id="1662550410081243962">Desa i emplena les formes de pagament</translation>
-<translation id="1663943134801823270">Les targetes i les adreces s'obtenen de Chrome. Pots gestionar-les des de <ph name="BEGIN_LINK" />Configuració<ph name="END_LINK" />.</translation>
+<translation id="1663943134801823270">Les targetes i les adreces s'obtenen de Brave. Pots gestionar-les des de <ph name="BEGIN_LINK" />Configuració<ph name="END_LINK" />.</translation>
 <translation id="1669987054044193553">Confirma i desa</translation>
 <translation id="1671391448414634642">A partir d'ara, les pàgines en <ph name="SOURCE_LANGUAGE" /> es traduiran a <ph name="TARGET_LANGUAGE" />.</translation>
-<translation id="1676269943528358898"><ph name="SITE" /> utilitza normalment l'encriptació per protegir la vostra informació. En aquesta ocasió, quan Google Chrome ha provat de connectar-se a <ph name="SITE" />, el lloc web ha enviat credencials poc comunes i incorrectes. Pot ser que un atacant estigui provant de fer-se passar per <ph name="SITE" /> o que una pantalla d'inici de sessió a la xarxa Wi-Fi hagi interromput la connexió. En qualsevol cas, la vostra informació continua estant segura, perquè Google Chrome ha aturat la connexió abans no s'intercanviés cap dada.</translation>
+<translation id="1676269943528358898"><ph name="SITE" /> utilitza normalment l'encriptació per protegir la vostra informació. En aquesta ocasió, quan Brave ha provat de connectar-se a <ph name="SITE" />, el lloc web ha enviat credencials poc comunes i incorrectes. Pot ser que un atacant estigui provant de fer-se passar per <ph name="SITE" /> o que una pantalla d'inici de sessió a la xarxa Wi-Fi hagi interromput la connexió. En qualsevol cas, la vostra informació continua estant segura, perquè Brave ha aturat la connexió abans no s'intercanviés cap dada.</translation>
 <translation id="168841957122794586">El certificat de servidor conté una clau criptogràfica dèbil.</translation>
 <translation id="1697532407822776718">Ja estàs a punt!</translation>
 <translation id="1703835215927279855">Letter</translation>
@@ -175,6 +174,7 @@
 <translation id="173080396488393970">Aquest tipus de targeta no s'admet</translation>
 <translation id="1734864079702812349">Amex</translation>
 <translation id="1734878702283171397">Proveu de contactar amb l'administrador del sistema.</translation>
+<translation id="1739107442478692187">S'ha produït una violació de les dades en un lloc web o en una aplicació que fas servir. Brave et recomana que comprovis les contrasenyes desades i que canviïs la contrasenya del lloc web <ph name="ORIGIN" /> ara mateix.</translation>
 <translation id="1740951997222943430">Introdueix un mes de caducitat vàlid</translation>
 <translation id="1743520634839655729">Perquè la propera vegada puguis pagar més ràpidament, desa la targeta, el nom i l'adreça de facturació al Compte de Google i en aquest dispositiu.</translation>
 <translation id="1743570585616704562">No s'ha reconegut</translation>
@@ -207,21 +207,20 @@
 <translation id="1914326953223720820">Descomprimeix el servei</translation>
 <translation id="1915697529809968049">Vols utilitzar Touch ID en lloc del CVC?</translation>
 <translation id="1916770123977586577">Per aplicar la configuració actualitzada a aquest lloc web, torna a carregar la pàgina</translation>
-<translation id="1917876262703816781">La teva contrasenya ha quedat exposada a causa de la violació de les dades en un lloc web o una aplicació. Chrome et recomana que canviïs la contrasenya per a <ph name="ORIGIN" /> ara.</translation>
 <translation id="1919345977826869612">Anuncis</translation>
 <translation id="1919367280705858090">Obtenir ajuda amb un missatge d'error específic</translation>
 <translation id="192020519938775529">{COUNT,plural, =0{Cap}=1{1 lloc}other{# llocs}}</translation>
 <translation id="1927235823738766038">Targetes de crèdit i de dèbit acceptades</translation>
 <translation id="194030505837763158">Ves a <ph name="LINK" /></translation>
-<translation id="1945968466830820669">Podries perdre l'accés al compte de la teva organització o ser víctima d'un robatori d'identitat. Chromium et recomana que canviïs la contrasenya ara.</translation>
+<translation id="1945968466830820669">Podries perdre l'accés al compte de la teva organització o ser víctima d'un robatori d'identitat. Brave et recomana que canviïs la contrasenya ara.</translation>
 <translation id="1947454675006758438">Grapat a la part superior dreta</translation>
 <translation id="1948773908305951926">Targetes de prepagament acceptades</translation>
 <translation id="1962204205936693436">Adreces d'interès de <ph name="DOMAIN" /></translation>
 <translation id="1973335181906896915">Error de serialització</translation>
 <translation id="1974060860693918893">Configuració avançada</translation>
-<translation id="1974883374937189061">Per ajudar a millorar la seguretat de Chrome, envia a Google <ph name="BEGIN_WHITEPAPER_LINK" />URL d'algunes pàgines que visites, informació limitada del sistema i part del contingut de les pàgines<ph name="END_WHITEPAPER_LINK" />. <ph name="PRIVACY_PAGE_LINK" /></translation>
+<translation id="1974883374937189061">Per ajudar a millorar la seguretat de Brave, envia a Google <ph name="BEGIN_WHITEPAPER_LINK" />URL d'algunes pàgines que visites, informació limitada del sistema i part del contingut de les pàgines<ph name="END_WHITEPAPER_LINK" />. <ph name="PRIVACY_PAGE_LINK" /></translation>
 <translation id="1978555033938440688">Versió del microprogramari</translation>
-<translation id="1981206234434200693">Esborra les dades de l'historial de navegació de Chrome</translation>
+<translation id="1981206234434200693">Esborra les dades de l'historial de navegació de Brave</translation>
 <translation id="2001146170449793414">{COUNT,plural, =1{i 1 aplicació més}other{i # aplicacions més}}</translation>
 <translation id="2003709556000175978">Restableix la contrasenya ara</translation>
 <translation id="2003775180883135320">Encunyació quàdruple a la part superior</translation>
@@ -240,6 +239,7 @@
 <translation id="2094505752054353250">Els dominis no coincideixen.</translation>
 <translation id="2096368010154057602">Departament</translation>
 <translation id="2099652385553570808">Grapat triple a l'esquerra</translation>
+<translation id="2100280972184758440">La contrasenya s'ha posat en perill</translation>
 <translation id="2102134110707549001">Suggereix una contrasenya segura…</translation>
 <translation id="2108755909498034140">Reinicia l'ordinador</translation>
 <translation id="2111256659903765347">Super-A</translation>
@@ -247,6 +247,7 @@
 <translation id="2114841414352855701">S'ha ignorat perquè <ph name="POLICY_NAME" /> l'ha substituït.</translation>
 <translation id="2119505898009119320">Emès per a: <ph name="ORGANIZATION" /> [<ph name="JURISDICTION" />]</translation>
 <translation id="2119867082804433120">Encunyació a la part inferior dreta</translation>
+<translation id="2124528555835617522">S'ha produït una violació de les dades en un lloc web o en una aplicació que fas servir. Brave et recomana que comprovis les contrasenyes desades.</translation>
 <translation id="2129079103035905234">Sensors de moviment</translation>
 <translation id="213826338245044447">Adreces d'interès per a mòbils</translation>
 <translation id="214556005048008348">Cancel·la el pagament</translation>
@@ -274,7 +275,7 @@
 <translation id="2250931979407627383">Cosit de la vora a l'esquerra</translation>
 <translation id="225207911366869382">El valor d'aquesta política és obsolet.</translation>
 <translation id="2262243747453050782">Error d'HTTP</translation>
-<translation id="2263079731045660823">Actualitza la informació de targetes de crèdit d'Emplenament automàtic a la configuració de Chrome</translation>
+<translation id="2263079731045660823">Actualitza la informació de targetes de crèdit d'Emplenament automàtic a la configuració de Brave</translation>
 <translation id="2267047181501709434">S'està verificant la teva identitat...</translation>
 <translation id="2270484714375784793">Número de telèfon</translation>
 <translation id="2277103315734023688">Avança</translation>
@@ -305,11 +306,11 @@
 <translation id="2392959068659972793">Mostra les polítiques sense valors definits</translation>
 <translation id="239429038616798445">Aquest mètode d'enviament no està disponible. Prova'n un altre.</translation>
 <translation id="2396249848217231973">&amp;Desfés la supressió</translation>
-<translation id="2409589295040002961">L'administrador pot modificar la configuració del navegador de manera remota. És possible que l'activitat d'aquest dispositiu també es gestioni fora de Chrome. <ph name="BEGIN_LINK" />Més informació<ph name="END_LINK" /></translation>
+<translation id="2409589295040002961">L'administrador pot modificar la configuració del navegador de manera remota. És possible que l'activitat d'aquest dispositiu també es gestioni fora de Brave. <ph name="BEGIN_LINK" />Més informació<ph name="END_LINK" /></translation>
 <translation id="2410754574180102685">Government-Legal</translation>
 <translation id="2413528052993050574">El servidor no ha pogut comprovar que sigui <ph name="DOMAIN" /> perquè és possible que el seu certificat de seguretat s'hagi revocat. Això pot ser a causa d'una configuració incorrecta o d'un atacant que intercepta la vostra connexió.</translation>
 <translation id="2438874542388153331">Encunyació quàdruple a la dreta</translation>
-<translation id="245044156129055925">Acabes d'introduir la contrasenya en un lloc web enganyós. Chromium et recomana que canviïs la contrasenya ara.</translation>
+<translation id="245044156129055925">Acabes d'introduir la contrasenya en un lloc web enganyós. Brave et recomana que canviïs la contrasenya ara.</translation>
 <translation id="2463193859425327265">Canvia la pàgina d'inici</translation>
 <translation id="2463739503403862330">Emplena</translation>
 <translation id="2465402087343596252">Architecture-E</translation>
@@ -323,9 +324,9 @@
 <translation id="2491120439723279231">El certificat del servidor conté errors.</translation>
 <translation id="2493640343870896922">Letter-Plus</translation>
 <translation id="2495083838625180221">Analitzador JSON</translation>
-<translation id="2495093607237746763">Si s'activa aquesta casella, Chromium desa una còpia de la vostra targeta al dispositiu per agilitzar l'emplenament de formularis.</translation>
+<translation id="2495093607237746763">Si s'activa aquesta casella, Brave desa una còpia de la vostra targeta al dispositiu per agilitzar l'emplenament de formularis.</translation>
 <translation id="2498091847651709837">Escaneja una targeta nova</translation>
-<translation id="249825481377667906">Chromium et pot ajudar a protegir el Compte de Google i a canviar la contrasenya. S'informarà a Google sobre aquest lloc web.</translation>
+<translation id="249825481377667906">Brave et pot ajudar a protegir el Compte de Google i a canviar la contrasenya. S'informarà a Google sobre aquest lloc web.</translation>
 <translation id="2501278716633472235">Torna</translation>
 <translation id="2503184589641749290">Targetes de dèbit i de prepagament acceptades</translation>
 <translation id="2505268675989099013">Protegeix el compte</translation>
@@ -410,11 +411,11 @@
 <translation id="2948083400971632585">Podeu desactivar qualsevol servidor intermediari configurat per a una connexió des de la pàgina de configuració.</translation>
 <translation id="295526156371527179">Advertiment: aquesta política no s'ha combinat com a diccionari segons el que s'especifica a la política perquè no és un diccionari.</translation>
 <translation id="2955913368246107853">Tanca la barra de cerca</translation>
-<translation id="2969319727213777354">Per establir una connexió segura, heu de tenir el rellotge ben configurat, ja que els certificats que els llocs web fan servir per identificar-se només són vàlids durant períodes de temps concrets. Com que el rellotge del dispositiu no està ben configurat, Google Chrome no pot verificar aquests certificats.</translation>
+<translation id="2969319727213777354">Per establir una connexió segura, heu de tenir el rellotge ben configurat, ja que els certificats que els llocs web fan servir per identificar-se només són vàlids durant períodes de temps concrets. Com que el rellotge del dispositiu no està ben configurat, Brave no pot verificar aquests certificats.</translation>
 <translation id="2972581237482394796">&amp;Refés</translation>
 <translation id="2977665033722899841">S'ha seleccionat <ph name="ROW_NAME" />. <ph name="ROW_CONTENT" /></translation>
 <translation id="2982481275546140226">Esborra les dades</translation>
-<translation id="2985306909656435243">Si s'activa aquesta opció, Chromium desa una còpia de la vostra targeta en aquest dispositiu per agilitzar l'emplenament de formularis.</translation>
+<translation id="2985306909656435243">Si s'activa aquesta opció, Brave desa una còpia de la vostra targeta en aquest dispositiu per agilitzar l'emplenament de formularis.</translation>
 <translation id="2985398929374701810">Introdueix una adreça vàlida</translation>
 <translation id="2986368408720340940">Aquest mètode de recollida no està disponible. Prova'n un altre.</translation>
 <translation id="2987034854559945715">No hi ha cap funció que coincideixi</translation>
@@ -475,12 +476,13 @@
 <translation id="3282497668470633863">Afegeix el titular de la targeta</translation>
 <translation id="3287510313208355388">Baixa quan estigui en línia</translation>
 <translation id="3293642807462928945">Més informació sobre la política <ph name="POLICY_NAME" /></translation>
+<translation id="3295439534709115864">S'ha produït una violació de les dades en un lloc web o en una aplicació que fas servir. Brave et recomana que canviïs la contrasenya del lloc web <ph name="ORIGIN" />.</translation>
 <translation id="3303855915957856445">No s'ha trobat cap resultat de la cerca</translation>
 <translation id="3320021301628644560">Afegeix una adreça de facturació</translation>
 <translation id="3324983252691184275">Carmesí</translation>
 <translation id="3338095232262050444">Segur</translation>
 <translation id="3355823806454867987">Canvia la configuració del servidor intermediari...</translation>
-<translation id="3361596688432910856">Chrome <ph name="BEGIN_EMPHASIS" />no desarà<ph name="END_EMPHASIS" /> la informació següent:
+<translation id="3361596688432910856">Brave <ph name="BEGIN_EMPHASIS" />no desarà<ph name="END_EMPHASIS" /> la informació següent:
         <ph name="BEGIN_LIST" />
           <ph name="LIST_ITEM" />El teu historial de navegació
           <ph name="LIST_ITEM" />Les galetes i les dades de llocs web
@@ -501,7 +503,7 @@
 <translation id="3422472998109090673">Actualment no es pot accedir a <ph name="HOST_NAME" />.</translation>
 <translation id="3427092606871434483">Permet (opció predeterminada)</translation>
 <translation id="3427342743765426898">&amp;Refés la modificació</translation>
-<translation id="342781501876943858">Chromium et recomana que restableixis la contrasenya si l'has fet servir en altres llocs web.</translation>
+<translation id="342781501876943858">Brave et recomana que restableixis la contrasenya si l'has fet servir en altres llocs web.</translation>
 <translation id="3431636764301398940">Desa aquesta targeta al dispositiu</translation>
 <translation id="3443726618221119081">Juuro-Ku-Kai</translation>
 <translation id="3447661539832366887">El propietari d'aquest dispositiu ha desactivat el joc de dinosaures.</translation>
@@ -513,7 +515,7 @@
 <translation id="3467763166455606212">El nom del titular de la targeta és obligatori</translation>
 <translation id="3468054117417088249"><ph name="TAB_SWITCH_SUFFIX" />, oberta actualment; prem el tabulador i després Retorn per canviar a la pestanya oberta</translation>
 <translation id="3479552764303398839">Ara no</translation>
-<translation id="3484560055331845446">Podries perdre l'accés al Compte de Google. Chrome et recomana que canviïs la contrasenya ara. Se't demanarà que iniciïs la sessió.</translation>
+<translation id="3484560055331845446">Podries perdre l'accés al Compte de Google. Brave et recomana que canviïs la contrasenya ara. Se't demanarà que iniciïs la sessió.</translation>
 <translation id="3495081129428749620">Cerca a la pàgina
     <ph name="PAGE_TITLE" /></translation>
 <translation id="3512163584740124171">Aquesta política s'ignora perquè una altra política del mateix grup de polítiques té una prioritat més alta.</translation>
@@ -524,7 +526,7 @@
 <translation id="3566021033012934673">La connexió no és privada</translation>
 <translation id="3574305903863751447"><ph name="CITY" />, <ph name="STATE" /> <ph name="COUNTRY" /></translation>
 <translation id="3576616784287504635">Una pàgina inserida a <ph name="SITE" /> diu</translation>
-<translation id="3581089476000296252">Chrome t'avisarà quan aquesta pàgina estigui preparada. &lt;a&gt;Cancel·la&lt;/a&gt;</translation>
+<translation id="3581089476000296252">Brave t'avisarà quan aquesta pàgina estigui preparada. &lt;a&gt;Cancel·la&lt;/a&gt;</translation>
 <translation id="358285529439630156">S'accepten targetes de crèdit i de prepagament.</translation>
 <translation id="3582930987043644930">Afegeix el nom</translation>
 <translation id="3583757800736429874">&amp;Refés el moviment</translation>
@@ -564,7 +566,7 @@
 <translation id="372429172604983730">Entre les aplicacions que poden provocar aquest error hi ha l'antivirus, el tallafoc i el programari de filtratge web o del servidor intermediari.</translation>
 <translation id="373042150751172459">B4 (sobre)</translation>
 <translation id="3736520371357197498">Si enteneu el risc que suposa per a la vostra seguretat, podeu <ph name="BEGIN_LINK" />visitar aquest lloc no segur<ph name="END_LINK" /> abans que no s'hagin suprimit els programes perillosos.</translation>
-<translation id="3744899669254331632">En aquest moments no podeu visitar la pàgina <ph name="SITE" /> perquè el lloc web ha enviat credencials aleatòries que Chromium no pot processar. Els atacs i els errors de xarxa acostumen a ser temporals, o sigui que probablement la pàgina funcionarà més endavant.</translation>
+<translation id="3744899669254331632">En aquest moments no podeu visitar la pàgina <ph name="SITE" /> perquè el lloc web ha enviat credencials aleatòries que Brave no pot processar. Els atacs i els errors de xarxa acostumen a ser temporals, o sigui que probablement la pàgina funcionarà més endavant.</translation>
 <translation id="3745099705178523657">Un cop confirmada, la informació de la targeta del Compte de Google es compartirà amb aquest lloc web.</translation>
 <translation id="3748148204939282805">Els atacants del lloc web <ph name="BEGIN_BOLD" /><ph name="SITE" /><ph name="END_BOLD" /> et poden enganyar perquè facis alguna acció perillosa, com ara instal·lar programari o revelar informació personal (per exemple, contrasenyes, números de telèfon o targetes de crèdit). <ph name="BEGIN_LEARN_MORE_LINK" />Més informació<ph name="END_LEARN_MORE_LINK" /></translation>
 <translation id="375403751935624634">S'ha produït un error en el procés de traducció a causa d'un error del servidor.</translation>
@@ -604,8 +606,8 @@
 <translation id="3964661563329879394">{COUNT,plural, =0{Cap}=1{D'1 lloc }other{De # llocs }}</translation>
 <translation id="397105322502079400">S’està calculant...</translation>
 <translation id="3973234410852337861"><ph name="HOST_NAME" /> està bloquejat</translation>
-<translation id="3981540111851280311"><ph name="ENROLLMENT_DOMAIN" /> ha activat la protecció contra amenaces de Chrome Enterprise al navegador. La protecció contra amenaces de Chrome Enterprise té accés a algunes de les teves dades.</translation>
-<translation id="3987405730340719549">Chrome ha determinat que aquest lloc web podria ser fals o fraudulent.
+<translation id="3981540111851280311"><ph name="ENROLLMENT_DOMAIN" /> ha activat la protecció contra amenaces de Brave Enterprise al navegador. La protecció contra amenaces de Brave Enterprise té accés a algunes de les teves dades.</translation>
+<translation id="3987405730340719549">Brave ha determinat que aquest lloc web podria ser fals o fraudulent.
 
     Si creus que aquest advertiment s'ha mostrat per error, ves a https://bugs.chromium.org/p/chromium/issues/entry?template=Safety+Tips+Appeals.</translation>
 <translation id="3987940399970879459">Menys d'1 MB</translation>
@@ -658,11 +660,11 @@
     &lt;/ol&gt;
     &lt;h4&gt;Pas 2: obriu la pàgina en mode d'incògnit (només a l'ordinador)&lt;/h4&gt;
     &lt;p&gt;Obriu la pàgina que estàveu visitant en una finestra d'incògnit.&lt;/p&gt;
-    &lt;p&gt;Si la pàgina s'obre, significa que alguna extensió de Chrome no funciona bé. Per solucionar l'error, desactiveu l'extensió.&lt;/p&gt;
+    &lt;p&gt;Si la pàgina s'obre, significa que alguna extensió de Brave no funciona bé. Per solucionar l'error, desactiveu l'extensió.&lt;/p&gt;
     &lt;h4&gt;Pas 3: actualitzeu el sistema operatiu&lt;/h4&gt;
     &lt;p&gt;Comproveu que el dispositiu estigui actualitzat.&lt;/p&gt;
     &lt;h4&gt;Pas 4: desactiveu l'antivirus temporalment&lt;/h4&gt;
-    &lt;p&gt;Aquest error es mostra si teniu un programari antivirus amb "protecció d'HTTPS" o "anàlisi d'HTTPS" que interfereix amb les funcions de seguretat de Chrome.&lt;/p&gt;
+    &lt;p&gt;Aquest error es mostra si teniu un programari antivirus amb "protecció d'HTTPS" o "anàlisi d'HTTPS" que interfereix amb les funcions de seguretat de Brave.&lt;/p&gt;
     &lt;p&gt;Per solucionar el problema, desactiveu el programari antivirus. Si la pàgina funciona en desactivar aquest programari, desactiveu-lo per consultar llocs web segurs.&lt;/p&gt;
     &lt;p&gt;Recordeu que heu de tornar a activar el programari antivirus quan hàgiu acabat.&lt;/p&gt;
     &lt;h4&gt;Pas 5: obteniu més ajuda&lt;/h4&gt;
@@ -680,7 +682,7 @@
 <translation id="4277028893293644418">Restableix la contrasenya</translation>
 <translation id="4279811152705618813"><ph name="ENROLLMENT_DOMAIN" /> gestiona el dispositiu <ph name="DEVICE_TYPE" /></translation>
 <translation id="428639260510061158">{NUM_CARDS,plural, =1{Aquesta targeta s'ha desat al Compte de Google}other{Aquestes targetes s'han desat al Compte de Google}}</translation>
-<translation id="428847186335018806">Escaneja els fitxers que baixes de Chrome o que hi penges.</translation>
+<translation id="428847186335018806">Escaneja els fitxers que baixes de Brave o que hi penges.</translation>
 <translation id="42981349822642051">Desplega</translation>
 <translation id="4300675098767811073">Encunyació múltiple a la dreta</translation>
 <translation id="4302965934281694568">Chou3 (sobre)</translation>
@@ -691,7 +693,7 @@
 <translation id="4325863107915753736">No s'ha pogut trobar l'article</translation>
 <translation id="4326324639298822553">Comprova la data de caducitat i torna-ho a provar</translation>
 <translation id="4331708818696583467">No segur</translation>
-<translation id="4340982228985273705">No ens consta que aquest ordinador estigui gestionat per una empresa. Per tant, la política només pot instal·lar automàticament extensions allotjades a Chrome Web Store. L'URL d'actualització de Chrome Web Store és <ph name="CWS_UPDATE_URL" />.</translation>
+<translation id="4340982228985273705">No ens consta que aquest ordinador estigui gestionat per una empresa. Per tant, la política només pot instal·lar automàticament extensions allotjades a Brave Web Store. L'URL d'actualització de Brave Web Store és <ph name="CWS_UPDATE_URL" />.</translation>
 <translation id="4346197816712207223">Targetes de crèdit acceptades</translation>
 <translation id="4346833872170306413">Roc-16K</translation>
 <translation id="4356973930735388585">Els atacants d'aquest lloc poden provar d'instal·lar programes perillosos a l'ordinador per robar o suprimir la teva informació (per exemple, les fotos, les contrasenyes, els missatges i les targetes de crèdit).</translation>
@@ -706,7 +708,7 @@
 <translation id="4406896451731180161">resultats de la cerca</translation>
 <translation id="4408413947728134509">Galetes <ph name="NUM_COOKIES" /></translation>
 <translation id="4415426530740016218">Adreça de recollida</translation>
-<translation id="4424024547088906515">Aquest servidor no ha pogut comprovar que sigui <ph name="DOMAIN" /> perquè Chrome considera que el seu certificat de seguretat no és de confiança. Això pot ser a causa d'una configuració incorrecta o d'un atacant que intercepta la vostra connexió.</translation>
+<translation id="4424024547088906515">Aquest servidor no ha pogut comprovar que sigui <ph name="DOMAIN" /> perquè Brave considera que el seu certificat de seguretat no és de confiança. Això pot ser a causa d'una configuració incorrecta o d'un atacant que intercepta la vostra connexió.</translation>
 <translation id="443121186588148776">Port en sèrie</translation>
 <translation id="4432688616882109544"><ph name="HOST_NAME" /> no ha acceptat el certificat d'inici de sessió o pot ser que no se n'hagi proporcionat cap.</translation>
 <translation id="4434045419905280838">Finestres emergents i redireccions</translation>
@@ -717,7 +719,7 @@
 <translation id="4477350412780666475">Pista següent</translation>
 <translation id="4482953324121162758">Aquest lloc web no es traduirà.</translation>
 <translation id="4490717597759821841">A7</translation>
-<translation id="4492519888999857993">Aquestes funcions estan desactivades de manera predeterminada. Deixaran d'estar disponibles en versions futures de Chrome.</translation>
+<translation id="4492519888999857993">Aquestes funcions estan desactivades de manera predeterminada. Deixaran d'estar disponibles en versions futures de Brave.</translation>
 <translation id="4493480324863638523">L'URL no és vàlid. Ha de tenir un esquema estàndard, com ara "http://example.com" o "https://example.com".</translation>
 <translation id="4503882053543859973">Architecture-D</translation>
 <translation id="4506176782989081258">Error de validació: <ph name="VALIDATION_ERROR" /></translation>
@@ -725,7 +727,7 @@
 <translation id="450710068430902550">Comparteix informació amb l'administrador</translation>
 <translation id="4508814173490746936">No s'ha pogut fer servir Touch ID</translation>
 <translation id="4510487217173779431">Chou4 (sobre)</translation>
-<translation id="4515275063822566619">Les targetes i les adreces s'obtenen de Chrome i del teu Compte de Google (<ph name="ACCOUNT_EMAIL" />). Pots gestionar-les des de <ph name="BEGIN_LINK" />Configuració<ph name="END_LINK" />.</translation>
+<translation id="4515275063822566619">Les targetes i les adreces s'obtenen de Brave i del teu Compte de Google (<ph name="ACCOUNT_EMAIL" />). Pots gestionar-les des de <ph name="BEGIN_LINK" />Configuració<ph name="END_LINK" />.</translation>
 <translation id="4517607026994743406">Comm-10 (sobre)</translation>
 <translation id="4522570452068850558">Detalls</translation>
 <translation id="4524805452350978254">Gestiona les targetes</translation>
@@ -736,7 +738,7 @@
 <translation id="457875822857220463">Entrega</translation>
 <translation id="4579056131138995126">Personal (sobre)</translation>
 <translation id="4582204425268416675">Suprimeix la targeta</translation>
-<translation id="4587425331216688090">Voleu suprimir l'adreça de Chrome?</translation>
+<translation id="4587425331216688090">Voleu suprimir l'adreça de Brave?</translation>
 <translation id="4592951414987517459">La connexió a <ph name="DOMAIN" /> s'ha encriptat amb un sistema de xifratge modern.</translation>
 <translation id="4594403342090139922">&amp;Desfés la supressió</translation>
 <translation id="4597348597567598915">Mida 8</translation>
@@ -757,7 +759,7 @@
 <translation id="4726672564094551039">Torna a carregar les polítiques</translation>
 <translation id="4728558894243024398">Plataforma</translation>
 <translation id="4731967714531604179">Prc2 (sobre)</translation>
-<translation id="4736825316280949806">Reinicia Chromium</translation>
+<translation id="4736825316280949806">Reinicia Brave</translation>
 <translation id="473775607612524610">Actualitza</translation>
 <translation id="4738601419177586157">Suggeriment de cerca de <ph name="TEXT" /></translation>
 <translation id="4742407542027196863">Gestiona les contrasenyes…</translation>
@@ -776,7 +778,7 @@
 <translation id="4800132727771399293">Comproveu la data de caducitat i el CVC i torneu-ho a provar</translation>
 <translation id="480334179571489655">Error de la política d'origen</translation>
 <translation id="4803924862070940586"><ph name="FORMATTED_TOTAL_AMOUNT" /> <ph name="CURRENCY_CODE" /></translation>
-<translation id="4807049035289105102">En aquest moment no podeu visitar <ph name="SITE" /> perquè el lloc web ha enviat credencials aleatòries que Google Chrome no pot processar. Els errors i els atacs de xarxa solen ser temporals, de manera que és probable que aquesta pàgina torni a funcionar més tard.</translation>
+<translation id="4807049035289105102">En aquest moment no podeu visitar <ph name="SITE" /> perquè el lloc web ha enviat credencials aleatòries que Brave no pot processar. Els errors i els atacs de xarxa solen ser temporals, de manera que és probable que aquesta pàgina torni a funcionar més tard.</translation>
 <translation id="4813512666221746211">Error de la xarxa</translation>
 <translation id="4816492930507672669">Ajusta a la mida de la pàgina</translation>
 <translation id="4850886885716139402">Mostra</translation>
@@ -809,7 +811,7 @@
 <translation id="4989542687859782284">No disponibles</translation>
 <translation id="4989809363548539747">Aquest connector no és compatible</translation>
 <translation id="4995216769782533993">Confirma el codi de seguretat per compartir els detalls de la targeta amb aquest lloc web</translation>
-<translation id="5002932099480077015">Si s'activa, Chrome emmagatzemarà una còpia de la targeta en aquest dispositiu per agilitzar l'emplenament de formularis.</translation>
+<translation id="5002932099480077015">Si s'activa, Brave emmagatzemarà una còpia de la targeta en aquest dispositiu per agilitzar l'emplenament de formularis.</translation>
 <translation id="5015510746216210676">Nom de l'ordinador:</translation>
 <translation id="5017554619425969104">Text que has copiat</translation>
 <translation id="5018422839182700155">No es pot obrir aquesta pàgina</translation>
@@ -832,7 +834,7 @@
 <translation id="5087580092889165836">Afegeix una targeta</translation>
 <translation id="5089810972385038852">Estat</translation>
 <translation id="5093232627742069661">Plegat en Z</translation>
-<translation id="5094747076828555589">Aquest servidor no ha pogut comprovar que sigui <ph name="DOMAIN" /> perquè Chromium considera que el seu certificat de seguretat no és de confiança. Això pot ser a causa d'una configuració incorrecta o d'un atacant que intercepta la vostra connexió.</translation>
+<translation id="5094747076828555589">Aquest servidor no ha pogut comprovar que sigui <ph name="DOMAIN" /> perquè Brave considera que el seu certificat de seguretat no és de confiança. Això pot ser a causa d'una configuració incorrecta o d'un atacant que intercepta la vostra connexió.</translation>
 <translation id="5095208057601539847">Província</translation>
 <translation id="5097099694988056070">Estadístiques del dispositiu, com ara l'ús de CPU o RAM</translation>
 <translation id="5097501891273180634">A2</translation>
@@ -849,7 +851,7 @@
 <translation id="5158275234811857234">Portada</translation>
 <translation id="5159010409087891077">Obre la pàgina en una finestra d'incògnit nova (⇧⌘N)</translation>
 <translation id="516920405563544094">Introdueix el CVC de la targeta <ph name="CREDIT_CARD" />. Un cop confirmada, la informació de la targeta del Compte de Google es compartirà amb aquest lloc web.</translation>
-<translation id="5169827969064885044">Podries perdre l'accés al compte de la teva organització o ser víctima d'un robatori d'identitat. Chrome et recomana que canviïs la contrasenya ara.</translation>
+<translation id="5169827969064885044">Podries perdre l'accés al compte de la teva organització o ser víctima d'un robatori d'identitat. Brave et recomana que canviïs la contrasenya ara.</translation>
 <translation id="5171045022955879922">Cerqueu o escriviu l'URL</translation>
 <translation id="5171689220826475070">Fanfold-European</translation>
 <translation id="5172758083709347301">Automàtica</translation>
@@ -880,7 +882,6 @@
 <translation id="5287240709317226393">Mostra les galetes</translation>
 <translation id="5287456746628258573">Aquest lloc web utilitza una configuració de seguretat obsoleta i, per tant, la informació que hi enviïs podria quedar exposada (per exemple, les contrasenyes o els números de les targetes de crèdit).</translation>
 <translation id="5288108484102287882">La validació dels valors de la política ha generat advertiments</translation>
-<translation id="5295292838686006428">La teva contrasenya ha quedat exposada a causa de la violació de les dades en un lloc web o una aplicació. Chrome et recomana que comprovis les contrasenyes desades ara.</translation>
 <translation id="5299298092464848405">S'ha produït un error en analitzar la política</translation>
 <translation id="5300589172476337783">Mostra</translation>
 <translation id="5308380583665731573">Connecta</translation>
@@ -930,7 +931,6 @@
 <translation id="5540224163453853">No s'ha pogut trobar l'article sol·licitat.</translation>
 <translation id="5541546772353173584">Afegeix un correu electrònic</translation>
 <translation id="5545756402275714221">Articles que et poden interessar</translation>
-<translation id="5552137475244467770">Chrome contrasta periòdicament les teves contrasenyes amb les d'una sèrie de llistes publicades en línia. Quan ho fa, les teves contrasenyes i els teus noms d'usuari s'encripten i, per tant, ningú no els pot llegir (ni tan sols Google).</translation>
 <translation id="5556459405103347317">Torna a carregar</translation>
 <translation id="5560088892362098740">Data de caducitat</translation>
 <translation id="5565735124758917034">Actiu</translation>
@@ -943,7 +943,7 @@
 <translation id="560412284261940334">Gestió no compatible</translation>
 <translation id="5605670050355397069">Ledger</translation>
 <translation id="5607240918979444548">Architecture-C</translation>
-<translation id="5608165884683734521">Aquest lloc web podria ser fals o fraudulent. Chrome recomana que en surtis ara.</translation>
+<translation id="5608165884683734521">Aquest lloc web podria ser fals o fraudulent. Brave recomana que en surtis ara.</translation>
 <translation id="5610142619324316209">Comproveu la connexió</translation>
 <translation id="5610807607761827392">Pots gestionar les targetes i les adreces a <ph name="BEGIN_LINK" />Configuració<ph name="END_LINK" />.</translation>
 <translation id="5617949217645503996"><ph name="HOST_NAME" /> us ha redirigit massa vegades.</translation>
@@ -966,7 +966,7 @@
 <translation id="5719499550583120431">S'accepten targetes de prepagament.</translation>
 <translation id="5720705177508910913">Usuari actual</translation>
 <translation id="5728056243719941842">C5 (sobre)</translation>
-<translation id="5730040223043577876">Chrome et recomana que restableixis la contrasenya si l'has fet servir en altres llocs web.</translation>
+<translation id="5730040223043577876">Brave et recomana que restableixis la contrasenya si l'has fet servir en altres llocs web.</translation>
 <translation id="5737183892635480227">{NUM_CARDS,plural, =1{Desa la targeta al Compte de Google}other{Desa targetes al Compte de Google}}</translation>
 <translation id="5763042198335101085">Introdueix una adreça electrònica vàlida</translation>
 <translation id="5765072501007116331">Per veure els mètodes i els requisits d'entrega, selecciona una adreça</translation>
@@ -978,7 +978,7 @@
 <translation id="5785756445106461925">A més, aquesta pàgina conté altres recursos que no són segurs. La resta d'usuaris poden visualitzar-los mentre estan en trànsit, i algun atacant podria modificar-los per canviar l'aparença de la pàgina.</translation>
 <translation id="5786044859038896871">Vols emplenar la informació de la teva targeta?</translation>
 <translation id="5798290721819630480">Vols descartar els canvis?</translation>
-<translation id="5798683403665926540">Canvia la pàgina d'inici a la configuració de Chrome</translation>
+<translation id="5798683403665926540">Canvia la pàgina d'inici a la configuració de Brave</translation>
 <translation id="5803412860119678065">Vols emplenar la informació de la teva targeta <ph name="CARD_DETAIL" />?</translation>
 <translation id="5804241973901381774">Permisos</translation>
 <translation id="5810442152076338065">La connexió a <ph name="DOMAIN" /> s'ha encriptat amb un sistema de xifratge obsolet.</translation>
@@ -1021,7 +1021,6 @@
 <translation id="5992691462791905444">Plegat en Z per a enginyeria</translation>
 <translation id="6000758707621254961"><ph name="RESULT_COUNT" /> resultats per a "<ph name="SEARCH_TEXT" />"</translation>
 <translation id="6008256403891681546">JCB</translation>
-<translation id="6014801569448771146">Comprova les contrasenyes</translation>
 <translation id="6015796118275082299">Any</translation>
 <translation id="6016158022840135739">{COUNT,plural, =1{Pàgina 1}other{Pàgina #}}</translation>
 <translation id="6017514345406065928">Verd</translation>
@@ -1058,7 +1057,7 @@
 <translation id="6169916984152623906">Ara pots navegar de manera privada i les altres persones que utilitzin aquest dispositiu no veuran la teva activitat. Tanmateix, les baixades i les adreces d'interès sí que es desaran.</translation>
 <translation id="6177128806592000436">La connexió amb aquest lloc web no és segura</translation>
 <translation id="6203231073485539293">Comprovació de la connexió a Internet</translation>
-<translation id="6218753634732582820">Voleu suprimir l'adreça de Chromium?</translation>
+<translation id="6218753634732582820">Voleu suprimir l'adreça de Brave?</translation>
 <translation id="622039917539443112">Plegat en paral·lel</translation>
 <translation id="6221345481584921695">Navegació segura de Google ha <ph name="BEGIN_LINK" />detectat programari maliciós<ph name="END_LINK" /> recentment a <ph name="SITE" />. De vegades, els llocs web que acostumen a ser segurs s'infecten amb programari maliciós. El contingut maliciós prové de l'amfitrió <ph name="SUBRESOURCE_HOST" />, un distribuïdor conegut de programari maliciós.</translation>
 <translation id="6234122620015464377">Retalla després de cada document</translation>
@@ -1075,7 +1074,7 @@
 <translation id="6280223929691119688">No es pot entregar a aquesta adreça. Selecciona'n una altra.</translation>
 <translation id="6282194474023008486">Codi postal</translation>
 <translation id="6290238015253830360">Els articles suggerits es mostren aquí</translation>
-<translation id="6302269476990306341">S'està aturant l'Assistent de Google a Chrome</translation>
+<translation id="6302269476990306341">S'està aturant l'Assistent de Google a Brave</translation>
 <translation id="6305205051461490394">No es pot accedir a <ph name="URL" />.</translation>
 <translation id="6321917430147971392">Reviseu la configuració de DNS</translation>
 <translation id="6322182122604171028">No s'ha pogut fer servir Windows Hello</translation>
@@ -1099,15 +1098,15 @@
 <translation id="6401136357288658127">Aquesta política es considera obsoleta. Hauries de fer servir la política <ph name="NEW_POLICY" />.</translation>
 <translation id="6404511346730675251">Edita l'adreça d'interès</translation>
 <translation id="6406765186087300643">C0 (sobre)</translation>
-<translation id="6409754798200046165">Acabes d'introduir la contrasenya en un lloc web enganyós. Chrome et recomana que canviïs la contrasenya ara.</translation>
+<translation id="6409754798200046165">Acabes d'introduir la contrasenya en un lloc web enganyós. Brave et recomana que canviïs la contrasenya ara.</translation>
 <translation id="6410264514553301377">Introdueix la data de caducitat i el CVC de la targeta <ph name="CREDIT_CARD" /></translation>
-<translation id="6415778972515849510">Chromium et pot ajudar a protegir el Compte de Google i a canviar la contrasenya.</translation>
+<translation id="6415778972515849510">Brave et pot ajudar a protegir el Compte de Google i a canviar la contrasenya.</translation>
 <translation id="6427730057873428458">Plegat en finestra</translation>
 <translation id="6431585503458005759">No emmagatzemis</translation>
 <translation id="6433490469411711332">Edita la informació de contacte</translation>
 <translation id="6433595998831338502"><ph name="HOST_NAME" /> no ens ha permès establir la connexió.</translation>
 <translation id="6434309073475700221">Descarta</translation>
-<translation id="6435221585574090192">Comparteix amb el teu administrador les dades sobre esdeveniments de seguretat que marqui la Protecció contra amenaces de Chrome Enterprise. Per exemple, URL de pàgines, noms i metadades de fitxers, el nom d'usuari del dispositiu i el nom d'usuari de Chrome.</translation>
+<translation id="6435221585574090192">Comparteix amb el teu administrador les dades sobre esdeveniments de seguretat que marqui la Protecció contra amenaces de Brave Enterprise. Per exemple, URL de pàgines, noms i metadades de fitxers, el nom d'usuari del dispositiu i el nom d'usuari de Brave.</translation>
 <translation id="6440503408713884761">Ignorada</translation>
 <translation id="6446163441502663861">Kahu (sobre)</translation>
 <translation id="6446608382365791566">Afegeix més informació</translation>
@@ -1121,7 +1120,7 @@
 <translation id="6499038740797743453">Vols restablir la contrasenya?</translation>
 <translation id="6507833130742554667">S'accepten targetes de crèdit i de dèbit.</translation>
 <translation id="650855688985305916">Sí, desa</translation>
-<translation id="6508722015517270189">Reinicia Chrome</translation>
+<translation id="6508722015517270189">Reinicia Brave</translation>
 <translation id="6517596291481585650">Advertiment: aquesta política no s'ha combinat com a llista segons el que s'especifica a la política perquè no és una llista.</translation>
 <translation id="6518133107902771759">Verifica</translation>
 <translation id="6521745193039995384">No activa</translation>
@@ -1153,11 +1152,11 @@
 <translation id="6657585470893396449">Contrasenya</translation>
 <translation id="6665553082534466207">Encunyació triple a la dreta</translation>
 <translation id="6670613747977017428">Torna a una pàgina segura.</translation>
-<translation id="6671697161687535275">Voleu suprimir el suggeriment de formulari de Chromium?</translation>
+<translation id="6671697161687535275">Voleu suprimir el suggeriment de formulari de Brave?</translation>
 <translation id="6685834062052613830">Tanqueu la sessió i completeu la configuració</translation>
-<translation id="6689271823431384964">Chrome t'està oferint desar les targetes al Compte de Google perquè tens la sessió iniciada. Pots canviar aquest comportament a la configuració. El nom del titular de la targeta s'obté del teu compte.</translation>
+<translation id="6689271823431384964">Brave t'està oferint desar les targetes al Compte de Google perquè tens la sessió iniciada. Pots canviar aquest comportament a la configuració. El nom del titular de la targeta s'obté del teu compte.</translation>
 <translation id="6704582573942289642">El lloc web és correcte?</translation>
-<translation id="6707256370811247129">Comprova el contingut de la memòria cau i els fitxers que baixis de Chrome o que hi pengis.</translation>
+<translation id="6707256370811247129">Comprova el contingut de la memòria cau i els fitxers que baixis de Brave o que hi pengis.</translation>
 <translation id="6710213216561001401">Anterior</translation>
 <translation id="6710594484020273272">&lt;Escriviu el terme de cerca&gt;</translation>
 <translation id="671076103358959139">Testimoni d'inscripció:</translation>
@@ -1288,7 +1287,7 @@ Detalls addicionals:
     &lt;li&gt;A &lt;strong&gt;Tipus d'inici&lt;/strong&gt;, seleccioneu &lt;strong&gt;Inhabilitat&lt;/strong&gt;.
     &lt;li&gt;A &lt;strong&gt;Estat del servei&lt;/strong&gt;, feu clic a &lt;strong&gt;Atura&lt;/strong&gt;.
     &lt;li&gt;Feu clic a &lt;strong&gt;Aplica&lt;/strong&gt; i, a continuació, a &lt;strong&gt;D'acord&lt;/strong&gt;.
-    &lt;li&gt;Visiteu el &lt;a href="https://support.google.com/chrome/answer/6098869"&gt;Centre d'ajuda de Chrome&lt;/a&gt; per obtenir informació sobre com podeu suprimir permanentment el programari de l'ordinador.
+    &lt;li&gt;Visiteu el &lt;a href="https://support.google.com/chrome/answer/6098869"&gt;Centre d'ajuda de Brave&lt;/a&gt; per obtenir informació sobre com podeu suprimir permanentment el programari de l'ordinador.
     &lt;/ol&gt;</translation>
 <translation id="741007362987735528">Wide-Format</translation>
 <translation id="7416351320495623771">Gestiona les contrasenyes…</translation>
@@ -1305,7 +1304,6 @@ Detalls addicionals:
 <translation id="7481312909269577407">Endavant</translation>
 <translation id="748406663033922918">Fes servir el bloqueig de pantalla per verificar les formes de pagament desades.</translation>
 <translation id="7485870689360869515">No s'han trobat dades.</translation>
-<translation id="7495290002932347110">La teva contrasenya ha quedat exposada a causa de la violació de les dades en un lloc web o una aplicació. Chrome et recomana que comprovis les contrasenyes desades i que canviïs la contrasenya per a <ph name="ORIGIN" /> ara.</translation>
 <translation id="7498234416455752244">Continua editant</translation>
 <translation id="7508255263130623398">L'identificador de dispositiu de la política que s'ha tornat és buit o no coincideix amb l'actual</translation>
 <translation id="7508870219247277067">Verd alvocat</translation>
@@ -1322,12 +1320,12 @@ Detalls addicionals:
 <translation id="7542995811387359312">L'emplenament automàtic de targetes de crèdit està desactivat perquè el formulari no utilitza una connexió segura.</translation>
 <translation id="7548892272833184391">Solucionar errors de connexió</translation>
 <translation id="7549584377607005141">Aquesta pàgina web necessita dades que heu introduït anteiorment per poder mostrar-la correctament. Podeu tornar a enviar les dades, però es tornarà a repetir qualsevol acció que la pàgina hagi dut a terme prèviament.</translation>
-<translation id="7550637293666041147">El nom d'usuari del dispositiu i el nom d'usuari de Chrome</translation>
+<translation id="7550637293666041147">El nom d'usuari del dispositiu i el nom d'usuari de Brave</translation>
 <translation id="7552846755917812628">Prova els consells següents:</translation>
 <translation id="7554791636758816595">Pestanya nova</translation>
-<translation id="7564049878696755256">Podries perdre l'accés al compte de <ph name="ORG_NAME" /> o tenir problemes de suplantació d'identitat. Chrome et recomana que canviïs la contrasenya ara.</translation>
+<translation id="7564049878696755256">Podries perdre l'accés al compte de <ph name="ORG_NAME" /> o tenir problemes de suplantació d'identitat. Brave et recomana que canviïs la contrasenya ara.</translation>
 <translation id="7567204685887185387">Aquest servidor no ha pogut comprovar que sigui <ph name="DOMAIN" /> perquè és possible que el seu certificat de seguretat s'hagi emès de manera fraudulenta. Això pot ser a causa d'una configuració incorrecta o d'un atacant que intercepta la vostra connexió.</translation>
-<translation id="7569952961197462199">Voleu suprimir la targeta de crèdit de Chrome?</translation>
+<translation id="7569952961197462199">Voleu suprimir la targeta de crèdit de Brave?</translation>
 <translation id="7569983096843329377">Negre</translation>
 <translation id="7578104083680115302">Agilitzeu els pagaments en llocs i en aplicacions des de qualsevol dispositiu mitjançant les targetes que hàgiu desat a Google.</translation>
 <translation id="7592362899630581445">El certificat del servidor incompleix les restriccions de nom.</translation>
@@ -1337,9 +1335,9 @@ Detalls addicionals:
 <translation id="7610193165460212391">El valor es troba fora de l'interval <ph name="VALUE" /> .</translation>
 <translation id="7613889955535752492">Data de caducitat: <ph name="EXPIRATION_MONTH" />/<ph name="EXPIRATION_YEAR" /></translation>
 <translation id="7615602087246926389">Ja teniu dades encriptades amb una versió diferent de la contrasenya del vostre compte de Google. Introduïu-la a continuació.</translation>
-<translation id="7625784245512586808">Protecció contra amenaces de Chrome Enterprise</translation>
+<translation id="7625784245512586808">Protecció contra amenaces de Brave Enterprise</translation>
 <translation id="7633909222644580952">Dades de rendiment i informes d'errors</translation>
-<translation id="7637571805876720304">Voleu suprimir la targeta de crèdit de Chromium?</translation>
+<translation id="7637571805876720304">Voleu suprimir la targeta de crèdit de Brave?</translation>
 <translation id="7638605456503525968">Ports en sèrie</translation>
 <translation id="7639968568612851608">Gris fosc</translation>
 <translation id="765676359832457558">Amaga la configuració avançada...</translation>
@@ -1378,9 +1376,9 @@ Detalls addicionals:
 <translation id="7802523362929240268">El lloc web és legítim</translation>
 <translation id="780301667611848630">No, gràcies</translation>
 <translation id="7805768142964895445">Estat</translation>
-<translation id="7806344367022510803">Canvia la configuració del motor de cerca a Chrome</translation>
+<translation id="7806344367022510803">Canvia la configuració del motor de cerca a Brave</translation>
 <translation id="7812922009395017822">Mir</translation>
-<translation id="7813600968533626083">Voleu suprimir el suggeriment de formulari de Chrome?</translation>
+<translation id="7813600968533626083">Voleu suprimir el suggeriment de formulari de Brave?</translation>
 <translation id="7815407501681723534">S'han trobat <ph name="NUMBER_OF_RESULTS" /> <ph name="SEARCH_RESULTS" /> per a "<ph name="SEARCH_STRING" />"</translation>
 <translation id="782886543891417279">És possible que la xarxa Wi-Fi (<ph name="WIFI_NAME" />) que esteu fent servir requereixi que visiteu la seva pàgina d'inici de sessió.</translation>
 <translation id="7836231406687464395">Postfix (sobre)</translation>
@@ -1447,7 +1445,7 @@ Detalls addicionals:
 <translation id="8150722005171944719">El fitxer de <ph name="URL" /> no es pot llegir. Pot ser que s'hagi eliminat, que s'hagi traslladat o que els permisos del fitxer n'impedeixin l'accés.</translation>
 <translation id="8157295877370077682">Surt del lloc web</translation>
 <translation id="8163866351304776260">Encunyació quàdruple a l'esquerra</translation>
-<translation id="8175796834047840627">Chrome t'està oferint desar les targetes al Compte de Google perquè tens la sessió iniciada. Pots canviar aquest comportament a la configuració.</translation>
+<translation id="8175796834047840627">Brave t'està oferint desar les targetes al Compte de Google perquè tens la sessió iniciada. Pots canviar aquest comportament a la configuració.</translation>
 <translation id="8184538546369750125">Utilitza l'opció predeterminada global (Permet)</translation>
 <translation id="8194797478851900357">&amp;Desfés el moviment</translation>
 <translation id="8197543752516192074">Tradueix la pàgina</translation>
@@ -1481,7 +1479,7 @@ Detalls addicionals:
 <translation id="830498451218851433">Plegat per la meitat</translation>
 <translation id="8307358339886459768">Small-Photo</translation>
 <translation id="8308427013383895095">No s'ha pogut executar la traducció a causa d'un problema amb la connexió de xarxa.</translation>
-<translation id="831207732689920588">Aquesta pàgina és sospitosa (marcada per Chrome).</translation>
+<translation id="831207732689920588">Aquesta pàgina és sospitosa (marcada per Brave).</translation>
 <translation id="8332188693563227489">S'ha rebutjat l'accés a <ph name="HOST_NAME" /></translation>
 <translation id="8340095855084055290"><ph name="EXPIRATION_MONTH" />/<ph name="EXPIRATION_YEAR" /></translation>
 <translation id="834457929814110454">Si enteneu el risc que suposa per a la vostra seguretat, podeu <ph name="BEGIN_LINK" />visitar aquest lloc<ph name="END_LINK" /> abans que no s'hagin suprimit els programes perjudicials.</translation>
@@ -1509,19 +1507,19 @@ Detalls addicionals:
 <translation id="8466379296835108687">{COUNT,plural, =1{1 targeta de crèdit}other{# targetes de crèdit}}</translation>
 <translation id="8473863474539038330">Adreces i més</translation>
 <translation id="8479754468255770962">Grapat a la part inferior esquerra</translation>
-<translation id="8483780878231876732">Per poder utilitzar targetes del teu compte de Google, inicia la sessió a Chrome</translation>
+<translation id="8483780878231876732">Per poder utilitzar targetes del teu compte de Google, inicia la sessió a Brave</translation>
 <translation id="8488350697529856933">Objectiu d'aplicació</translation>
 <translation id="8498891568109133222"><ph name="HOST_NAME" /> ha tardat massa a respondre.</translation>
-<translation id="8503559462189395349">Contrasenyes de Chrome</translation>
+<translation id="8503559462189395349">Contrasenyes de Brave</translation>
 <translation id="8503813439785031346">Nom d'usuari</translation>
 <translation id="8508648098325802031">Icona de la cerca</translation>
-<translation id="8522552481199248698">Chrome et pot ajudar a protegir el Compte de Google i a canviar la contrasenya.</translation>
+<translation id="8522552481199248698">Brave et pot ajudar a protegir el Compte de Google i a canviar la contrasenya.</translation>
 <translation id="8542014550340843547">Grapat triple a la part inferior</translation>
 <translation id="8543181531796978784">Podeu <ph name="BEGIN_ERROR_LINK" />informar d'un problema de detecció<ph name="END_ERROR_LINK" /> o, si enteneu els riscos que això comporta per a la vostra seguretat, <ph name="BEGIN_LINK" />visiteu aquest lloc no segur<ph name="END_LINK" />.</translation>
 <translation id="8553075262323480129">S'ha produït un error en fer la traducció perquè no s'ha pogut determinar l'idioma de la pàgina.</translation>
 <translation id="8557066899867184262">El CVC es troba a la part posterior de la targeta.</translation>
 <translation id="8559762987265718583">No es pot establir una connexió privada amb <ph name="BEGIN_BOLD" /><ph name="DOMAIN" /><ph name="END_BOLD" /> perquè la data i l'hora (<ph name="DATE_AND_TIME" />) del dispositiu són incorrectes.</translation>
-<translation id="8564985650692024650">Chromium et recomana que restableixis la contrasenya per a <ph name="BEGIN_BOLD" /><ph name="ORG_NAME" /><ph name="END_BOLD" /> si l'has fet servir en altres llocs web.</translation>
+<translation id="8564985650692024650">Brave et recomana que restableixis la contrasenya per a <ph name="BEGIN_BOLD" /><ph name="ORG_NAME" /><ph name="END_BOLD" /> si l'has fet servir en altres llocs web.</translation>
 <translation id="8571890674111243710">S'està traduint la pàgina a l'idioma <ph name="LANGUAGE" />...</translation>
 <translation id="858637041960032120">Afegeix un número de telèfon</translation>
 <translation id="860043288473659153">Nom del titular de la targeta</translation>
@@ -1541,7 +1539,7 @@ Detalls addicionals:
 <translation id="8725066075913043281">Torna-ho a provar</translation>
 <translation id="8728672262656704056">Has passat al mode d'incògnit</translation>
 <translation id="8730621377337864115">Fet</translation>
-<translation id="8738058698779197622">Per establir una connexió segura, el rellotge ha d'estar ben ajustat, perquè els certificats que els llocs web fan servir per identificar-se només són vàlids per a períodes de temps concrets. Com que el rellotge del dispositiu no està ben ajustat, Chromium no pot verificar aquests certificats.</translation>
+<translation id="8738058698779197622">Per establir una connexió segura, el rellotge ha d'estar ben ajustat, perquè els certificats que els llocs web fan servir per identificar-se només són vàlids per a períodes de temps concrets. Com que el rellotge del dispositiu no està ben ajustat, Brave no pot verificar aquests certificats.</translation>
 <translation id="8740359287975076522">No s'ha trobat l'&lt;abbr id="dnsDefinition"&gt;adreça DNS&lt;/abbr&gt; de <ph name="HOST_NAME" />. S'està diagnosticant el problema.</translation>
 <translation id="874846938927089722">Targetes de crèdit i de prepagament acceptades</translation>
 <translation id="874918643257405732">Afegeix aquesta pestanya a les adreces d'interès</translation>
@@ -1552,7 +1550,7 @@ Detalls addicionals:
 <translation id="8768895707659403558">Per utilitzar les targetes en tots els dispositius, <ph name="SIGN_IN_LINK" />.</translation>
 <translation id="877985182522063539">A4</translation>
 <translation id="8790007591277257123">&amp;Refés la supressió</translation>
-<translation id="8792621596287649091">Podries perdre l'accés al compte de <ph name="ORG_NAME" /> o tenir problemes de suplantació d'identitat. Chromium et recomana que canviïs la contrasenya ara.</translation>
+<translation id="8792621596287649091">Podries perdre l'accés al compte de <ph name="ORG_NAME" /> o tenir problemes de suplantació d'identitat. Brave et recomana que canviïs la contrasenya ara.</translation>
 <translation id="8800988563907321413">Els suggeriments més propers es mostren aquí</translation>
 <translation id="8805819170075074995">Entrada "<ph name="LANGUAGE_ID" />" de la llista: l'entrada s'ha ignorat perquè també s'inclou a la política SpellcheckLanguage.</translation>
 <translation id="8807160976559152894">Retalla després de cada pàgina</translation>
@@ -1561,7 +1559,7 @@ Detalls addicionals:
 <translation id="884264119367021077">Adreça d’enviament</translation>
 <translation id="884923133447025588">No s'ha trobat cap mecanisme de revocació.</translation>
 <translation id="885730110891505394">Comparteix informació amb Google</translation>
-<translation id="8858065207712248076">Chrome et recomana que restableixis la contrasenya per a <ph name="BEGIN_BOLD" /><ph name="ORG_NAME" /><ph name="END_BOLD" /> si l'has fet servir en altres llocs web.</translation>
+<translation id="8858065207712248076">Brave et recomana que restableixis la contrasenya per a <ph name="BEGIN_BOLD" /><ph name="ORG_NAME" /><ph name="END_BOLD" /> si l'has fet servir en altres llocs web.</translation>
 <translation id="8866481888320382733">S'ha produït un error en analitzar la configuració de la política</translation>
 <translation id="8866928039507595380">Plegat</translation>
 <translation id="886872106311861689">B3</translation>
@@ -1610,13 +1608,13 @@ Detalls addicionals:
 <translation id="9065203028668620118">Edita</translation>
 <translation id="9065745800631924235">Cerca de <ph name="TEXT" /> des de l'historial</translation>
 <translation id="9069693763241529744">Bloquejat per una extensió</translation>
-<translation id="9076630408993835509">Cap empresa ni cap altra organització supervisa aquest navegador. És possible que l'activitat d'aquest dispositiu es gestioni fora de Chrome. <ph name="BEGIN_LINK" />Més informació<ph name="END_LINK" /></translation>
+<translation id="9076630408993835509">Cap empresa ni cap altra organització supervisa aquest navegador. És possible que l'activitat d'aquest dispositiu es gestioni fora de Brave. <ph name="BEGIN_LINK" />Més informació<ph name="END_LINK" /></translation>
 <translation id="9078964945751709336">Necessitem més informació</translation>
 <translation id="9080712759204168376">Resum de la comanda</translation>
 <translation id="9089260154716455634">Política fora de l'horari:</translation>
 <translation id="9095388113577226029">Més idiomes...</translation>
-<translation id="9098981495403789647">L'administrador ha activat la protecció contra amenaces de Chrome Enterprise al navegador. La protecció contra amenaces de Chrome Enterprise té accés a algunes de les teves dades.</translation>
-<translation id="9103872766612412690"><ph name="SITE" /> utilitza normalment l'encriptació per protegir la vostra informació. En aquesta ocasió, quan Chromium ha provat de connectar-se a <ph name="SITE" />, el lloc web ha enviat credencials poc comunes i incorrectes. Pot ser que un atacant estigui provant de fer-se passar per <ph name="SITE" /> o que una pantalla d'inici de sessió a la xarxa Wi-Fi hagi interromput la connexió. En qualsevol cas, la vostra informació continua estant segura, perquè Chromium ha aturat la connexió abans no s'intercanviés cap dada.</translation>
+<translation id="9098981495403789647">L'administrador ha activat la protecció contra amenaces de Brave Enterprise al navegador. La protecció contra amenaces de Brave Enterprise té accés a algunes de les teves dades.</translation>
+<translation id="9103872766612412690"><ph name="SITE" /> utilitza normalment l'encriptació per protegir la vostra informació. En aquesta ocasió, quan Brave ha provat de connectar-se a <ph name="SITE" />, el lloc web ha enviat credencials poc comunes i incorrectes. Pot ser que un atacant estigui provant de fer-se passar per <ph name="SITE" /> o que una pantalla d'inici de sessió a la xarxa Wi-Fi hagi interromput la connexió. En qualsevol cas, la vostra informació continua estant segura, perquè Brave ha aturat la connexió abans no s'intercanviés cap dada.</translation>
 <translation id="9106062320799175032">Afegeix una adreça de facturació</translation>
 <translation id="9114524666733003316">S'està confirmant la targeta...</translation>
 <translation id="9128870381267983090">Connecta't a la xarxa</translation>
@@ -1638,12 +1636,12 @@ Detalls addicionals:
 <translation id="9191834167571392248">Encunyació a la part inferior esquerra</translation>
 <translation id="9205078245616868884">Les vostres dades estan encriptades amb la vostra frase de contrasenya de sincronització. Introduïu-la per començar la sincronització.</translation>
 <translation id="9207861905230894330">No s'ha pogut afegir l'article.</translation>
-<translation id="9215416866750762878">Una aplicació impedeix que Chrome es connecti de manera segura a aquest lloc web</translation>
+<translation id="9215416866750762878">Una aplicació impedeix que Brave es connecti de manera segura a aquest lloc web</translation>
 <translation id="9219103736887031265">Imatges</translation>
 <translation id="933712198907837967">Diners Club</translation>
 <translation id="935608979562296692">ESBORRA EL FORMULARI</translation>
 <translation id="936474030629450166">Super-B</translation>
-<translation id="936602727769022409">Podries perdre l'accés al Compte de Google. Chromium et recomana que canviïs la contrasenya ara. Se't demanarà que iniciïs la sessió.</translation>
+<translation id="936602727769022409">Podries perdre l'accés al Compte de Google. Brave et recomana que canviïs la contrasenya ara. Se't demanarà que iniciïs la sessió.</translation>
 <translation id="939736085109172342">Carpeta nova</translation>
 <translation id="945855313015696284">Consulta la informació següent i suprimeix les targetes que no siguin vàlides</translation>
 <translation id="950736567201356821">Encunyació triple a la part superior</translation>
@@ -1667,5 +1665,5 @@ Detalls addicionals:
     &lt;li&gt;Prova de connectar-te a una altra xarxa&lt;/li&gt;
     &lt;/ul&gt;</translation>
 <translation id="997986563973421916">De Google Pay</translation>
-<translation id="998893882640184078">Obre una finestra d'incògnit de Chrome nova</translation>
+<translation id="998893882640184078">Obre una finestra d'incògnit de Brave nova</translation>
 </translationbundle>
