@@ -1490,7 +1490,7 @@ Zpráva serveru: <ph name="SERVER_MSG" /></translation>
 
     Popis:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Aplikace Brave</translation>
+<translation id="300669147395456190">Aplikace Brave</translation>
 <translation id="3150927491400159470">Úplné opětovné načtení</translation>
 <translation id="315116470104423982">Mobilní datové přenosy</translation>
 <translation id="3151539355209957474">Čas zahájení</translation>
@@ -1570,7 +1570,7 @@ Zpráva serveru: <ph name="SERVER_MSG" /></translation>
 <translation id="3280243678470289153">Zůstat v Brave</translation>
 <translation id="3281892622610078515">Soubory a programy, které chcete umístit do karantény:</translation>
 <translation id="3282210178675490297">Nějaká karta se sdílí s aplikací <ph name="APP_NAME" /></translation>
-<translation id="3282568296779691940">Přihlásit se do Brave</translation>
+<translation id="82609232232243542">Přihlásit se do Brave</translation>
 <translation id="3285322247471302225">Nová kar&amp;ta</translation>
 <translation id="328571385944182268">Ukládat hesla?</translation>
 <translation id="3286737518123001369">Zobrazit a vymazat přihlašovací údaje uložené na bezpečnostním klíči</translation>
@@ -2382,7 +2382,7 @@ Zpráva serveru: <ph name="SERVER_MSG" /></translation>
 <translation id="4469477701382819144">Blokováno na webech, které zobrazují rušivé nebo zavádějící reklamy</translation>
 <translation id="4469762931504673593">Web <ph name="ORIGIN" /> může upravovat soubory ve složce <ph name="FOLDERNAME" /></translation>
 <translation id="4470957202018033307">Předvolby externího úložiště</translation>
-<translation id="447252321002412580">Pomoci s vylepšováním funkcí a výkonu prohlížeče Brave</translation>
+<translation id="918192811481327695">Pomoci s vylepšováním funkcí a výkonu prohlížeče Brave</translation>
 <translation id="4474155171896946103">Přidat do záložek všechny karty...</translation>
 <translation id="4474461121892222090">Dokončení aktivace mobilních dat může trvat až 15 minut.</translation>
 <translation id="4475552974751346499">Hledat stažené soubory</translation>
@@ -3975,7 +3975,7 @@ Před přechodem do režimu virtuální reality zkontrolujte, zda tomuto webu d�
 <translation id="6841187140911216178">Chcete-li zobrazit přihlašovací údaje, vložte bezpečnostní klíč a dotkněte se ho</translation>
 <translation id="6843423766595476978">Funkce OK Google je připravená</translation>
 <translation id="6845038076637626672">Otevřít maximalizované</translation>
-<translation id="6845325883481699275">Pomoci zlepšovat zabezpečení Brave</translation>
+<translation id="4991384657077828949">Pomoci zlepšovat zabezpečení Brave</translation>
 <translation id="6848388270925200958">V současné době máte několik karet, které lze používat jen na tomto zařízení.</translation>
 <translation id="6850286078059909152">Barva textu</translation>
 <translation id="6851497530878285708">Aplikace povolena</translation>
@@ -4458,7 +4458,7 @@ Před přechodem do režimu virtuální reality zkontrolujte, zda tomuto webu d�
 <translation id="756445078718366910">Otevřít okno prohlížeče</translation>
 <translation id="7564847347806291057">Ukončit proces</translation>
 <translation id="7566118625369982896">Spravovat odkazy na aplikace ve službě Play</translation>
-<translation id="756809126120519699">Vymazání údajů Brave</translation>
+<translation id="7814200940910057384">Vymazání údajů Brave</translation>
 <translation id="7568790562536448087">Aktualizace</translation>
 <translation id="7569983096843329377">Černá</translation>
 <translation id="7571643774869182231">Na aktualizaci nemáte dostatek místa</translation>
@@ -4578,7 +4578,7 @@ Před přechodem do režimu virtuální reality zkontrolujte, zda tomuto webu d�
 <translation id="7737238973539693982">Vymazat Linux (beta)</translation>
 <translation id="7740996059027112821">Standardně</translation>
 <translation id="7744047395460924128">Zobrazení historie tisku</translation>
-<translation id="7746457520633464754">Kvůli detekci nebezpečných aplikací a webů odesílá Brave do Googlu adresy URL některých navštívených stránek, omezené informace o systému a část obsahu stránek</translation>
+<translation id="3712897541513849705">Kvůli detekci nebezpečných aplikací a webů odesílá Brave do Googlu adresy URL některých navštívených stránek, omezené informace o systému a část obsahu stránek</translation>
 <translation id="7750228210027921155">Obraz v obraze</translation>
 <translation id="7751260505918304024">Zobrazit vše</translation>
 <translation id="7754704193130578113">Před stažením se vždy zeptat na místo uložení každého souboru</translation>
