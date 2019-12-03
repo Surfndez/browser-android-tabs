@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.content.SharedPreferences;
 import java.util.Calendar;
+import android.os.Build;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
@@ -342,8 +343,9 @@ public class Tab {
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
-
-        backgroundImage = getBackgroundImage();
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            backgroundImage = getBackgroundImage();
+        }
         index = SponsoredImageUtil.imageIndex;
     }
 
@@ -1972,7 +1974,7 @@ public class Tab {
             if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
                 && LocaleUtil.isSponsoredRegions()
                 && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
-                SponsoredImageUtil.imageIndex++;
+                SponsoredImageUtil.imageIndex = SponsoredImageUtil.imageIndex + 3;
                 return sponsoredImage;
             }
         }
