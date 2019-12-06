@@ -41,8 +41,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 tools:ignore="ContentDescription"
-                android:src="@drawable/incognito_splash"
-                app:tint="@color/default_icon_color_white" />
+                android:src="@drawable/incognito_splash" />
 
             <ImageView
                 android:id="@+id/new_tab_incognito_icon"
