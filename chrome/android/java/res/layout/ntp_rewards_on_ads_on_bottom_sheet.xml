@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright (c) 2019 The Brave Authors. All rights reserved.
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ntp_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:layout_gravity="start|bottom"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ntp_bottom_sheet_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/bat_logo"
+            android:drawablePadding="16dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/brave_ui_brave_rewards"/>
+
+        <TextView
+            android:id="@+id/ntp_bottom_sheet_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/get_paid_to_see_ads"/>
+
+        <TextView
+            android:id="@+id/ntp_bottom_sheet_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@string/ntp_brave_rewards_off_text"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ntp_bottom_sheet_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@drawable/btn_close"/>
+
+</LinearLayout>
+

@@ -4,6 +4,7 @@
 
 package org.chromium.chrome.browser.ntp;
 
+import android.os.Bundle;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
@@ -65,6 +66,9 @@ import org.chromium.chrome.browser.ntp.sponsored.SponsoredImage;
 import org.chromium.chrome.browser.ntp.sponsored.SponsoredImageUtil;
 import org.chromium.chrome.browser.util.LocaleUtil;
 import org.chromium.content_public.browser.LoadUrlParams;
+import org.chromium.chrome.browser.ntp.sponsored.RewardsBottomSheetDialogFragment;
+import org.chromium.chrome.browser.BraveAdsNativeHelper;
+import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 
 /**
  * The native new tab page, represented by some basic data such as title and url, and an Android
@@ -494,6 +498,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
     private void showBackgroundImage() {
 
         TextView creditText = (TextView)mNewTabPageLayout.findViewById(R.id.credit_text);
+        // LinearLayout nonDisruptiveBannerContent = (LinearLayout) mNewTabPageLayout.findViewById(R.id.ntp_non_disruptive_banner_content);
 
         if(mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)
             && Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
@@ -568,6 +573,33 @@ public class NewTabPageView extends HistoryNavigationLayout {
                         }
                     } else {
                         creditText.setVisibility(View.GONE);
+                    }
+
+                    if (BraveRewardsPanelPopup.isBraveRewardsEnabled()) {
+                        if (BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())) {
+                            if (backgroundImage instanceof SponsoredImage) {
+
+                            } else {
+
+                            }
+                        } else {
+                            if (backgroundImage instanceof SponsoredImage) {
+
+                            } else {
+                                
+                            }
+                        }
+                    } else {
+                        if (backgroundImage instanceof SponsoredImage) {
+
+                        }
+
+                        RewardsBottomSheetDialogFragment rewardsBottomSheetDialogFragment = RewardsBottomSheetDialogFragment.newInstance();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(RewardsBottomSheetDialogFragment.NTP_TYPE, RewardsBottomSheetDialogFragment.BR_OFF);
+                        rewardsBottomSheetDialogFragment.setArguments(bundle);
+                        rewardsBottomSheetDialogFragment.show(mTab.getActivity().getSupportFragmentManager(), "rewards_bottom_sheet_dialog_fragment");
+                        rewardsBottomSheetDialogFragment.setCancelable(false);
                     }
 
                     mNewTabPageLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);

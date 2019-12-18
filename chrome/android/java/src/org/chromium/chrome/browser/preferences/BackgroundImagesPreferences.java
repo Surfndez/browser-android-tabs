@@ -50,9 +50,9 @@ public class BackgroundImagesPreferences extends BravePreferenceFragment
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.prefs_new_tab_page);
         PreferenceUtils.addPreferencesFromResource(this, R.xml.background_images_preferences);
-        if (!LocaleUtil.isSponsoredRegions()) {
-            removePreferenceIfPresent(PREF_SHOW_SPONSORED_IMAGES);
-        }
+        // if (!LocaleUtil.isSponsoredRegions()) {
+        //     removePreferenceIfPresent(PREF_SHOW_SPONSORED_IMAGES);
+        // }
     }
 
     private void removePreferenceIfPresent(String key) {

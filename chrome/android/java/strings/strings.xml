@@ -330,4 +330,8 @@ content creators you love.</string>
 
     <string name="photo_by">Photo by <ph name="PHOTO_BY">%1$s</ph></string>
 
+    <string name="get_paid_to_see_ads">Get paid to see this background image.</string>
+    <string name="ntp_brave_rewards_off_text">You\’ll receive 70% of the ad revenue for this private sponsorship which can be used to support web content creators. Turn on Brave Rewards to claim your share.</string>
+    <string name="turn_on_rewards">Turn on Rewards</string>
+
 </resources>

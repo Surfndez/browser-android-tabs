@@ -4777,6 +4777,11 @@ content creators you love.
 
       <message name="IDS_PHOTO_BY" desc="TExt for image credit for background images on NTP">Photo by <ph name="PHOTO_BY">%1$s</ph></message>
 
+      <message name="IDS_GET_PAID_TO_SEE_ADS">Get paid to see this background image.
+      </message>
+      <message name="IDS_NTP_BRAVE_REWARDS_OFF_TEXT">You\’ll receive 70% of the ad revenue for this private sponsorship which can be used to support web content creators. Turn on Brave Rewards to claim your share.</message>
+      <message name="IDS_TURN_ON_REWARDS">Turn on Rewards</message>
+
     </messages>
   </release>
 </grit>

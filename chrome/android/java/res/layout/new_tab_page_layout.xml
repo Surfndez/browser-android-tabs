@@ -169,6 +169,8 @@
             android:textSize="12sp"
             android:textColor = "@android:color/white"/>
 
+        <include layout="@layout/ntp_non_disruptive_banner" />
+
     </FrameLayout>
 
 </org.chromium.chrome.browser.ntp.NewTabPageLayout>
