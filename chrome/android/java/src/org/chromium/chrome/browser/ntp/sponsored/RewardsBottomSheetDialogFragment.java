@@ -7,8 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.FrameLayout;
 
 import android.support.design.widget.BottomSheetDialogFragment;
+import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.BottomSheetBehavior;
+import android.view.ViewTreeObserver;
 import org.chromium.chrome.R;
 
 public class RewardsBottomSheetDialogFragment extends BottomSheetDialogFragment{
@@ -50,6 +54,16 @@ public class RewardsBottomSheetDialogFragment extends BottomSheetDialogFragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                BottomSheetDialog dialog = (BottomSheetDialog) getDialog();
+                FrameLayout bottomSheet = (FrameLayout) dialog.findViewById(android.support.design.R.id.design_bottom_sheet);
+                BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomSheet);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        });
 
         ImageView btnClose = view.findViewById(R.id.ntp_bottom_sheet_close);
         btnClose.setOnClickListener(new View.OnClickListener() {

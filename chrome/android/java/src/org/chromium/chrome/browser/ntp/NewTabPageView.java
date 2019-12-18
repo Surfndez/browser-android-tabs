@@ -244,6 +244,33 @@ public class NewTabPageView extends HistoryNavigationLayout {
         backgroundImage = mTab.getTabBackgroundImage();
         showBackgroundImage();
 
+        if (BraveRewardsPanelPopup.isBraveRewardsEnabled()) {
+            if (BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())) {
+                if (backgroundImage instanceof SponsoredImage) {
+
+                } else {
+
+                }
+            } else {
+                if (backgroundImage instanceof SponsoredImage) {
+
+                } else {
+                                
+                }
+            }
+        } else {
+            if (backgroundImage instanceof SponsoredImage) {
+
+            }
+
+            RewardsBottomSheetDialogFragment rewardsBottomSheetDialogFragment = RewardsBottomSheetDialogFragment.newInstance();
+            Bundle bundle = new Bundle();
+            bundle.putInt(RewardsBottomSheetDialogFragment.NTP_TYPE, RewardsBottomSheetDialogFragment.BR_OFF);
+            rewardsBottomSheetDialogFragment.setArguments(bundle);
+            rewardsBottomSheetDialogFragment.show(mTab.getActivity().getSupportFragmentManager(), "rewards_bottom_sheet_dialog_fragment");
+            rewardsBottomSheetDialogFragment.setCancelable(false);
+        }
+
         initializeLayoutChangeListener();
         mNewTabPageLayout.setSearchProviderInfo(searchProviderHasLogo, searchProviderIsGoogle);
 
@@ -573,33 +600,6 @@ public class NewTabPageView extends HistoryNavigationLayout {
                         }
                     } else {
                         creditText.setVisibility(View.GONE);
-                    }
-
-                    if (BraveRewardsPanelPopup.isBraveRewardsEnabled()) {
-                        if (BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())) {
-                            if (backgroundImage instanceof SponsoredImage) {
-
-                            } else {
-
-                            }
-                        } else {
-                            if (backgroundImage instanceof SponsoredImage) {
-
-                            } else {
-                                
-                            }
-                        }
-                    } else {
-                        if (backgroundImage instanceof SponsoredImage) {
-
-                        }
-
-                        RewardsBottomSheetDialogFragment rewardsBottomSheetDialogFragment = RewardsBottomSheetDialogFragment.newInstance();
-                        Bundle bundle = new Bundle();
-                        bundle.putInt(RewardsBottomSheetDialogFragment.NTP_TYPE, RewardsBottomSheetDialogFragment.BR_OFF);
-                        rewardsBottomSheetDialogFragment.setArguments(bundle);
-                        rewardsBottomSheetDialogFragment.show(mTab.getActivity().getSupportFragmentManager(), "rewards_bottom_sheet_dialog_fragment");
-                        rewardsBottomSheetDialogFragment.setCancelable(false);
                     }
 
                     mNewTabPageLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
