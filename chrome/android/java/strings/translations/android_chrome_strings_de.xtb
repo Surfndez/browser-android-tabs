@@ -1234,7 +1234,7 @@ Standardbrowser eingerichtet.</translation>
 <translation id="6874141297197991294">Wie wir sehen, haben Sie bereits einen Standardbrowser eingerichtet.
 Sie können den Standardbrowser in Ihren Anwendungseinstellungen ändern.</translation>
 <translation id="5708254139873333042">Sparen Sie Akkuleistung und laden Sie Webseiten schneller. Machen Sie Brave zu Ihrem Standardbrowser. Tippen Sie im Brave-Menü auf „Als Standardbrowser festlegen“.</translation>
-<translation id="3570367516044491911">Als Standardbrowser einrichten</translation>
+<translation id="3570367516044491911">Brave als Standardbrowser</translation>
 <translation id="5827583267117939716">Wählen Sie in der Liste Brave aus und tippen Sie auf „Immer“.</translation>
 <translation id="2262526166668973593">Machen Sie Brave zu Ihrem Standard-Webbrowser
 Sparen Sie Akku und laden Sie Webseiten schneller</translation>
@@ -1296,7 +1296,7 @@ in diesem Monat …</translation>
 <translation id="8969049974285901797">auf Twitch</translation>
 <translation id="606865182719489911">Eine kostenlose Token-Zuwendung ist verfügbar.</translation>
 <translation id="3453206261112715431">Kostenlose Token-Zuwendung</translation>
-<translation id="13853865024308201">Einforderung</translation>
+<translation id="13853865024308201">Öffnen</translation>
 <translation id="3692362746128814480">Sie haben <ph name="BAT_VALUE" /> BAT für Content-Creator bestimmt, die sich noch kein
 Teil von Brave Rewards sind. Ihr Browser wird weiterhin versuchen, Ihre Spenden
 zu übermitteln, bis sich die Content-Creator verifiziert haben, oder 90 Tage vergangen sind.</translation>
@@ -1346,7 +1346,7 @@ gleichzeitig Ihre Lieblings-Content Creator.</translation>
 <translation id="7091885296442320770">Brave ist blitzschnell</translation>
 <translation id="2171928016777725844">Machen Sie Brave zu Ihrem Standardbrowser!</translation>
 <translation id="7136694880210472378">Als Standard festlegen</translation>
-<translation id="4292832015778676417">aus Werbeanzeigen eingenommen</translation>
+<translation id="4292832015778676417">durch Werbung erhalten</translation>
 <translation id="8281886186245836920">Überspringen</translation>
 <translation id="316832010181763471">Suchmaschinen-Onboarding</translation>
 <translation id="986879628471635371">Fehlerbehebung beim Onboarding</translation>
@@ -1355,8 +1355,8 @@ gleichzeitig Ihre Lieblings-Content Creator.</translation>
 <translation id="5806601733251372221">Brave Schutz</translation>
 <translation id="2880356288762235261">Werbeanzeigen und Tracker, die den Schutz Ihrer Daten nicht respektieren. So können Sie surfen, ohne im Internet verfolgt zu werden.</translation>
 <translation id="6980054221517850750">Verdienen Sie Token</translation>
-<translation id="1789842587755069541">für das Anzeigen von Werbeanzeigen, die den Schutz Ihrer Daten respektiert. Verwenden Sie sie, um Ihre Lieblingsseiten und -autoren zu unterstützen.</translation>
-<translation id="821707262661492716">für das Anzeigen von Werbeanzeigen, die den Schutz Ihrer Daten respektiert.</translation>
+<translation id="1789842587755069541">durch das Ansehen von Werbung, die keinen Zugriff auf Ihre Daten hat. Sie können diese an Websites und Content-Creator spenden.</translation>
+<translation id="821707262661492716">durch das Ansehen von Werbung, die keinen Zugriff auf Ihre Daten hat.</translation>
 <translation id="7387657435304445967">Stimmen Sie den Bedingungen zu, um Brave-Rewards zu nutzen.</translation>
 <translation id="53852415493597253">Ich stimme Brave-Rewards zu</translation>
 <translation id="4281844954008187215">Allgemeine Geschäftsbedingungen</translation>
@@ -1365,7 +1365,7 @@ gleichzeitig Ihre Lieblings-Content Creator.</translation>
 <translation id="6871397658902960384">Lossurfen</translation>
 <translation id="454386012157232640">Ich habe keine Werbeanzeige gesehen</translation>
 <translation id="1448877943847791441">Brave zeigt Ihre erste Anzeige an in</translation>
-<translation id="7414844564462429821">Um Werbeanzeigen von Brave-Rewards zu sehen, stellen Sie sicher, dass Brave Ihnen Benachrichtigungen anzeigen darf.</translation>
+<translation id="7414844564462429821">Um Werbung von Brave-Rewards zu sehen, stellen Sie sicher, dass Brave Ihnen Benachrichtigungen anzeigen darf.</translation>
 <translation id="6511854390690723657">Dies ist Ihre erste Brave-Werbeanzeige. Tippen Sie hier, um mehr zu erfahren.</translation>
 <translation id="4930714375720679147">Aktivieren</translation>
 <translation id="8329401903432352231">Nicht zustimmen</translation>
@@ -1374,10 +1374,10 @@ gleichzeitig Ihre Lieblings-Content Creator.</translation>
 <translation id="2453860139492968684">Abschließen</translation>
 <translation id="7127980134843952133">Verlauf herunterladen</translation>
 <translation id="327726072512457161">Einstellungen schließen</translation>
-<translation id="351823742912624358">Werbeanzeigen &amp; Tracker blockiert</translation>
-<translation id="676626188808136495">Blockieren Sie Werbeanzeigen &amp; Tracking</translation>
-<translation id="6975719536773320922">Werbeanzeigen &amp; Tracker blockiert</translation>
-<translation id="8158940752709423201">Werbeanzeigen &amp; Tracker</translation>
+<translation id="351823742912624358">Anzeigen &amp; Tracker blockiert</translation>
+<translation id="676626188808136495">Anzeigen &amp; Tracking blockieren</translation>
+<translation id="6975719536773320922">Anzeigen &amp; Tracker blockiert</translation>
+<translation id="8158940752709423201">Anzeigen &amp; Tracker</translation>
 <translation id="8565174155241544325">Sie können jetzt %1$ss verdienen, indem Sie Werbung ansehen, welche den Schutz Ihrer Daten wahrt.</translation>
 <translation id="7924320838799747606">Ihr Guthaben</translation>
 <translation id="6160106411363856968">BAP</translation>
@@ -1392,7 +1392,7 @@ gleichzeitig Ihre Lieblings-Content Creator.</translation>
 <translation id="2132683977638223450">Kostenloser Punkte-Zuschuss</translation>
 <translation id="4376933248999950592">Sie haben Urhebern, die sich noch nicht für den Erhalt von Zuwendungen angemeldet haben, <ph name="BAT_VALUE" />  <ph name="BAT_TEXT" /> zugewiesen. Ihr Browser wird weiterhin versuchen, die Zuwendung vorzunehmen, bis sie diese verifizieren oder 90 Tage vergangen sind.</translation>
 <translation id="4522570452068850558">Details</translation>
-<translation id="4702084935512138078">Werbeanzeigen &amp; Tracker, damit Sie im Internet surfen können, ohne dabei verfolgt zu werden.</translation>
+<translation id="4702084935512138078">Anzeigen &amp; Tracker, damit Sie im Internet surfen können, ohne dabei verfolgt zu werden.</translation>
 <translation id="8537217141725709400">Verdienen Sie <ph name="TOKEN" />s</translation>
 <translation id="7396091471805549630">Indem Sie die Belohnungen aktivieren, erklären Sie Ihre Zustimmung zu</translation>
 <translation id="597993392929850353">Brave-Lizenz</translation>
@@ -1401,5 +1401,10 @@ gleichzeitig Ihre Lieblings-Content Creator.</translation>
 <translation id="6678056861663824314">1 <ph name="TIP" /></translation>
 <translation id="4065726515175370979">5 <ph name="TIP" /></translation>
 <translation id="8171148564903208264">10 <ph name="TIP" /></translation>
-<translation id="3540580927110899945">Sie können jetzt <ph name="TOKEN" /> verdienen, indem Sie Werbung ansehen, welche den Schutz Ihrer Daten wahrt.</translation>
+<translation id="3540580927110899945">Jetzt können Sie <ph name="TOKEN" />e für
+das Ansehen von Werbung, die den Datenschutz respektiert, verdienen.</translation>
+<translation id="7781069478569868053">Seite „Neuer Tab“</translation>
+<translation id="8522669544471808198">Hintergrundbilder anzeigen</translation>
+<translation id="3870475560794762985">Gesponserte Bilder anzeigen</translation>
+<translation id="8297488609722895137">Foto von <ph name="PHOTO_BY" /></translation>
 </translationbundle>

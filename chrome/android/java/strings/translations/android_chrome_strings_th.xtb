@@ -1405,6 +1405,9 @@ EST แล้ว</translation>
 <translation id="6678056861663824314">1 <ph name="TIP" /></translation>
 <translation id="4065726515175370979">5 <ph name="TIP" /></translation>
 <translation id="8171148564903208264">10 <ph name="TIP" /></translation>
-<translation id="3540580927110899945">รับ <ph name="TOKEN" /> ได้แล้วตอนนี้
-เพียงดูโฆษณาเกี่ยวกับความเป็นส่วนตัว</translation>
+<translation id="3540580927110899945">ตอนนี้คุณสามารถได้รับ <ph name="TOKEN" />จากการชมโฆษณาที่เคารพความเป็นส่วนตัว</translation>
+<translation id="7781069478569868053">หน้าแท็บใหม่</translation>
+<translation id="8522669544471808198">แสดงภาพพื้นหลัง</translation>
+<translation id="3870475560794762985">แสดงภาพที่ได้รับการสนับสนุน</translation>
+<translation id="8297488609722895137">ภาพถ่ายโดย <ph name="PHOTO_BY" /></translation>
 </translationbundle>
