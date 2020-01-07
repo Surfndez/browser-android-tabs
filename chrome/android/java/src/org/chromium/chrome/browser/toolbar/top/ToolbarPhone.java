@@ -394,6 +394,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 ToolbarColors.getThemedToolbarIconTint(getContext(), true).getDefaultColor();
         mDarkModeDefaultColor =
                 ToolbarColors.getThemedToolbarIconTint(getContext(), false).getDefaultColor();
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        isInitialNotificationPosted = !sharedPref.getBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, false);
     }
 
     @Override
@@ -632,9 +634,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             if (null == mRewardsPopup) {
                 mRewardsPopup = new BraveRewardsPanelPopup(v);
                 mRewardsPopup.showLikePopDownMenu();
-                if (mBraveRewardsNotificationsCount.isShown()) {
-                    SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
-                    SharedPreferences.Editor editor = sharedPref.edit();
+                if (isInitialNotificationPosted){
+                    SharedPreferences.Editor editor = ContextUtils.getAppSharedPreferences().edit();
                     editor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, true);
                     editor.apply();
                     mBraveRewardsNotificationsCount.setVisibility(View.INVISIBLE);
