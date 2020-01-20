@@ -38,6 +38,7 @@ public class BackgroundImagesPreferences extends BravePreferenceFragment
 
     public static final String PREF_SHOW_BACKGROUND_IMAGES = "show_background_images";
     public static final String PREF_SHOW_SPONSORED_IMAGES = "show_sponsored_images";
+    public static final String PREF_SHOW_NON_DISTRUPTIVE_BANNER = "show_non_distruptive_banner";
     public static final String PREF_APP_OPEN_COUNT = "app_open_count";
 
     ChromeSwitchPreference showBackgroundImagesPref, showSponsoredImagesPref;
@@ -50,7 +51,7 @@ public class BackgroundImagesPreferences extends BravePreferenceFragment
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.prefs_new_tab_page);
         PreferenceUtils.addPreferencesFromResource(this, R.xml.background_images_preferences);
-        // if (!LocaleUtil.isSponsoredRegions()) {
+        // if (!LocaleUtil.isSponsoredRegions() || !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
         //     removePreferenceIfPresent(PREF_SHOW_SPONSORED_IMAGES);
         // }
     }
@@ -86,6 +87,7 @@ public class BackgroundImagesPreferences extends BravePreferenceFragment
         if (PREF_SHOW_BACKGROUND_IMAGES.equals(preference.getKey()) && showSponsoredImagesPref != null) {
             if ((boolean)newValue) {
                 showSponsoredImagesPref.setEnabled(true);
+                showSponsoredImagesPref.setChecked(true);
             } else {
                 showSponsoredImagesPref.setEnabled(false);
             }

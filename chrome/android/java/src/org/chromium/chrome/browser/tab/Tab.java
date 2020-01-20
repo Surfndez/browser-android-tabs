@@ -275,6 +275,7 @@ public class Tab {
 
     private BackgroundImage backgroundImage;
     private int index;
+    private boolean mShouldShowBanner;
 
     /**
      * @return {@link UserDataHost} that manages {@link UserData} objects attached to
@@ -343,10 +344,11 @@ public class Tab {
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+        // if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             backgroundImage = getBackgroundImage();
-        }
+        // }
         index = SponsoredImageUtil.imageIndex;
+        mShouldShowBanner = ContextUtils.getAppSharedPreferences().getBoolean(BackgroundImagesPreferences.PREF_SHOW_NON_DISTRUPTIVE_BANNER, true);
     }
 
     /**
@@ -1959,8 +1961,16 @@ public class Tab {
         return backgroundImage;
     }
 
+    public void setBackgroundImage(BackgroundImage backgroundImage) {
+        this.backgroundImage = backgroundImage;
+    }
+
     public int getIndex() {
         return index;
+    }
+
+    public boolean shouldShowBanner() {
+        return mShouldShowBanner;
     }
 
     private BackgroundImage getBackgroundImage() {
@@ -1971,9 +1981,14 @@ public class Tab {
             && SponsoredImageUtil.imageIndex == 2) {
             SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage(); 
             long currentTime = Calendar.getInstance().getTimeInMillis();
-            if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
-                && LocaleUtil.isSponsoredRegions()
-                && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
+            // if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
+            //     && LocaleUtil.isSponsoredRegions()
+            //     && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)
+            //     && !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            //     SponsoredImageUtil.imageIndex = SponsoredImageUtil.imageIndex + 3;
+            //     return sponsoredImage;
+            // }
+            if (mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
                 SponsoredImageUtil.imageIndex = SponsoredImageUtil.imageIndex + 3;
                 return sponsoredImage;
             }
@@ -1982,10 +1997,16 @@ public class Tab {
         if (SponsoredImageUtil.imageIndex % 4 == 0 && SponsoredImageUtil.imageIndex != 1) {
             SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage(); 
             long currentTime = Calendar.getInstance().getTimeInMillis();
-            if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
-                && LocaleUtil.isSponsoredRegions()
-                && mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) != 1
-                && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
+            // if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
+            //     && LocaleUtil.isSponsoredRegions()
+            //     && mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) != 1
+            //     && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)
+            //     && !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            //     backgroundImage = sponsoredImage;
+            // } else {
+            //     backgroundImage = SponsoredImageUtil.getBackgroundImage();
+            // }
+            if (mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
                 backgroundImage = sponsoredImage;
             } else {
                 backgroundImage = SponsoredImageUtil.getBackgroundImage();

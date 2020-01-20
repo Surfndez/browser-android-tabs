@@ -4,13 +4,12 @@
      found in the LICENSE file. -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ntp_non_disruptive_banner_content"
+    android:id="@+id/non_distruptive_banner"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
-    android:background="#343a40"
+    android:background="@color/ntp_non_disruptive_banner_bg_color"
     android:layout_gravity="start|bottom"
-    android:visibility="gone"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -24,6 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
+            android:drawableStart="@drawable/bat_logo"
+            android:drawablePadding="16dp"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
             android:text="@string/brave_ui_brave_rewards"/>
 
         <TextView
@@ -31,7 +34,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="@string/brave_ui_insufficient_funds_desc"/>
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/ntp_banner_learn_more_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/learn_more"
+            android:textColor="@color/brave_theme_color"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_turn_on_ads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/blue_rounded_button"
+            android:text="@string/turn_on_brave_ads"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/coins"
+            android:drawablePadding="8dp"
+            android:textColor="@android:color/white"
+            style="?android:attr/borderlessButtonStyle"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

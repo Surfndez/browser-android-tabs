@@ -6,8 +6,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Calendar;
+import android.content.res.Configuration;
+import android.content.Context;
 
 public class SponsoredImageUtil {
+
+    public static final String NTP_TYPE = "ntp_type";
+
+    public static final int BR_OFF = 1;
+    public static final int BR_ON_ADS_OFF = 2;
+    public static final int BR_ON_ADS_OFF_BG_IMAGE = 3;
+    public static final int BR_ON_ADS_ON = 4;
 
 	public static List<BackgroundImage> backgroundImages = new ArrayList<BackgroundImage>(Arrays.asList(
             new BackgroundImage(R.drawable.anders_jilden, 1200, new ImageCredit("Anders Jildén", "https://unsplash.com/@andersjilden?utm_source=unsplash&utm_medium=referral&utm_content=credit")),
@@ -28,7 +37,9 @@ public class SponsoredImageUtil {
     ));
 
     private static List<SponsoredImage> sponsoredImages = new ArrayList<SponsoredImage>(Arrays.asList(
-    	new SponsoredImage(R.drawable.eaff_ja_soccer_background, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis())
+    	new SponsoredImage(R.drawable.sponsored_1, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis()),
+        new SponsoredImage(R.drawable.sponsored_2, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis()),
+        new SponsoredImage(R.drawable.sponsored_3, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis())
     ));
 
 	private static int backgroundImageIndex = getRandomIndex(backgroundImages.size());
@@ -72,8 +83,17 @@ public class SponsoredImageUtil {
     		sponsoredImageIndex = 0;
     	}
 
-    	SponsoredImage sponsoredImage = sponsoredImages.get(0);
+    	SponsoredImage sponsoredImage = sponsoredImages.get(sponsoredImageIndex);
     	sponsoredImageIndex++;
     	return sponsoredImage;
+    }
+
+    public static boolean isLandscape(Context context) {
+        int orientation = context.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

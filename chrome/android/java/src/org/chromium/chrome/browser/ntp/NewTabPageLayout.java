@@ -184,6 +184,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
     protected void onFinishInflate() {
         super.onFinishInflate();
         mMiddleSpacer = findViewById(R.id.ntp_middle_spacer);
+        mBraveStatsView = (ViewGroup) findViewById(R.id.brave_stats);
         //mSearchProviderLogoView = findViewById(R.id.search_provider_logo);
         mSearchBoxView = findViewById(R.id.search_box);
         mExploreOfflineCard = new ExploreOfflineCard(this, openDownloadHomeCallback());
@@ -266,8 +267,6 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
                     R.dimen.ntp_search_box_bounds_vertical_inset_modern);
         }
         mNoSearchLogoSpacer = findViewById(R.id.no_search_logo_spacer);
-
-        mBraveStatsView = (ViewGroup) findViewById(R.id.brave_stats);
 
         initializeSearchBoxTextView();
         initializeVoiceSearchButton();
@@ -428,8 +427,9 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
                 1f);
     }
 
-    private void insertSiteSectionView() {
-        mSiteSectionView = SiteSection.inflateSiteSection(this);
+    public void insertSiteSectionView() {
+        ViewGroup mainLayout = findViewById(R.id.ntp_main_layout);
+        mSiteSectionView = SiteSection.inflateSiteSection(mainLayout);
         ViewGroup.LayoutParams layoutParams = mSiteSectionView.getLayoutParams();
         layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
         // If the explore sites section exists as its own section, then space it more closely.
@@ -442,8 +442,8 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
         }
         mSiteSectionView.setLayoutParams(layoutParams);
 
-        int insertionPoint = indexOfChild(mMiddleSpacer) + 1;
-        addView(mSiteSectionView, insertionPoint);
+        int insertionPoint = mainLayout.indexOfChild(mBraveStatsView) + 1;
+        mainLayout.addView(mSiteSectionView, insertionPoint);
     }
 
     /**
