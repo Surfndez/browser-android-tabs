@@ -1,0 +1,23 @@
+{
+  "layers": [
+    {
+      "name": "Scrolling Contents Layer",
+      "bounds": [808, 621],
+      "contentsOpaque": true,
+      "backgroundColor": "#FFFFFF",
+      "paintInvalidations": [
+        {
+          "object": "InlineTextBox 'Passes, if text is at 200x20'",
+          "rect": [208, 13, 166, 19],
+          "reason": "appeared"
+        },
+        {
+          "object": "InlineTextBox 'Passes, if text is at 200x20'",
+          "rect": [18, 193, 166, 19],
+          "reason": "disappeared"
+        }
+      ]
+    }
+  ]
+}
+
