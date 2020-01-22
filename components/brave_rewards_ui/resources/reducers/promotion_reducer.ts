@@ -85,7 +85,11 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
         break
       }
 
-      state.currentGrant = currentGrant
+      state = {
+        ...state,
+        currentGrant
+      }
+
       chrome.send('brave_rewards.claimPromotion', [currentGrant.promotionId])
       break
     case types.SOLVE_GRANT_CAPTCHA: {
@@ -152,18 +156,17 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
       state = { ...state }
       let newGrant: any = {}
       const properties: Rewards.PromotionFinish = action.payload.properties
-      const panelClaimed = properties.result === 0 && !state.currentGrant
 
-      if (panelClaimed) {
-        state.grants = []
+      if (!state.grants) {
         break
       }
 
-      if (!state.grants || !state.currentGrant) {
+      newGrant.promotionId = properties.promotion && properties.promotion.promotionId
+
+      if (!newGrant.promotionId) {
         break
       }
 
-      newGrant.promotionId = state.currentGrant.promotionId
       const promotion = properties.promotion
 
       switch (properties.result) {
@@ -180,7 +183,6 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
           }
 
           chrome.send('brave_rewards.getWalletProperties')
-          //chrome.send('brave_rewards.fetchBalance')
           break
         default:
           newGrant.status = 'generalError'
