@@ -1808,6 +1808,8 @@ if (public_android_sdk) {
     version_name = chrome_version_name
     apk_name = "BraveMono"
     target_type = "android_apk"
+    include_32_bit_webview = false
+    is_64_bit_browser = android_64bit_target_cpu
   }
 
   trichrome_library_apk_tmpl("trichrome_library_apk") {
