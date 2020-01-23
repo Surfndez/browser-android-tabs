@@ -77,10 +77,10 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
     private final BrowsingModeBottomToolbarModel mModel;
 
     /** The callback to be exectured when the share button on click listener is available. */
-    private final Callback<OnClickListener> mShareButtonListenerSupplierCallback;
+    // private final Callback<OnClickListener> mShareButtonListenerSupplierCallback;
 
     /** The supplier for the share button on click listener. */
-    private final ObservableSupplier<OnClickListener> mShareButtonListenerSupplier;
+    // private final ObservableSupplier<OnClickListener> mShareButtonListenerSupplier;
 
     /** The activity tab provider that used for making the IPH. */
     private final ActivityTabProvider mTabProvider;
@@ -122,12 +122,12 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         // mShareButtonListenerSupplier.addObserver(mShareButtonListenerSupplierCallback);
         // mShareButton.setActivityTabProvider(mTabProvider);
 
+        mBookmarksButton = mToolbarRoot.findViewById(R.id.bookmark_this_page_id);
+
         mSearchAccelerator = mToolbarRoot.findViewById(R.id.search_accelerator);
         mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
         setupIPH(FeatureConstants.CHROME_DUET_SEARCH_FEATURE, mSearchAccelerator,
-                 searchAcceleratorListener);
-
-        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
+                 searchAcceleratorListener);        
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(mToolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
@@ -165,23 +165,15 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
             }
         });
 
-        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
-        if (mBookmarksButton != null) {
-            mBookmarksButton.setWrapperView(toolbarRoot.findViewById(R.id.bookmark_button_wrapper));
-        }
-
         // Set long click events
-        mHomeButtonWrapper = toolbarRoot.findViewById(R.id.home_button_wrapper);
-        if (mHomeButtonWrapper != null) {
-            mHomeButtonWrapper.setOnLongClickListener(this);
+        if (mHomeButton != null) {
+            mHomeButton.setOnLongClickListener(this);
         }
-        mSearchAcceleratorWrapper = toolbarRoot.findViewById(R.id.search_accelerator_wrapper);
-        if (mSearchAcceleratorWrapper != null) {
-            mSearchAcceleratorWrapper.setOnLongClickListener(this);
+        if (mSearchAccelerator != null) {
+            mSearchAccelerator.setOnLongClickListener(this);
         }
-        mBookmarkButtonWrapper = toolbarRoot.findViewById(R.id.bookmark_button_wrapper);
-        if (mBookmarkButtonWrapper != null) {
-            mBookmarkButtonWrapper.setOnLongClickListener(this);
+        if (mBookmarksButton != null) {
+            mBookmarksButton.setOnLongClickListener(this);
         }
     }
 
@@ -237,7 +229,7 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         // overview mode. We need to pass the OverviewModeBehavior to the buttons so they are
         // disabled based on the moverview state.
         if (ReturnToChromeExperimentsUtil.shouldShowStartSurfaceAsTheHomePage()) {
-            mShareButton.setOverviewModeBehavior(overviewModeBehavior);
+            // mShareButton.setOverviewModeBehavior(overviewModeBehavior);
             mTabSwitcherButtonCoordinator.setOverviewModeBehavior(overviewModeBehavior);
             mHomeButton.setOverviewModeBehavior(overviewModeBehavior);
         }
@@ -253,16 +245,16 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         String description = "";
         Resources resources = context.getResources();
 
-        if (v == mHomeButtonWrapper) {
+        if (v == mHomeButton) {
             if (!HomepageManager.isHomepageEnabled()) {
                 TabUtil.showTabPopupMenu(context, v);
                 return true;
             } else {
                 description = resources.getString(R.string.accessibility_toolbar_btn_home);
             }
-        } else if (v == mBookmarkButtonWrapper) {
+        } else if (v == mBookmarksButton) {
             description = resources.getString(R.string.accessibility_toolbar_btn_bookmark);
-        } else if (v == mSearchAcceleratorWrapper) {
+        } else if (v == mSearchAccelerator) {
             description = resources.getString(R.string.accessibility_toolbar_btn_search_accelerator);
         }
 
@@ -313,10 +305,10 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
     }
 
     /**
-     * @return The browsing mode bottom toolbar's share button.
+     * @return The browsing mode bottom toolbar's bookmark button.
      */
-    ShareButton getShareButton() {
-        return mShareButton;
+    BookmarksButton getBookmarksButton() {
+        return mBookmarksButton;
     }
 
     /**
@@ -344,7 +336,7 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
      * Clean up any state when the browsing mode bottom toolbar is destroyed.
      */
     public void destroy() {
-        mShareButtonListenerSupplier.removeObserver(mShareButtonListenerSupplierCallback);
+        //mShareButtonListenerSupplier.removeObserver(mShareButtonListenerSupplierCallback);
         mMediator.destroy();
         mHomeButton.destroy();
         //mShareButton.destroy();

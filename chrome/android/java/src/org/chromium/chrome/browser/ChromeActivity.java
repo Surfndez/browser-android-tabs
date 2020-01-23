@@ -144,7 +144,7 @@ import org.chromium.chrome.browser.page_info.PageInfoController;
 import org.chromium.chrome.browser.partnercustomizations.PartnerBrowserCustomizations;
 import org.chromium.chrome.browser.preferences.Pref;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
-import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
+import org.chromium.chrome.browser.settings.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.preferences.ClosingTabsManager;
 import org.chromium.chrome.browser.printing.TabPrinter;
 import org.chromium.chrome.browser.profiles.Profile;
@@ -750,9 +750,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
 
     public void braveShieldsCountUpdate(String url, int adsAndTrackers,
             int httpsUpgrades, int scriptsBlocked, int fingerprintsBlocked) {
-        List<Tab> tabsList = new ArrayList<>();
+        List<TabImpl> tabsList = new ArrayList<>();
         for (int i = 0; i < getCurrentTabModel().getCount(); i++) {
-            Tab tab = getCurrentTabModel().getTabAt(i);
+            TabImpl tab = (TabImpl)getCurrentTabModel().getTabAt(i);
             if (null != tab) {
                 String tabUrl = tab.getUrl();
                 if (tabUrl.equals(url)) {
@@ -764,8 +764,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             return;
         }
 
-        Tab tabToUpdate = null;
-        for (Tab currentTab : tabsList) {
+        TabImpl tabToUpdate = null;
+        for (TabImpl currentTab : tabsList) {
             if (null == tabToUpdate) {
                 tabToUpdate = currentTab;
                 continue;
@@ -2424,7 +2424,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             return true;
         }
 
-        final Tab currentTab = getActivityTab();
+        final TabImpl currentTab = (TabImpl)getActivityTab();
 
         /*if (id == R.id.help_id) {
             String url = currentTab != null ? currentTab.getUrl() : "";
@@ -2478,8 +2478,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             tracker.notifyEvent(EventConstants.TRANSLATE_MENU_BUTTON_CLICKED);
             TranslateBridge.translateTabWhenReady(getActivityTab());
         } else if (id==R.id.share_page_id || id == R.id.share_menu_id) {
-            onShareMenuItemSelected(false,
-                    getCurrentTabModel().isIncognito());
+            // TODO(samartnik): it was removed in chromium, need to find out what to do with it
+            // onShareMenuItemSelected(false,
+            //         getCurrentTabModel().isIncognito());
         } else if (id == R.id.print_id) {
             PrintingController printingController = PrintingControllerImpl.getInstance();
             if (printingController != null && !printingController.isBusy()

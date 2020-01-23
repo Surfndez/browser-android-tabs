@@ -109,6 +109,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.chromium.ui.widget.Toast;
+import org.chromium.chrome.browser.settings.website.WebsitePreferenceBridge;
 
 /**
  * Phone specific toolbar implementation.
@@ -537,7 +538,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     void onNativeLibraryReady() {
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
         if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
-            !PrefServiceBridge.getInstance().isSafetynetCheckFailed() &&
+            !WebsitePreferenceBridge.isSafetynetCheckFailed() &&
                 !sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
             if (mRewardsLayout != null) {
                 mRewardsLayout.setVisibility(View.VISIBLE);
@@ -1810,7 +1811,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             }
         } else if (isNativeLibraryReady() &&
                 ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
-                !PrefServiceBridge.getInstance().isSafetynetCheckFailed() &&
+                !WebsitePreferenceBridge.isSafetynetCheckFailed() &&
                 !sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
             if (mRewardsLayout != null) {
                 mRewardsLayout.setVisibility(View.VISIBLE);
@@ -2120,7 +2121,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     @Override
     public void OnWalletInitialized(int error_code) {
         if (error_code == BraveRewardsNativeWorker.SAFETYNET_ATTESTATION_FAILED) {
-            PrefServiceBridge.getInstance().setSafetynetCheckFailed(true);
+            WebsitePreferenceBridge.setSafetynetCheckFailed(true);
             if (mRewardsLayout != null) {
                 mRewardsLayout.setVisibility(View.GONE);
             }
@@ -2163,7 +2164,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnPublisherInfo(int tabId) {}
 
     @Override
-    public void OnGetCurrentBalanceReport(String[] report) {}
+    public void OnGetCurrentBalanceReport(double[] report) {}
 
     @Override
     public void OnNotificationAdded(String id, int type, long timestamp,
