@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.chromium.base.ContextUtils;
+import org.chromium.chrome.browser.util.LocaleUtil;
 import org.chromium.base.Log;
 import org.chromium.chrome.browser.init.NTPDownloadUtils;
 import org.chromium.chrome.browser.BraveAdsNativeHelper;
@@ -44,8 +45,7 @@ public class NTPUpdater {
 
     // NTP data download
     public static void DownloadNTPData(Context context) {
-        String locale = BraveAdsNativeHelper.nativeGetLocale();
-        String countryCode = BraveAdsNativeHelper.nativeGetCountryCode(locale);
+        String countryCode = LocaleUtil.getCountryCode();
         if (NTPDownloadUtils.downloadNTPData(context, countryCode)) {
           mReceivedAnUpdate = true;
         }

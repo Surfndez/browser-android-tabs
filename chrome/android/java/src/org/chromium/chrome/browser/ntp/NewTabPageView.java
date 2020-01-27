@@ -531,8 +531,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
             observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
-                    String locale = BraveAdsNativeHelper.nativeGetLocale();
-                    String countryCode = BraveAdsNativeHelper.nativeGetCountryCode(locale);
+                    String countryCode = LocaleUtil.getCountryCode();
 
                     int layoutWidth = mNewTabPageLayout.getMeasuredWidth();
                     int layoutHeight = mNewTabPageLayout.getMeasuredHeight();
