@@ -25,8 +25,9 @@
             android:textSize="16sp"
             android:drawableStart="@drawable/bat_logo"
             android:drawablePadding="16dp"
+            android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/brave_ui_brave_rewards"/>
 
         <TextView
@@ -57,7 +58,7 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:padding="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:drawableStart="@drawable/coins"
             android:drawablePadding="8dp"
             android:textColor="@android:color/white"

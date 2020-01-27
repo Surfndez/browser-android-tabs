@@ -77,10 +77,14 @@ import org.chromium.content_public.common.ResourceRequestBody;
 import org.chromium.ui.base.PageTransition;
 import org.chromium.ui.base.WindowAndroid;
 import org.chromium.chrome.browser.preferences.BackgroundImagesPreferences;
+import org.chromium.chrome.browser.ntp.sponsored.NTPImage;
 import org.chromium.chrome.browser.ntp.sponsored.BackgroundImage;
 import org.chromium.chrome.browser.ntp.sponsored.SponsoredImage;
 import org.chromium.chrome.browser.ntp.sponsored.SponsoredImageUtil;
 import org.chromium.chrome.browser.util.LocaleUtil;
+import org.chromium.chrome.browser.preferences.PrefServiceBridge;
+import org.chromium.chrome.browser.profiles.Profile;
+import org.chromium.chrome.browser.BraveAdsNativeHelper;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -273,7 +277,7 @@ public class Tab {
 
     private final UserDataHost mUserDataHost = new UserDataHost();
 
-    private BackgroundImage backgroundImage;
+    private NTPImage ntpImage;
     private int index;
     private boolean mShouldShowBanner;
 
@@ -344,11 +348,11 @@ public class Tab {
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
-        // if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            backgroundImage = getBackgroundImage();
-        // }
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            ntpImage = getNTPImage();
+        }
         index = SponsoredImageUtil.imageIndex;
-        mShouldShowBanner = ContextUtils.getAppSharedPreferences().getBoolean(BackgroundImagesPreferences.PREF_SHOW_NON_DISTRUPTIVE_BANNER, true);
+        updateBannerPref();
     }
 
     /**
@@ -1957,12 +1961,12 @@ public class Tab {
         }
     }
 
-    public BackgroundImage getTabBackgroundImage() {
-        return backgroundImage;
+    public NTPImage getTabNTPImage() {
+        return ntpImage;
     }
 
-    public void setBackgroundImage(BackgroundImage backgroundImage) {
-        this.backgroundImage = backgroundImage;
+    public void setNTPImage(NTPImage ntpImage) {
+        this.ntpImage = ntpImage;
     }
 
     public int getIndex() {
@@ -1973,51 +1977,46 @@ public class Tab {
         return mShouldShowBanner;
     }
 
-    private BackgroundImage getBackgroundImage() {
-        BackgroundImage backgroundImage;
+    public void updateBannerPref() {
+        mShouldShowBanner = ContextUtils.getAppSharedPreferences().getBoolean(BackgroundImagesPreferences.PREF_SHOW_NON_DISTRUPTIVE_BANNER, true);
+    }
+
+    private NTPImage getNTPImage() {
+        NTPImage ntpImage;
         SharedPreferences mSharedPreferences = ContextUtils.getAppSharedPreferences();
 
         if (mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) == 2
-            && SponsoredImageUtil.imageIndex == 2) {
+            && SponsoredImageUtil.sponsoredImages.size() > 0
+            && SponsoredImageUtil.imageIndex == 2
+            && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
+            && !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
             SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage(); 
             long currentTime = Calendar.getInstance().getTimeInMillis();
-            // if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
-            //     && LocaleUtil.isSponsoredRegions()
-            //     && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)
-            //     && !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
-            //     SponsoredImageUtil.imageIndex = SponsoredImageUtil.imageIndex + 3;
-            //     return sponsoredImage;
-            // }
             if (mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
                 SponsoredImageUtil.imageIndex = SponsoredImageUtil.imageIndex + 3;
                 return sponsoredImage;
             }
         }
 
-        if (SponsoredImageUtil.imageIndex % 4 == 0 && SponsoredImageUtil.imageIndex != 1) {
-            SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage(); 
-            long currentTime = Calendar.getInstance().getTimeInMillis();
-            // if ((sponsoredImage.getStartDate() <= currentTime  && currentTime <= sponsoredImage.getEndDate()) 
-            //     && LocaleUtil.isSponsoredRegions()
-            //     && mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) != 1
-            //     && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)
-            //     && !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
-            //     backgroundImage = sponsoredImage;
-            // } else {
-            //     backgroundImage = SponsoredImageUtil.getBackgroundImage();
-            // }
-            if (mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
-                backgroundImage = sponsoredImage;
+        if (SponsoredImageUtil.sponsoredImages.size() > 0
+            && SponsoredImageUtil.imageIndex % 4 == 0
+            && SponsoredImageUtil.imageIndex != 1
+            && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
+            && !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            SponsoredImage sponsoredImage = SponsoredImageUtil.getSponsoredImage();
+            if (mSharedPreferences.getInt(BackgroundImagesPreferences.PREF_APP_OPEN_COUNT, 0) != 1
+                && mSharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_SPONSORED_IMAGES, true)) {
+                ntpImage = sponsoredImage;
             } else {
-                backgroundImage = SponsoredImageUtil.getBackgroundImage();
+                ntpImage = SponsoredImageUtil.getBackgroundImage();
             }
         } else {
-            backgroundImage = SponsoredImageUtil.getBackgroundImage();
+            ntpImage = SponsoredImageUtil.getBackgroundImage();
         }
 
         SponsoredImageUtil.imageIndex++;
 
-        return backgroundImage;
+        return ntpImage;
     }
 
     @NativeMethods
