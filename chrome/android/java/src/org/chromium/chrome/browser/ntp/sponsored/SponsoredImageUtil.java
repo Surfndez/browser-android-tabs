@@ -18,6 +18,8 @@ public class SponsoredImageUtil {
     public static final int BR_ON_ADS_OFF_BG_IMAGE = 3;
     public static final int BR_ON_ADS_ON = 4;
 
+    public static SponsoredLogo sponsoredLogo;
+
 	public static List<BackgroundImage> backgroundImages = new ArrayList<BackgroundImage>(Arrays.asList(
             new BackgroundImage(R.drawable.anders_jilden, 1200, new ImageCredit("Anders Jildén", "https://unsplash.com/@andersjilden?utm_source=unsplash&utm_medium=referral&utm_content=credit")),
             new BackgroundImage(R.drawable.andreas_gucklhorn, 1160, new ImageCredit("Andreas Gücklhorn", "https://unsplash.com/@draufsicht?utm_source=unsplash&utm_medium=referral&utm_content=credit")),
@@ -36,32 +38,12 @@ public class SponsoredImageUtil {
             new BackgroundImage(R.drawable.xavier_balderas_cejudo, 1975, new ImageCredit("Xavier Balderas Cejudo", "https://unsplash.com/@xavibalderas?utm_source=unsplash&utm_medium=referral&utm_content=credit"))
     ));
 
-    private static List<SponsoredImage> sponsoredImages = new ArrayList<SponsoredImage>(Arrays.asList(
-    	new SponsoredImage(R.drawable.sponsored_1, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis()),
-        new SponsoredImage(R.drawable.sponsored_2, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis()),
-        new SponsoredImage(R.drawable.sponsored_3, 1280, new ImageCredit("EAFF E-1 Football Championship 2019 Final Korea Republic", "https://eaff.com/competitions/eaff2019/") ,getStartDate().getTimeInMillis(), getEndDate().getTimeInMillis())
-    ));
+    public static List<SponsoredImage> sponsoredImages = new ArrayList<SponsoredImage>();
 
 	private static int backgroundImageIndex = getRandomIndex(backgroundImages.size());
-	private static int sponsoredImageIndex = getRandomIndex(sponsoredImages.size());
+	private static int sponsoredImageIndex;
 
 	public static int imageIndex = 1;
-
-    private static Calendar getStartDate() {
-    	Calendar startCalendar = Calendar.getInstance();
-	    startCalendar.set(Calendar.MONTH, Calendar.DECEMBER);
-	    startCalendar.set(Calendar.DAY_OF_MONTH, 2);
-	    startCalendar.set(Calendar.YEAR, 2019);
-	    return startCalendar;
-    } 
-
-    private static Calendar getEndDate() {
-    	Calendar endCalendar = Calendar.getInstance();
-	    endCalendar.set(Calendar.MONTH, Calendar.DECEMBER);
-	    endCalendar.set(Calendar.DAY_OF_MONTH, 18);
-	    endCalendar.set(Calendar.YEAR, 2019);
-	    return endCalendar;
-    }
 
     private static int getRandomIndex(int count) {
     	Random rand = new Random();
@@ -86,6 +68,10 @@ public class SponsoredImageUtil {
     	SponsoredImage sponsoredImage = sponsoredImages.get(sponsoredImageIndex);
     	sponsoredImageIndex++;
     	return sponsoredImage;
+    }
+
+    public static void updateSponsoredImageIndex() {
+        getRandomIndex(sponsoredImages.size());
     }
 
     public static boolean isLandscape(Context context) {

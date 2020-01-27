@@ -70,6 +70,7 @@ import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveSyncWorker;
 import org.chromium.chrome.browser.StatsUpdaterWorker;
 import org.chromium.chrome.browser.ADBlockUpdaterWorker;
+import org.chromium.chrome.browser.NTPUpdaterWorker;
 import org.chromium.chrome.browser.IntentHandler.IntentHandlerDelegate;
 import org.chromium.chrome.browser.IntentHandler.TabOpenType;
 import org.chromium.chrome.browser.appmenu.AppMenuBlocker;
@@ -1680,6 +1681,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 }
                 if (app.mADBlockUpdaterWorker == null) {
                     app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(app);
+                }
+                if (app.mNTPUpdaterWorker == null) {
+                    app.mNTPUpdaterWorker = new NTPUpdaterWorker(app);
                 }
                 //MixPanelWorker.SendBraveAppStartEvent();
             }

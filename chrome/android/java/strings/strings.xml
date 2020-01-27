@@ -346,9 +346,6 @@ content creators you love.</string>
     <string name="you_are_getting_paid">
         You’re getting paid to see this background image.
     </string>
-    <string name="this_sponsored_image_is_brought">
-        This sponsored image is brought to you by American Express®. You’ll receive 70% of the ad revenue for every sponsorship.
-    </string>
     <string name="br_on_ads_on_text">
         <ph name="LEARN_MORE">%1$s</ph> about sponsored images in Brave Rewards. You can also choose to <ph name="HIDE_SPONSORED_IMAGES">%2$s</ph>.
     </string>

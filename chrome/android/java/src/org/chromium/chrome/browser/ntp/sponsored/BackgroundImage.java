@@ -1,6 +1,6 @@
 package org.chromium.chrome.browser.ntp.sponsored;
 
-public class BackgroundImage {
+public class BackgroundImage extends NTPImage{
     private int imageDrawable;
     private int centerPoint;
     private ImageCredit imageCredit;

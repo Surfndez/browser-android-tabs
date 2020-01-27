@@ -24,7 +24,8 @@
             android:drawableStart="@drawable/btn_bat"
             android:drawablePadding="8dp"
             android:textSize="20sp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@android:color/black"
             android:text="@string/brave_ui_brave_rewards"/>
 
         <TextView
@@ -33,14 +34,16 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp"/>
 
         <TextView
             android:id="@+id/ntp_bottom_sheet_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:layout_marginBottom="8dp"/>
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp"/>
 
         <Button
             android:id="@+id/btn_turn_on_ads"
@@ -86,6 +89,7 @@
             android:text="@string/learn_more"
             android:textAllCaps="false"
             android:visibility="gone"
+            android:textColor="@android:color/black"
             android:textSize="16sp"/>
 
     </LinearLayout>

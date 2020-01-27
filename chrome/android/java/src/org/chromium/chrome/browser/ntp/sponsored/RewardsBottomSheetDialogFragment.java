@@ -257,7 +257,7 @@ public class RewardsBottomSheetDialogFragment extends BottomSheetDialogFragment{
             if (!(ref instanceof ChromeTabbedActivity)) continue;
             ChromeTabbedActivity chromeTabbedActivity =  (ChromeTabbedActivity)ref;
             Tab currentTab = chromeTabbedActivity.getActivityTab(); 
-            currentTab.setBackgroundImage(SponsoredImageUtil.getBackgroundImage());
+            currentTab.setNTPImage(SponsoredImageUtil.getBackgroundImage());
             if(currentTab != null) {
                 currentTab.reload();
             }

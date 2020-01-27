@@ -29,6 +29,8 @@ import org.chromium.chrome.browser.ChromeTabbedActivity;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.tabmodel.TabModelUtils;
 import org.chromium.chrome.browser.util.LocaleUtil;
+import org.chromium.chrome.browser.profiles.Profile;
+import org.chromium.chrome.browser.BraveAdsNativeHelper;
 
 /**
  * Fragment to keep track of all the display related preferences.
@@ -51,9 +53,9 @@ public class BackgroundImagesPreferences extends BravePreferenceFragment
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.prefs_new_tab_page);
         PreferenceUtils.addPreferencesFromResource(this, R.xml.background_images_preferences);
-        // if (!LocaleUtil.isSponsoredRegions() || !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
-        //     removePreferenceIfPresent(PREF_SHOW_SPONSORED_IMAGES);
-        // }
+        if (!BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile()) || PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            removePreferenceIfPresent(PREF_SHOW_SPONSORED_IMAGES);
+        }
     }
 
     private void removePreferenceIfPresent(String key) {

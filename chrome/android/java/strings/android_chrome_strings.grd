@@ -4790,13 +4790,10 @@ content creators you love.
         Hide Sponsored Images
       </message>
       <message name="IDS_YOU_CAN_SUPPORT_CREATORS">
-          You can support web creators with tokens. \nEarn tokens by viewing privacy-respecting ads.
+        You can support web creators with tokens. \nEarn tokens by viewing privacy-respecting ads.
       </message>
       <message name="IDS_YOU_ARE_GETTING_PAID">
           You’re getting paid to see this background image.
-      </message>
-      <message name="IDS_THIS_SPONSORED_IMAGE_IS_BROUGHT">
-          This sponsored image is brought to you by American Express®. You’ll receive 70% of the ad revenue for every sponsorship.
       </message>
       <message name="IDS_BR_ON_ADS_ON_TEXT">
           <ph name="LEARN_MORE">%1$s</ph> about sponsored images in Brave Rewards. You can also choose to <ph name="HIDE_SPONSORED_IMAGES">%2$s</ph>.
@@ -4806,12 +4803,6 @@ content creators you love.
       </message>
       <message name="IDS_TURN_ON_BRAVE_ADS_TO_CLAIM">
           Get paid to see this background image. Turn on Brave Ads to claim your share.
-      </message>
-      <message name="IDS_NON_DISRUPTIVE_BANNER_CONTENT2">
-        non_disruptive_banner_content2
-      </message>
-      <message name="IDS_NON_DISRUPTIVE_BANNER_CONTENT1">
-        non_disruptive_banner_content1
       </message>
 
     </messages>
