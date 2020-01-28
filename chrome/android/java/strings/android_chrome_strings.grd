@@ -4706,6 +4706,9 @@ content creators you love.
       <message name="IDS_NOTIFICATION_CATEGORY_BRAVE_ADS" desc="Label for Brave Ads. [CHAR-LIMIT=32]">
         Brave Ads
       </message>
+      <message name="IDS_NOTIFICATION_CATEGORY_BRAVE_ADS_BACKGROUND" desc="Label for Brave Ads in background.">
+        Brave Ads sent when browser is in the background
+      </message>
       <message name="IDS_NOTIFICATION_CATEGORY_GROUP_BRAVE_ADS" desc="Subheading for 'Brave Ads' section of a list of notification categories. [CHAR-LIMIT=32]">
         Brave Ads
       </message>
