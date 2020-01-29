@@ -552,7 +552,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
 
                     if (ntpImage instanceof SponsoredImage) {
                         SponsoredImage sponsoredImage = (SponsoredImage) ntpImage;
-                        File imageFile = new File(PathUtils.getDataDirectory(), countryCode + "_background-3.jpg");
+                        File imageFile = new File(PathUtils.getDataDirectory(), countryCode + "_" + sponsoredImage.getImageUrl());
                         Log.i("NTP", " imageFile : " + imageFile.getPath());
                         try {
                             Uri imageFileUri = Uri.parse("file://"+imageFile.getAbsolutePath());
