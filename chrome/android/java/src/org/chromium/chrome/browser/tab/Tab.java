@@ -348,9 +348,8 @@ public class Tab {
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            ntpImage = getNTPImage();
-        }
+        
+        ntpImage = getNTPImage();
         index = SponsoredImageUtil.imageIndex;
         updateBannerPref();
     }

@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.content.SharedPreferences;
 
@@ -67,7 +68,7 @@ import org.chromium.chrome.browser.tab.Tab;
  * Layout for the new tab page. This positions the page elements in the correct vertical positions.
  * There are no separate phone and tablet UIs; this layout adapts based on the available space.
  */
-public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer, VrModeObserver {
+public class NewTabPageLayout extends FrameLayout implements TileGroup.Observer, VrModeObserver {
     private static final String TAG = "NewTabPageLayout";
     // Used to signify the cached resource value is unset.
     private static final int UNSET_RESOURCE_FLAG = -1;
@@ -793,8 +794,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
                 ViewStub placeholderStub = findViewById(R.id.tile_grid_placeholder_stub);
                 mTileGridPlaceholder = placeholderStub.inflate();
                 SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-                if(sharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true) 
-                    && Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+                if(sharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)) {
                     TextView title = mTileGridPlaceholder.findViewById(R.id.most_visited_placeholder_title);
                     TextView summary = mTileGridPlaceholder.findViewById(R.id.most_visited_placeholder_summary);                    
                     title.setTextColor(getResources().getColor(android.R.color.white));
@@ -809,8 +809,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
 
     private int getMaxTileRows() {
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-        if(sharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)
-            && Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+        if(sharedPreferences.getBoolean(BackgroundImagesPreferences.PREF_SHOW_BACKGROUND_IMAGES, true)) {
             return 1;
         } else {
             return 2;

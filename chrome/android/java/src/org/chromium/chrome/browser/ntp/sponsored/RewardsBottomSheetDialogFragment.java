@@ -23,6 +23,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.TextPaint;
+import android.content.res.Configuration;
 
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.BottomSheetDialog;
@@ -44,11 +45,14 @@ import org.chromium.chrome.browser.customtabs.CustomTabActivity;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.R;
 
+import static org.chromium.chrome.browser.util.ViewUtils.dpToPx;
+
 public class RewardsBottomSheetDialogFragment extends BottomSheetDialogFragment{
     private static final String BRAVE_TERMS_PAGE = "https://basicattentiontoken.org/user-terms-of-service/";
-    private static final String BRAVE_REWARDS_LEARN_MORE = "https://brave.com/faq-rewards/#unclaimed-funds";
+    private static final String BRAVE_REWARDS_LEARN_MORE = "https://brave.com/faq-rewards";
 
     private int ntpType;
+    private NewTabListener newTabListener;
 
     public static RewardsBottomSheetDialogFragment newInstance() {
         return new RewardsBottomSheetDialogFragment();
@@ -63,6 +67,40 @@ public class RewardsBottomSheetDialogFragment extends BottomSheetDialogFragment{
     		ntpType = getArguments().getInt(SponsoredImageUtil.NTP_TYPE,1);
     	}
         return inflater.inflate(R.layout.ntp_bottom_sheet, container,false);
+    }
+
+    @Override
+    public void onPause() {
+        newTabListener.updateInteractableFlag(true);
+        super.onPause();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.screenWidthDp > 400) {
+            // you can go more fancy and vary the bottom sheet width depending on the screen width
+            // see recommendations on https://material.io/guidelines/components/bottom-sheets.html#bottom-sheets-specs
+            getDialog().getWindow().setLayout(dpToPx(getActivity(), 400), -1);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        newTabListener.updateInteractableFlag(false);
+
+        Configuration configuration = getActivity().getResources().getConfiguration();
+        if (configuration.screenWidthDp > 400) {
+            // you can go more fancy and vary the bottom sheet width depending on the screen width
+            // see recommendations on https://material.io/guidelines/components/bottom-sheets.html#bottom-sheets-specs
+            getDialog().getWindow().setLayout(dpToPx(getActivity(), 400), -1);
+        }
+    }
+
+    public void setNewTabListener(NewTabListener newTabListener) {
+        this.newTabListener = newTabListener;
     }
 
     @Override
@@ -263,9 +301,7 @@ public class RewardsBottomSheetDialogFragment extends BottomSheetDialogFragment{
             ChromeTabbedActivity chromeTabbedActivity =  (ChromeTabbedActivity)ref;
             Tab currentTab = chromeTabbedActivity.getActivityTab(); 
             currentTab.setNTPImage(SponsoredImageUtil.getBackgroundImage());
-            if(currentTab != null) {
-                currentTab.reload();
-            }
+            newTabListener.updateNTPImage();
         }
     }
 

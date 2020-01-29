@@ -5,12 +5,14 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/non_distruptive_banner"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:maxWidth="400dp"
     android:padding="16dp"
     android:background="@color/ntp_non_disruptive_banner_bg_color"
-    android:layout_gravity="start|bottom"
-    android:orientation="horizontal">
+    android:layout_gravity="center_horizontal|bottom"
+    android:orientation="horizontal"
+    android:visibility="gone">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -20,7 +22,7 @@
 
         <TextView
             android:id="@+id/ntp_banner_header"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:drawableStart="@drawable/bat_logo"
@@ -32,14 +34,14 @@
 
         <TextView
             android:id="@+id/ntp_banner_text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/ntp_banner_learn_more_text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:layout_marginBottom="8dp"
@@ -57,7 +59,8 @@
             android:text="@string/turn_on_brave_ads"
             android:textAllCaps="false"
             android:textSize="16sp"
-            android:padding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:layout_marginTop="16dp"
             android:drawableStart="@drawable/coins"
             android:drawablePadding="8dp"
