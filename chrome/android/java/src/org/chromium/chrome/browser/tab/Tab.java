@@ -89,6 +89,8 @@ import org.chromium.base.ApplicationStatus;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
 import org.chromium.chrome.browser.tabmodel.TabModel;
 import org.chromium.chrome.browser.BraveRewardsHelper;
+import org.chromium.chrome.browser.ntp.sponsored.NewTabListener;
+import org.chromium.chrome.browser.ntp.NewTabPage;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -286,6 +288,7 @@ public class Tab {
     private boolean mShouldShowBanner;
 
     private boolean isMoreTabs;
+    private NewTabListener newTabListener;
 
     /**
      * @return {@link UserDataHost} that manages {@link UserData} objects attached to
@@ -606,13 +609,19 @@ public class Tab {
      * Reloads the current page content.
      */
     public void reload() {
-        // TODO(dtrainor): Should we try to rebuild the ContentView if it's frozen?
-        if (OfflinePageUtils.isOfflinePage(this)) {
-            // If current page is an offline page, reload it with custom behavior defined in extra
-            // header respected.
-            OfflinePageUtils.reload(this);
+
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && !isMoreTabs() && NewTabPage.isNTPUrl(getUrl())) {
+            if(newTabListener != null)
+                newTabListener.updateNTPImage();
         } else {
-            if (getWebContents() != null) getWebContents().getNavigationController().reload(true);
+            // TODO(dtrainor): Should we try to rebuild the ContentView if it's frozen?
+            if (OfflinePageUtils.isOfflinePage(this)) {
+                // If current page is an offline page, reload it with custom behavior defined in extra
+                // header respected.
+                OfflinePageUtils.reload(this);
+            } else {
+                if (getWebContents() != null) getWebContents().getNavigationController().reload(true);
+            }
         }
     }
 
@@ -1975,11 +1984,19 @@ public class Tab {
     }
 
     public NTPImage getTabNTPImage() {
-        return ntpImage;
+        if (ntpImage != null) {
+            return ntpImage;
+        } else {
+            return getNTPImage();
+        }
     }
 
     public void setNTPImage(NTPImage ntpImage) {
         this.ntpImage = ntpImage;
+    }
+
+    public void setNewTabListener(NewTabListener newTabListener) {
+        this.newTabListener = newTabListener;
     }
 
     public int getTabIndex() {

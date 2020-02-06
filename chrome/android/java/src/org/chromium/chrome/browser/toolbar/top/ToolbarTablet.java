@@ -627,9 +627,6 @@ public class ToolbarTablet extends ToolbarLayout
         }
 
         updateNotificationBadgeForNewInstall(rewardsEnabled);
-        if (!PackageUtils.isFirstInstall(getContext()) && !OnboardingPrefManager.getInstance().isAdsAvailable()) {
-            mayShowBraveAdsOobeDialog();
-        }
     }
 
     private void updateNotificationBadgeForNewInstall(boolean rewardsEnabled) {

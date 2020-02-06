@@ -2212,9 +2212,6 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         }
 
         updateNotificationBadgeForNewInstall(rewardsEnabled);
-        if (!PackageUtils.isFirstInstall(getContext()) && !OnboardingPrefManager.getInstance().isAdsAvailable()) {
-            mayShowBraveAdsOobeDialog();
-        }
     }
 
     private void updateNotificationBadgeForNewInstall(boolean rewardsEnabled) {
