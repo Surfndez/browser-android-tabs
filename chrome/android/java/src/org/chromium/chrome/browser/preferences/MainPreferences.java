@@ -221,6 +221,10 @@ public class MainPreferences extends PreferenceFragmentCompat
         if (!ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)) {
             getPreferenceScreen().removePreference(welcomeTour);
         }
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            getPreferenceScreen().removePreference(findPreference(PREF_BACKGROUND_IMAGES));
+        }
     }
 
     /**
